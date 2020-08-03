@@ -1,30 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mônada landing page
 
-## Getting Started
+This is the project of Mônada's landing page.
 
-First, run the development server:
+You can see a live version of this site [here](https://monada.netlify.app).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## What major libraries is this using?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **styled-components:** This is a *CSS-in-JS* solution, which I personaly like a lot. It works very well with *Server-side rendering* tools (like `Next.js`). Webpage [here](https://styled-components.com/)
+- **Next.js:** Allows for *Server-side rendering* (**SSR**) and *static page generation* (**SSG**). It's great for a faster page loading time, and removed most of the problems with a *CSS-in-JS* styling solution. It's built uppon **React**. Webpage [here](https://nextjs.org/)
+- **React:** Library for building user interfaces.  Webpage [here](https://reactjs.org/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Folder architecture
 
-## Learn More
+Here are a few short descriptions of each folder's purpose:
 
-To learn more about Next.js, take a look at the following resources:
+### public
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The `public` folder should hold all images, text fonts, videos, etc.. It's content's are not very strictly organized, so you may choose where to place your assets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### src/pages
 
-## Deploy on Vercel
+The contents of `src/pages` is actually defined by `Next.js` itself. You can read more [here](https://nextjs.org/docs/basic-features/pages).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`src/pages` should not have any logic at all, neither should it have any component construction. All it should do is import things from `src/containers` and export them.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### src/containers
+
+Since `src/pages` has a special meaning for `Next.js`, the `src/containers` folder exists to allow for more flexibility around the definition of pages. Pages's component's should be defined in `src/containers`, and imported in `src/pages`. This allows for `src/containers` to have files that are not directly related to pages, but are auxiliar components to them.
+
+### src/constants
+
+Here lives hard data that should never change. The contents of these files should be mostly dictionaries of data, with the minimum ammount of possible logic.
+
+### src/components
+
+This folder should store any component that will be used more than once. It has two subfolders:
+
+- **src/components/layout:** Here we should have components that are a whole piece of the page (e.g. navbar or footer). They aren't reusable on any context, only in specific places of specific pages.
+
+- **src/components/reusable:** Here should live all ambient agnostic components, such as buttons, icons, inputs, etc...
