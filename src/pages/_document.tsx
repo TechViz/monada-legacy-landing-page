@@ -1,5 +1,5 @@
 
-import Document, { DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -28,4 +28,18 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
+
+	render () {
+		return (
+			<Html lang='pt-br'>
+			<Head>
+				<meta name="description" content="Site oficial da empresa Mônada" />
+			</Head>
+			<body>
+				<Main />
+				<NextScript />
+			</body>
+			</Html>
+		)
+	}
 }
