@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="176 79 448.5 463.9978942871094" height="463.9978942871094" width="448.5">
+	<defs>
+		<style>
+			.cls-1{
+				fill:#8228e0;
+			}
+			.cls-2{
+				fill:#efefef;
+			}
+			.cls-3{
+				stroke:#fff;
+				stroke-miterlimit:10;
+				stroke-width:10.71px;
+				fill:url(#linear-gradient);
+			}
+			.cls-4{
+				fill:#cd004b;
+			}
+			.cls-5{
+				fill:#fff;
+			}
+			.cls-6{
+				fill:#f3711b;
+			}
+			.cls-7{
+				fill:#fcb808;
+			}
+			.cls-8{
+				fill:#008ad1;
+			}
+			.cls-9{
+				fill:#04b34a;
+			}
+		</style>
+		<linearGradient id="linear-gradient" x1="178.23" y1="473.77" x2="618.8" y2="473.77" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#a59fea"/>
+			<stop offset="0.15" stop-color="#a398e9"/>
+			<stop offset="0.36" stop-color="#9e86e8"/>
+			<stop offset="0.6" stop-color="#9568e5"/>
+			<stop offset="0.88" stop-color="#883ee2"/>
+			<stop offset="1" stop-color="#8228e0"/>
+		</linearGradient>
+	</defs>
+	<title>MARCA_svg</title>
+	<g>
+	<rect class="cls-3" x="178.23" y="405.02" width="440.57" height="137.51" rx="65.54" ry="65.54"/>
+	<ellipse class="cls-1" cx="550.66" cy="474.57" rx="64.86" ry="62.34"/>
+	<polygon class="cls-4" points="441.32 153.5 441.32 129.63 422.83 129.63 422.83 112.28 382.78 112.28 382.78 129.63 364.29 129.63 364.29 153.5 339.64 153.5 339.64 370.68 465.97 370.68 465.97 153.5 441.32 153.5"/>
+	<polyline class="cls-5" points="338.24 370.68 382.02 370.68 382.02 228.8 361.3 228.8 361.3 214.49 338.93 214.49"/>
+	<polygon class="cls-6" points="351.36 236.02 351.36 221.22 286.58 221.22 286.58 236.02 265.85 236.02 265.85 370.68 372.09 370.68 372.09 236.02 351.36 236.02"/>
+	<rect class="cls-5" x="265.52" y="262.04" width="34.24" height="108.64"/>
+	<rect class="cls-7" x="226.89" y="268.68" width="62.22" height="102"/>
+	<polyline class="cls-5" points="462.68 370.68 426.65 370.68 426.65 164.11 466.68 188.21"/>
+	<polygon class="cls-8" points="529.92 370.68 436.59 370.68 436.59 177.36 529.92 231.97 529.92 370.68"/>
+	<rect class="cls-5" x="494.95" y="262.75" width="35.26" height="107.86"/>
+	<rect class="cls-9" x="504.88" y="268.68" width="62.22" height="102"/>
+	</g>
+</svg>
