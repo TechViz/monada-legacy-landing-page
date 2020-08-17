@@ -34,6 +34,7 @@ const LinksContainer = styled.ul`
 
 	${props => props.theme.mediaQueries.maxScreen.tablet} {
 		position: absolute;
+		top: 0;
 		right: 0;
 		transform: translate(100%, 0);
 	}
