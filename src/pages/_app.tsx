@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 // Misc
 import FilledThemeProvider from '../theme';
+import Providers from '../contexts';
 
 type MyAppProps = React.PropsWithoutRef<{
 	Component: any,
@@ -36,7 +37,9 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
 				{/* Note: I'm not using styled-components here because it doesn't play
 				well with Server-side rendering */}
 				<div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-					<Component {...pageProps} />
+					<Providers>
+						<Component {...pageProps} />
+					</Providers>
 				</div>
 			</FilledThemeProvider>
 		</>

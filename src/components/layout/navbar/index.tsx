@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Images from '../../../constants/images';
 import NavLink from './nav-link';
 import Hamburguer from '../../reusable/hamburguer';
+import { useHamburguer } from '../../../contexts/hamburguer';
 
 const Root = styled.div`
 	height: 10vh;
@@ -51,6 +52,8 @@ type NavbarProps = React.PropsWithoutRef<{}>;
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
 
 const Navbar: NavbarComponent = () => {
+	const { openHamburguer, closeHamburguer } = useHamburguer();
+
 	return (
 		<Root>
 			<Link href='/home'>
@@ -63,7 +66,7 @@ const Navbar: NavbarComponent = () => {
 				<NavLink idToFocus='macarrão'>Contato</NavLink>
 			</DesktopLinksContainer>
 			<MobileHamburguer>
-				<Hamburguer />
+				<Hamburguer onOpen={openHamburguer} onClose={closeHamburguer} />
 			</MobileHamburguer>
 		</Root>
 	);
