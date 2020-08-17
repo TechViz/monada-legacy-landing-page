@@ -22,6 +22,13 @@ const Images = {
 			...props,
 		}))``,
 	},
+	Icons: {
+		gift: styled(BaseImage).attrs(props => ({
+			src: '/icons/gift.svg',
+			alt: 'Icone de um presente',
+			...props,
+		}))``
+	}
 }
 
 export default Images;
