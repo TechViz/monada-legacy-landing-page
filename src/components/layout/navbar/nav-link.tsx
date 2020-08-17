@@ -37,6 +37,18 @@ const Anchor = styled.a`
 	}
 `;
 
+const MobileAnchor = styled(Anchor)`
+	${props => props.theme.mediaQueries.minScreen.tablet} {
+		display: none;
+	}
+`;
+
+const DesktopAnchor = styled(Anchor)`
+	${props => props.theme.mediaQueries.maxScreen.tablet} {
+		display: none;
+	}
+`;
+
 type NavLinkProps = React.PropsWithChildren<{
 	/** The ID of the document object to scroll to */
 	idToFocus: string,
@@ -67,9 +79,12 @@ const NavLink: NavLinkComponent = ({
 
 	return (
 		<Root onClick={handleClick} {...props}>
-			<Anchor tabIndex={isHamburguerOpen ? 0 : -1} href='#'>
+			<MobileAnchor tabIndex={isHamburguerOpen ? 0 : -1} href='#'>
 				{children}
-			</Anchor>
+			</MobileAnchor>
+			<DesktopAnchor href='#'>
+				{children}
+			</DesktopAnchor>
 		</Root>
 	);
 }

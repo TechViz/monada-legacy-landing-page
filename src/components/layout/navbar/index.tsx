@@ -89,6 +89,7 @@ const Navbar: NavbarComponent = () => {
 					value={isHamburguerOpen}
 					onOpen={openHamburguer}
 					onClose={closeHamburguer}
+					animationTime={500}
 				/>
 			</MobileHamburguer>
 		</Root>

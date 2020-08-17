@@ -63,7 +63,7 @@ const Hamburguer: HamburguerComponent = ({
 	const isOpen = typeof value === 'undefined' ? isOpenState : value;
 
 	return (
-		<Root {...props} onClick={handleClick} ref={ref}>
+		<Root {...props} aria-label='Abrir menu' onClick={handleClick} ref={ref}>
 			<Bar animationTime={animationTime} style={{
 				top: isOpen? `11px` : `0px`,
 				transform: isOpen? `rotate(45deg)` : 'rotate(0deg)',
