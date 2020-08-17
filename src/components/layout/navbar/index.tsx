@@ -66,6 +66,7 @@ const Navbar: NavbarComponent = () => {
 
 	const linksContainerRef = React.useRef<HTMLUListElement>(null);
 
+	// Tells how much should the screen slide when then hamburguer opens
 	React.useEffect(() => {
 		const width = linksContainerRef.current!.clientWidth;
 		setHamburguerOffset(width);

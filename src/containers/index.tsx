@@ -30,6 +30,9 @@ const Backdrop = styled.div<{ show: boolean }>`
 type AppContainerProps = React.PropsWithoutRef<{}>;
 type AppContainerComponent = React.FunctionComponent<AppContainerProps>;
 
+/** This component should only be used in the `/src/pages/_app.tsx` component.
+* The `AppContainer` component was created to contain the whole application. It's
+* primary purpose is to allow for the screen to slide when the hamburguer opens. */
 const AppContainer: AppContainerComponent = ({ children }) => {
 	const { isHamburguerOpen, hamburguerOffset } = useHamburguer();
 
