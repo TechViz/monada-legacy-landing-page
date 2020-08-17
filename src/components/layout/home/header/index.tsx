@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Images from '../../../constants/images';
+import HeaderLogo from './logo';
 
 const Root = styled.div`
 	height: 100%;
@@ -39,9 +39,6 @@ const ImageContainer = styled.div`
 	width: 100%;
 `;
 
-const LogoImage = styled(Images.Logo.Textless)`
-`;
-
 type HomeHeaderProps = React.PropsWithoutRef<{
 }>;
 
@@ -59,7 +56,7 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 				</Description>
 			</TextContainer>
 			<ImageContainer>
-				<LogoImage />
+				<HeaderLogo />
 			</ImageContainer>
 		</Root>
 	);
