@@ -4,8 +4,6 @@ import { useHamburguer } from '../contexts/hamburguer';
 
 const Root = styled.div`
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 	overflow: hidden;
 `;
 
@@ -14,6 +12,8 @@ const MovableContainer = styled.div<{ offset: number }>`
 	position: relative;
 	transition: 500ms;
 	top: ${({ offset }) => offset}px;
+	display: flex;
+	flex-direction: column;
 `;
 
 const Backdrop = styled.div<{ show: boolean }>`

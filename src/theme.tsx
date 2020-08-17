@@ -12,6 +12,9 @@ declare module "styled-components" {
 			primary: {
 				main: string,
 				white: string,
+				black: string,
+				dark: string,
+				light: string,
 			},
 			secondary: {
 				main: string,
@@ -86,6 +89,9 @@ const theme: DefaultTheme = {
 		primary: {
 			main: '#6a27c1',
 			white: '#F1EBF9',
+			black: '#130723',
+			dark: '#3A1569',
+			light: '#AE89DD',
 		},
 		secondary: {
 			main: '#98fb98',
