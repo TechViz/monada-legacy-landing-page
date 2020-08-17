@@ -59,7 +59,16 @@ declare module "styled-components" {
 			},
 		},
 		mediaQueries: {
-			screen: {
+			minScreen: {
+				mobileS: string,
+				mobileM: string,
+				mobileL: string,
+				tablet: string,
+				laptop: string,
+				laptopL: string,
+				uhd: string,
+			}
+			maxScreen: {
 				mobileS: string,
 				mobileM: string,
 				mobileL: string,
@@ -106,7 +115,7 @@ const theme: DefaultTheme = {
 	font: {
 		size: {
 			normal: '16px',
-			large: '20px',
+			large: '24px',
 		},
 	},
 	shadows: {
@@ -134,7 +143,7 @@ const theme: DefaultTheme = {
 		},
 	},
 	mediaQueries: {
-		screen: {
+		minScreen: {
 			mobileS: '@media screen and (min-width: 320px)',
 			mobileM: '@media screen and (min-width: 375px)',
 			mobileL: '@media screen and (min-width: 425px)',
@@ -142,6 +151,15 @@ const theme: DefaultTheme = {
 			laptop: '@media screen and (min-width: 1024px)',
 			laptopL: '@media screen and (min-width: 1440px)',
 			uhd: '@media screen and (min-width: 2560px)',
+		},
+		maxScreen: {
+			mobileS: '@media screen and (max-width: 320px)',
+			mobileM: '@media screen and (max-width: 375px)',
+			mobileL: '@media screen and (max-width: 425px)',
+			tablet: '@media screen and (max-width: 768px)',
+			laptop: '@media screen and (max-width: 1024px)',
+			laptopL: '@media screen and (max-width: 1440px)',
+			uhd: '@media screen and (max-width: 2560px)',
 		},
 	},
 };

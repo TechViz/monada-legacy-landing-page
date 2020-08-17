@@ -4,12 +4,15 @@ type HamburguerContext = {
 	isHamburguerOpen: boolean,
 	openHamburguer: () => void,
 	closeHamburguer: () => void,
+	hamburguerOffset: number,
+	setHamburguerOffset: (newOffset: number) => void,
 };
 
 const context = React.createContext<HamburguerContext>(null as any);
 
 const HamburguerProvider = ({ ...props }) => {
 	const [isHamburguerOpen, setIsHamburguerOpen] = React.useState<boolean>(false);
+	const [hamburguerOffset, setHamburguerOffset] = React.useState<number>(0);
 
 	function closeHamburguer () {
 		setIsHamburguerOpen(false);
@@ -19,7 +22,13 @@ const HamburguerProvider = ({ ...props }) => {
 		setIsHamburguerOpen(true);
 	}
 
-	return <context.Provider {...props} value={{ isHamburguerOpen, openHamburguer, closeHamburguer }} />
+	return <context.Provider {...props} value={{
+		isHamburguerOpen,
+		openHamburguer,
+		closeHamburguer,
+		hamburguerOffset,
+		setHamburguerOffset,
+	}} />
 }
 
 function useHamburguer () {

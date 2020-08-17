@@ -16,7 +16,7 @@ const Root = styled.div`
 	justify-content: space-between;
 
 	padding: 8px 8px;
-	${props => props.theme.mediaQueries.screen.tablet} {
+	${props => props.theme.mediaQueries.minScreen.tablet} {
 		padding: 8px 32px;
 	}
 `;
@@ -27,13 +27,17 @@ const Logo = styled(Images.Logo.Textless)`
 	cursor: pointer;
 `;
 
-const DesktopLinksContainer = styled.ul`
+const LinksContainer = styled.ul`
 	padding: 0;
 	margin: 0;
 	align-items: center;
 
-	display: none;
-	${props => props.theme.mediaQueries.screen.tablet} {
+	${props => props.theme.mediaQueries.maxScreen.tablet} {
+		position: absolute;
+		right: 0;
+		transform: translate(100%, 0);
+	}
+	${props => props.theme.mediaQueries.minScreen.tablet} {
 		display: flex;
 	}
 `;
@@ -42,7 +46,7 @@ const MobileHamburguer = styled.div`
 	display: flex;
 	align-items: center;
 
-	${props => props.theme.mediaQueries.screen.tablet} {
+	${props => props.theme.mediaQueries.minScreen.tablet} {
 		display: none;
 	}
 `;
@@ -52,19 +56,31 @@ type NavbarProps = React.PropsWithoutRef<{}>;
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
 
 const Navbar: NavbarComponent = () => {
-	const { openHamburguer, closeHamburguer, isHamburguerOpen } = useHamburguer();
+	const {
+		openHamburguer,
+		closeHamburguer,
+		isHamburguerOpen,
+		setHamburguerOffset,
+	} = useHamburguer();
+
+	const linksContainerRef = React.useRef<HTMLUListElement>(null);
+
+	React.useEffect(() => {
+		const width = linksContainerRef.current!.clientWidth;
+		setHamburguerOffset(width);
+	}, []);
 
 	return (
 		<Root>
 			<Link href='/home'>
 				<Logo />
 			</Link>
-			<DesktopLinksContainer>
+			<LinksContainer ref={linksContainerRef}>
 				<NavLink idToFocus='video'>Quem Somos</NavLink>
 				<NavLink idToFocus='tomate'>Planos</NavLink>
 				<NavLink idToFocus='tomate'>Sobre Nós</NavLink>
 				<NavLink idToFocus='macarrão'>Contato</NavLink>
-			</DesktopLinksContainer>
+			</LinksContainer>
 			<MobileHamburguer>
 				<Hamburguer
 					value={isHamburguerOpen}

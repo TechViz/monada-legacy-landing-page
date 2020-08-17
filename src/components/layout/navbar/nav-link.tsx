@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHamburguer } from '../../../contexts/hamburguer';
 
 const Root = styled.li`
 	list-style: none;
@@ -36,6 +37,8 @@ const NavLink: NavLinkComponent = ({
 	onClick,
 	...props
 }) => {
+	const { isHamburguerOpen } = useHamburguer();
+
 	function handleClick (event: React.MouseEvent<HTMLLIElement>) {
 		const targetElem = document.getElementById('#' + idToFocus);
 		if (!targetElem) {
@@ -50,7 +53,7 @@ const NavLink: NavLinkComponent = ({
 
 	return (
 		<Root onClick={handleClick} {...props}>
-			<Anchor href='#'>
+			<Anchor tabIndex={isHamburguerOpen ? 0 : -1} href='#'>
 				{children}
 			</Anchor>
 		</Root>
