@@ -11,6 +11,7 @@ declare module "styled-components" {
 		colors: {
 			primary: {
 				main: string,
+				white: string,
 			},
 			secondary: {
 				main: string,
@@ -34,6 +35,13 @@ declare module "styled-components" {
 			},
 			gray: {
 				light: string,
+				lighter: string,
+			},
+		},
+		font: {
+			size: {
+				normal: string,
+				large: string,
 			},
 		},
 		shadows: {
@@ -56,13 +64,15 @@ declare module "styled-components" {
 const theme: DefaultTheme = {
 	colors: {
 		primary: {
-			main: '#98fb98',
+			main: '#6a27c1',
+			white: '#F1EBF9',
 		},
 		secondary: {
 			main: '#98fb98',
 		},
 		gray: {
 			light: '#dddddd',
+			lighter: '#eeeeee',
 		},
 		success: {
 			lighter: '#a7d7a9',
@@ -80,6 +90,12 @@ const theme: DefaultTheme = {
 			light: '#ffb74d',
 			normal: '#ff9800',
 			dark: '#f57c00',
+		},
+	},
+	font: {
+		size: {
+			normal: '16px',
+			large: '20px',
 		},
 	},
 	shadows: {
