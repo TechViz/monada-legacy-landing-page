@@ -25,6 +25,7 @@ const Anchor = styled.a`
 		// Mobile only
 		display: block;
 		padding: 16px 24px;
+		text-align: center;
 		width: 100%;
 		width: 100%;
 	}

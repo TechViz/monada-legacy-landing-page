@@ -13,7 +13,7 @@ const MovableContainer = styled.div<{ offset: number }>`
 	height: 100%;
 	position: relative;
 	transition: 500ms;
-	right: ${({ offset }) => offset}px;
+	top: ${({ offset }) => offset}px;
 `;
 
 const Backdrop = styled.div<{ show: boolean }>`
@@ -24,7 +24,7 @@ const Backdrop = styled.div<{ show: boolean }>`
 	pointer-events: none;
 	position: fixed;
 	transition: 500ms;
-	top: -10px;
+	left: 0px;
 `;
 
 type AppContainerProps = React.PropsWithoutRef<{}>;

@@ -35,8 +35,9 @@ const LinksContainer = styled.ul`
 	${props => props.theme.mediaQueries.maxScreen.tablet} {
 		position: absolute;
 		top: 0;
-		right: 0;
-		transform: translate(100%, 0);
+		left: 0;
+		width: 100%;
+		transform: translate(0, -100%);
 	}
 	${props => props.theme.mediaQueries.minScreen.tablet} {
 		display: flex;
@@ -68,8 +69,8 @@ const Navbar: NavbarComponent = () => {
 
 	// Tells how much should the screen slide when then hamburguer opens
 	React.useEffect(() => {
-		const width = linksContainerRef.current!.clientWidth;
-		setHamburguerOffset(width);
+		const height = linksContainerRef.current!.clientHeight;
+		setHamburguerOffset(height);
 	}, []);
 
 	return (
