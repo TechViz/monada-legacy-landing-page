@@ -52,7 +52,7 @@ type NavbarProps = React.PropsWithoutRef<{}>;
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
 
 const Navbar: NavbarComponent = () => {
-	const { openHamburguer, closeHamburguer } = useHamburguer();
+	const { openHamburguer, closeHamburguer, isHamburguerOpen } = useHamburguer();
 
 	return (
 		<Root>
@@ -66,7 +66,11 @@ const Navbar: NavbarComponent = () => {
 				<NavLink idToFocus='macarrão'>Contato</NavLink>
 			</DesktopLinksContainer>
 			<MobileHamburguer>
-				<Hamburguer onOpen={openHamburguer} onClose={closeHamburguer} />
+				<Hamburguer
+					value={isHamburguerOpen}
+					onOpen={openHamburguer}
+					onClose={closeHamburguer}
+				/>
 			</MobileHamburguer>
 		</Root>
 	);

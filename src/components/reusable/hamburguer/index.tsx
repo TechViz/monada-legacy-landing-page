@@ -27,6 +27,8 @@ type HamburguerProps = React.PropsWithRef<{
 	onClose?: () => void,
 	/** Time (in milisseconds) it takes to animate the hamburguer */
 	animationTime?: number,
+	/** If value is provided, it will override the hamburguer's internal state */
+	value?: boolean,
 }>;
 
 type HamburguerComponent = React.ForwardRefRenderFunction<HTMLButtonElement, HamburguerProps>;
@@ -35,17 +37,33 @@ const Hamburguer: HamburguerComponent = ({
 	onOpen = (()=>{}),
 	onClose = (()=>{}),
 	animationTime = 200, //in milisseconds
+	value,
 	...props
 }, ref) => {
-	let [isOpen, setIsOpen] = React.useState<boolean>(false);
+	let [isOpenState, setIsOpenState] = React.useState<boolean>(value || false);
+
+	function handleClick () {
+		if (typeof value === 'undefined') {
+			// Value is not set, use the component's internal state.
+			setIsOpenState(!isOpenState);
+		} else {
+			// Value is set. Don't touch the component's state
+			if (value) onClose();
+			else onOpen();
+		}
+	}
 
 	React.useEffect(()=>{
-		if(isOpen) onOpen();
+		if (typeof value !== 'undefined') return;
+
+		if(isOpenState) onOpen();
 		else onClose();
-	}, [isOpen]);
+	}, [isOpenState, value]);
+
+	const isOpen = typeof value === 'undefined' ? isOpenState : value;
 
 	return (
-		<Root {...props} onClick={() => setIsOpen(s => !s)} ref={ref}>
+		<Root {...props} onClick={handleClick} ref={ref}>
 			<Bar animationTime={animationTime} style={{
 				top: isOpen? `11px` : `0px`,
 				transform: isOpen? `rotate(45deg)` : 'rotate(0deg)',
