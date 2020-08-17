@@ -2,6 +2,8 @@ import Head from 'next/head'
 import styled from 'styled-components';
 import Navbar from '../../components/layout/navbar';
 
+import HomeHeader from '../../components/layout/home/header';
+
 const Main = styled.div`
 	width: 100%;
 	height: 100%;
@@ -19,7 +21,7 @@ export default function Home() {
 			</Head>
 			<Navbar />
 			<Main>
-				Página da Mônada
+				<HomeHeader />
 			</Main>
 		</>
 	)

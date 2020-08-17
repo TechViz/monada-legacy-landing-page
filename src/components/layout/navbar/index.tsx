@@ -4,15 +4,20 @@ import Link from 'next/link';
 
 import Images from '../../../constants/images';
 import NavLink from './nav-link';
+import Hamburguer from '../../reusable/hamburguer';
 
 const Root = styled.div`
 	height: 10vh;
-	padding: 8px 32px;
 	width: 100%;
 	background-color: ${({ theme }) => theme.colors.primary.white};
 	box-shadow: ${({ theme }) => theme.shadows.layout.large};
 	display: flex;
 	justify-content: space-between;
+
+	padding: 8px 8px;
+	${props => props.theme.mediaQueries.screen.tablet} {
+		padding: 8px 32px;
+	}
 `;
 
 const Logo = styled(Images.Logo.Textless)`
@@ -21,11 +26,24 @@ const Logo = styled(Images.Logo.Textless)`
 	cursor: pointer;
 `;
 
-const LinksContainer = styled.ul`
-	display: flex;
+const DesktopLinksContainer = styled.ul`
 	padding: 0;
 	margin: 0;
 	align-items: center;
+
+	display: none;
+	${props => props.theme.mediaQueries.screen.tablet} {
+		display: flex;
+	}
+`;
+
+const MobileHamburguer = styled.div`
+	display: flex;
+	align-items: center;
+
+	${props => props.theme.mediaQueries.screen.tablet} {
+		display: none;
+	}
 `;
 
 type NavbarProps = React.PropsWithoutRef<{}>;
@@ -38,12 +56,15 @@ const Navbar: NavbarComponent = () => {
 			<Link href='/home'>
 				<Logo />
 			</Link>
-			<LinksContainer>
+			<DesktopLinksContainer>
 				<NavLink idToFocus='video'>Quem Somos</NavLink>
 				<NavLink idToFocus='tomate'>Planos</NavLink>
 				<NavLink idToFocus='tomate'>Sobre Nós</NavLink>
 				<NavLink idToFocus='macarrão'>Contato</NavLink>
-			</LinksContainer>
+			</DesktopLinksContainer>
+			<MobileHamburguer>
+				<Hamburguer />
+			</MobileHamburguer>
 		</Root>
 	);
 }

@@ -36,7 +36,6 @@ const NavLink: NavLinkComponent = ({
 	onClick,
 	...props
 }) => {
-
 	function handleClick (event: React.MouseEvent<HTMLLIElement>) {
 		const targetElem = document.getElementById('#' + idToFocus);
 		if (!targetElem) {
