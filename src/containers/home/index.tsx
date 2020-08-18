@@ -5,6 +5,7 @@ import Navbar from '../../components/layout/navbar';
 import HomeHeader from '../../components/layout/home/header';
 import { useHamburguer } from '../../contexts/hamburguer';
 import HomeAboutUs from '../../components/layout/home/about-us';
+import HomePlans from '../../components/layout/home/plans';
 
 const Main = styled.div`
 	width: 100%;
@@ -25,6 +26,7 @@ export default function Home() {
 			<Main onClick={closeHamburguer}>
 				<HomeHeader />
 				<HomeAboutUs />
+				<HomePlans />
 			</Main>
 		</>
 	)

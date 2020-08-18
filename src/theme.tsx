@@ -18,6 +18,12 @@ declare module "styled-components" {
 			},
 			secondary: {
 				main: string,
+				white: string,
+				dark: string,
+				light: string,
+			},
+			action: {
+				main: string,
 			},
 			success: {
 				lighter: string,
@@ -51,7 +57,10 @@ declare module "styled-components" {
 			/** Layout shadows are shadows related to things like cards, the navbar, etc...
 			* These shadows are usually larger and more subtle*/
 			layout: {
-				large: string,
+				large: {
+					soft: HoverableShadow,
+					strong: HoverableShadow,
+				},
 			},
 			button: {
 				small: HoverableShadow,
@@ -94,7 +103,13 @@ const theme: DefaultTheme = {
 			light: '#AE89DD',
 		},
 		secondary: {
-			main: '#98fb98',
+			main: '#008AD1',
+			dark: '#00245D',
+			light: '#80c5e8',
+			white: '#F2FAFF',
+		},
+		action: {
+			main: '#F3711B',
 		},
 		gray: {
 			light: '#dddddd',
@@ -126,7 +141,18 @@ const theme: DefaultTheme = {
 	},
 	shadows: {
 		layout: {
-			large: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+			large: {
+				soft: {
+					normal: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+					active: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+					hover: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+				},
+				strong: {
+					normal: '-3px 3px 12px rgba(0, 0, 0, 0.2)',
+					active: '-2px 2px 6px rgba(0, 0, 0, 0.3)',
+					hover: '-6px 6px 22px rgba(0, 0, 0, 0.1)',
+				},
+			},
 		},
 		button: {
 			small: {
