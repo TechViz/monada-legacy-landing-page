@@ -89,7 +89,6 @@ const HeaderLogo: HeaderLogoComponent = ({  }) => {
 					transform-origin: 50% 370.68px;
 					transition: 1000ms;
 					transform: scale(1, 0);
-					filter: grayscale(1);
 				}
 				.ball {
 					opacity: 0;
