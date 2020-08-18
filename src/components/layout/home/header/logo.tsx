@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Root = styled.div`
+	display: flex;
+	align-items: center;
+	height: 100%;
 `;
 
 type HeaderLogoProps = React.PropsWithoutRef<{
@@ -29,6 +32,11 @@ const HeaderLogo: HeaderLogoComponent = ({  }) => {
 		resetElem(blueBuildingRef);
 		resetElem(ballRef);
 		resetElem(ballBackgroundRef);
+		setBuildingChildrenColor(redBuildingRef, 'gray');
+		setBuildingChildrenColor(orangeBuildingRef, 'gray');
+		setBuildingChildrenColor(blueBuildingRef, 'gray');
+		setBuildingChildrenColor(greenBuildingRef, 'gray');
+		setBuildingChildrenColor(yellowBuildingRef, 'gray');
 	}
 
 	async function setBuildingChildrenColor (building: React.RefObject<SVGGElement>, color: string = '') {

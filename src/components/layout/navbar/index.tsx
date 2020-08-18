@@ -11,7 +11,7 @@ const Root = styled.div`
 	height: 10vh;
 	width: 100%;
 	background-color: ${({ theme }) => theme.colors.primary.white};
-	box-shadow: ${({ theme }) => theme.shadows.layout.large};
+	box-shadow: ${({ theme }) => theme.shadows.layout.large.soft.normal};
 	display: flex;
 	justify-content: space-between;
 
