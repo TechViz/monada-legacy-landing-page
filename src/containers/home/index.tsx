@@ -6,6 +6,7 @@ import HomeHeader from '../../components/layout/home/header';
 import { useHamburguer } from '../../contexts/hamburguer';
 import HomeAboutUs from '../../components/layout/home/about-us';
 import HomePlans from '../../components/layout/home/plans';
+import HomeMonadaTeam from '../../components/layout/home/monada-team';
 
 const Main = styled.div`
 	width: 100%;
@@ -27,6 +28,7 @@ export default function Home() {
 				<HomeHeader />
 				<HomeAboutUs />
 				<HomePlans />
+				<HomeMonadaTeam />
 			</Main>
 		</>
 	)
