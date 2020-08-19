@@ -28,6 +28,26 @@ const Images = {
 			alt: 'Icone de um presente',
 			...props,
 		}))``,
+		Facebook: styled(BaseImage).attrs(props => ({
+			src: '/icons/facebook.svg',
+			alt: 'Icone do Facebook',
+			...props,
+		}))``,
+		Instagram: styled(BaseImage).attrs(props => ({
+			src: '/icons/instagram.svg',
+			alt: 'Icone do Instagram',
+			...props,
+		}))``,
+		Linkedin: styled(BaseImage).attrs(props => ({
+			src: '/icons/linkedin.svg',
+			alt: 'Icone do Linkedin',
+			...props,
+		}))``,
+		Youtube: styled(BaseImage).attrs(props => ({
+			src: '/icons/youtube.svg',
+			alt: 'Icone do Youtube',
+			...props,
+		}))``,
 	},
 	Founders: {
 		Adla: styled(BaseImage).attrs(props => ({

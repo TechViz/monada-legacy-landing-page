@@ -7,6 +7,7 @@ import { useHamburguer } from '../../contexts/hamburguer';
 import HomeAboutUs from '../../components/layout/home/about-us';
 import HomePlans from '../../components/layout/home/plans';
 import HomeMonadaTeam from '../../components/layout/home/monada-team';
+import HomeContact from '../../components/layout/home/contact';
 
 const Main = styled.div`
 	width: 100%;
@@ -29,6 +30,7 @@ export default function Home() {
 				<HomeAboutUs />
 				<HomePlans />
 				<HomeMonadaTeam />
+				<HomeContact />
 			</Main>
 		</>
 	)
