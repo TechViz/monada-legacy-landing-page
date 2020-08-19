@@ -33,14 +33,8 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 
 	return (
 		<Root>
-			<iframe
-				width='560'
-				height='315'
-				src='https://www.youtube.com/embed/X4_KojYz2_M'
-				frameBorder='0'
-				allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-				allowFullScreen
-			/>
+			{/* Note: Youtube Embeds are HEEEAVY (around 700kB). Avoid it */}
+			Vídeo aqui
 			<PresentButton imageElem={<PresentIcon />} />
 		</Root>
 	);
