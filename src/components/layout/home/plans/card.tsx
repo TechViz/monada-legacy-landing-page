@@ -73,7 +73,7 @@ const Banner = styled.div`
 	padding: 8px 16px;
 	text-align: center;
 	background-color: ${props => props.theme.colors.action.main};
-	color: white;
+	color: rgba(0, 0, 0, 0.8);
 	border-radius: 16px 16px 0 0;
 	transform: translate(-50%, -100%);
 	font-size: 18px;

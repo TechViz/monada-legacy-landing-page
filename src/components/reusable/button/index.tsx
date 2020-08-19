@@ -49,7 +49,7 @@ const Button: ButtonComponent = ({
 	fullWidth = false,
 	hoverScaleOffset = 0.1,
 	backgroundColor = (theme: DefaultTheme) => theme.colors.action.main,
-	textColor = 'white',
+	textColor = 'rgba(0, 0, 0, 0.8)',
 	ref,
 	...props
 }) => {
