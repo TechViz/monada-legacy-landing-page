@@ -19,12 +19,6 @@ const Title = styled.h2`
 	grid-column: span 2;
 `;
 
-const Logo = styled(Images.Logo.Textless)`
-	width: 200px;
-	height: 200px;
-	justify-self: flex-end;
-`;
-
 const SocialMediaList = styled.div`
 	justify-self: flex-start;
 `;

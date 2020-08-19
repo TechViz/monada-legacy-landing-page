@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "build-export": "npm run build && npm run export"
+    "build-export": "npm run build && npm run export",
+    "lint": "tsc --noEmit -p ."
   },
   "dependencies": {
     "next": "9.5.1",

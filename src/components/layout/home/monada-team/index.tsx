@@ -24,14 +24,18 @@ const PicturesContainer= styled.div`
 	width: 100%;
 `;
 
+const commonPictureCss = css`
+	object-fit: cover;
+`;
+
+const ReijaneImage = Images.Founders.Reijane;
+const MariaImage = Images.Founders.Maria;
+const AdlaImage = Images.Founders.Adla;
+
 type HomeMonadaTeamProps = React.PropsWithoutRef<{
 }>;
 
 type HomeMonadaTeamComponent = React.FunctionComponent<HomeMonadaTeamProps>;
-
-const commonPictureCss = css`
-	object-fit: cover;
-`;
 
 const HomeMonadaTeam: HomeMonadaTeamComponent = ({  }) => {
 	return (
@@ -42,19 +46,19 @@ const HomeMonadaTeam: HomeMonadaTeamComponent = ({  }) => {
 					personName='Reijane Salazar'
 					personTitle='Educadora e Gerontóloga Pesquisa'
 				>
-					<Images.Founders.Reijane css={commonPictureCss} />
+					<ReijaneImage css={commonPictureCss} />
 				</MonadaTeamPicture>
 				<MonadaTeamPicture
 					personName='Adla Viana'
 					personTitle='Antropóloga Pesquisa'
 				>
-					<Images.Founders.Adla css={commonPictureCss} />
+					<AdlaImage css={commonPictureCss} />
 				</MonadaTeamPicture>
 				<MonadaTeamPicture
 					personName='Maria Luiza Salvador'
 					personTitle='Designer UX/UI Design'
 				>
-					<Images.Founders.Maria css={commonPictureCss} />
+					<MariaImage css={commonPictureCss} />
 				</MonadaTeamPicture>
 			</PicturesContainer>
 		</Root>
