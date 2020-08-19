@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "build-export": "npm run build && npm run export"
+    "build-export": "npm run build && npm run export",
+    "lint": "tsc --noEmit -p ."
   },
   "dependencies": {
     "next": "9.5.1",
@@ -20,6 +21,8 @@
     "@types/react": "^16.9.44",
     "@types/styled-components": "^5.1.2",
     "babel-plugin-styled-components": "^1.11.1",
+    "file-loader": "^6.0.0",
+    "imagemin-webp-webpack-plugin": "^3.3.2",
     "typescript": "^3.9.7"
   }
 }
