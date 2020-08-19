@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import MonadaTeamPicture from './picture';
 import Images from '../../../../constants/images';
 
@@ -24,13 +24,9 @@ const PicturesContainer= styled.div`
 	width: 100%;
 `;
 
-const commonPictureCss = css`
-	object-fit: cover;
-`;
-
-const ReijaneImage = Images.Founders.Reijane;
-const MariaImage = Images.Founders.Maria;
-const AdlaImage = Images.Founders.Adla;
+const ReijaneImage = styled(Images.Founders.Reijane).attrs({ fit: 'cover' })``;
+const MariaImage = styled(Images.Founders.Maria).attrs({ fit: 'cover' })``;
+const AdlaImage = styled(Images.Founders.Adla).attrs({ fit: 'cover' })``;
 
 type HomeMonadaTeamProps = React.PropsWithoutRef<{
 }>;
@@ -46,19 +42,19 @@ const HomeMonadaTeam: HomeMonadaTeamComponent = ({  }) => {
 					personName='Reijane Salazar'
 					personTitle='Educadora e Gerontóloga Pesquisa'
 				>
-					<ReijaneImage css={commonPictureCss} />
+					<ReijaneImage />
 				</MonadaTeamPicture>
 				<MonadaTeamPicture
 					personName='Adla Viana'
 					personTitle='Antropóloga Pesquisa'
 				>
-					<AdlaImage css={commonPictureCss} />
+					<AdlaImage />
 				</MonadaTeamPicture>
 				<MonadaTeamPicture
 					personName='Maria Luiza Salvador'
 					personTitle='Designer UX/UI Design'
 				>
-					<MariaImage css={commonPictureCss} />
+					<MariaImage />
 				</MonadaTeamPicture>
 			</PicturesContainer>
 		</Root>

@@ -53,6 +53,10 @@ const MobileHamburguer = styled.div`
 	}
 `;
 
+const Anchor = styled.a.attrs({ href: '#' })`
+	max-width: 80px;
+`;
+
 type NavbarProps = React.PropsWithoutRef<{}>;
 
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
@@ -76,7 +80,9 @@ const Navbar: NavbarComponent = () => {
 	return (
 		<Root>
 			<Link href='/home'>
-				<Logo />
+				<Anchor>
+					<Logo />
+				</Anchor>
 			</Link>
 			<LinksContainer ref={linksContainerRef}>
 				<NavLink idToFocus='video'>Quem Somos</NavLink>
