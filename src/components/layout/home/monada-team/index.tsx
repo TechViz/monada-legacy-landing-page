@@ -35,7 +35,8 @@ type HomeMonadaTeamComponent = React.FunctionComponent<HomeMonadaTeamProps>;
 
 const HomeMonadaTeam: HomeMonadaTeamComponent = ({  }) => {
 	return (
-		<Root>
+		// Note: The ID is used by the navbar to scroll this element into view.
+		<Root id='team'>
 			<Title>Nossa equipe</Title>
 			<PicturesContainer>
 				<MonadaTeamPicture

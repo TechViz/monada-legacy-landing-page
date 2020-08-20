@@ -19,7 +19,8 @@ const HomePlans: HomePlansComponent = ({  }) => {
 	const theme = useTheme();
 
 	return (
-		<Root>
+		// Note: The ID is used by the navbar to scroll this element into view.
+		<Root id='plans'>
 			<HomePlanCard
 				bodyItems={[
 					'Acesso a métricas de diversidade e inclusão da sua empresa',

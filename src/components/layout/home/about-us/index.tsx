@@ -32,7 +32,8 @@ type HomeAboutUsComponent = React.FunctionComponent<HomeAboutUsProps>;
 const HomeAboutUs: HomeAboutUsComponent = () => {
 
 	return (
-		<Root>
+		// Note: The ID is used by the navbar to scroll this element into view.
+		<Root id='about-us'>
 			{/* Note: Youtube Embeds are HEEEAVY (around 700kB). Avoid it */}
 			Vídeo aqui
 			<PresentButton imageElem={<PresentIcon />} />

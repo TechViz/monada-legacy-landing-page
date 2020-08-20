@@ -47,7 +47,8 @@ type HomeHeaderComponent = React.FunctionComponent<HomeHeaderProps>;
 
 const HomeHeader: HomeHeaderComponent = ({  }) => {
 	return (
-		<Root>
+		// Note: The ID is used by the navbar to scroll this element into view.
+		<Root id='header'>
 			<SlideIn direction='right'>
 				<TextContainer>
 					<Title>Faturamento através de diversidade com a <CompanyName>Mônada</CompanyName></Title>

@@ -25,7 +25,8 @@ export default function Home() {
 				<title>Mônada</title>
 			</Head>
 			<Navbar />
-			<Main onClick={closeHamburguer}>
+			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
+			<Main onClick={closeHamburguer} id='main-page-container'>
 				<HomeHeader />
 				<HomeAboutUs />
 				<HomePlans />

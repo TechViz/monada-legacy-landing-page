@@ -65,24 +65,12 @@ const NavLink: NavLinkComponent = ({
 }) => {
 	const { isHamburguerOpen } = useHamburguer();
 
-	function handleClick (event: React.MouseEvent<HTMLLIElement>) {
-		const targetElem = document.getElementById('#' + idToFocus);
-		if (!targetElem) {
-			console.warn(`Trying to scroll to invalid element of id '${idToFocus}'`);
-			return;
-		}
-		// TODO - actual scroll
-		console.log(`Scrolling to element...`, targetElem);
-
-		if (onClick) onClick(event);
-	}
-
 	return (
-		<Root onClick={handleClick} {...props}>
+		<Root onClick={onClick} {...props}>
 			<MobileAnchor tabIndex={isHamburguerOpen ? 0 : -1} href='#'>
 				{children}
 			</MobileAnchor>
-			<DesktopAnchor href='#'>
+			<DesktopAnchor href={'#'}>
 				{children}
 			</DesktopAnchor>
 		</Root>

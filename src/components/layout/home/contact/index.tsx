@@ -43,7 +43,8 @@ type HomeContactComponent = React.FunctionComponent<HomeContactProps>;
 
 const HomeContact: HomeContactComponent = ({  }) => {
 	return (
-		<Root>
+		// Note: The ID is used by the navbar to scroll this element into view.
+		<Root id='contact'>
 			<Title>Contate-nos</Title>
 			<Form>
 				<ActionTitle>Mande-nos uma mensagem</ActionTitle>

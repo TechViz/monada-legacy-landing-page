@@ -6,6 +6,7 @@ import Images from '../../../constants/images';
 import NavLink from './nav-link';
 import Hamburguer from '../../reusable/hamburguer';
 import { useHamburguer } from '../../../contexts/hamburguer';
+import smoothScroll from '../../../libs/smooth-scroll';
 
 const Root = styled.div`
 	height: 10vh;
@@ -71,24 +72,53 @@ const Navbar: NavbarComponent = () => {
 
 	const linksContainerRef = React.useRef<HTMLUListElement>(null);
 
+	/**
+	* Will scroll the element with id `idToFocus` into view (and align them with the
+	* top of the screen).
+	*/
+	function scrollIntoElementId (idToFocus: string) {
+		const containerElem = document.getElementById('main-page-container');
+
+		if (!containerElem) {
+			console.info('Warning. The container element was not found. Scroll function will be ignored.');
+			return;
+		}
+
+		const targetElem = document.getElementById(idToFocus);
+		if (!targetElem) {
+			console.warn(`Trying to scroll to invalid element of id '${idToFocus}'`);
+			return;
+		}
+		smoothScroll(containerElem, targetElem, 1000);
+	}
+
 	// Tells how much should the screen slide when then hamburguer opens
 	React.useEffect(() => {
 		const height = linksContainerRef.current!.clientHeight;
 		setHamburguerOffset(height);
 	}, []);
 
+	const links = [
+		{ idToFocus: 'about-us', text: 'Sobre Nós' },
+		{ idToFocus: 'plans', text: 'Planos' },
+		{ idToFocus: 'team', text: 'Nossa equipe' },
+		{ idToFocus: 'contact', text: 'Contato' },
+	];
+
 	return (
 		<Root>
 			<Link href='/home'>
-				<Anchor>
+				<Anchor onClick={() => scrollIntoElementId('header')}>
 					<Logo />
 				</Anchor>
 			</Link>
 			<LinksContainer ref={linksContainerRef}>
-				<NavLink idToFocus='video'>Quem Somos</NavLink>
-				<NavLink idToFocus='tomate'>Planos</NavLink>
-				<NavLink idToFocus='tomate'>Sobre Nós</NavLink>
-				<NavLink idToFocus='macarrão'>Contato</NavLink>
+				{links.map(link => <NavLink
+					idToFocus={link.idToFocus}
+					children={link.text}
+					key={link.text}
+					onClick={() => scrollIntoElementId(link.idToFocus)}
+				/>)}
 			</LinksContainer>
 			<MobileHamburguer>
 				<Hamburguer
