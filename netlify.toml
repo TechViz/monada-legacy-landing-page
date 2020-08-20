@@ -1,2 +1,11 @@
 [[plugins]]
 package = "netlify-plugin-cache-nextjs"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+# optional, fails build when a category is below a threshold
+[plugins.inputs.thresholds]
+	accessibility = 1.0
+	best-practices = 1.0
+	seo = 1.0
