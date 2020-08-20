@@ -26,6 +26,12 @@ const PresentButton = styled(FloatIconButton)`
 	background-color: ${props => props.theme.colors.primary.white};
 `;
 
+const Video = styled.video`
+	border: 1px solid black;
+	width: auto;
+	height: 100%;
+`;
+
 type HomeAboutUsProps = React.PropsWithoutRef<{}>;
 type HomeAboutUsComponent = React.FunctionComponent<HomeAboutUsProps>;
 
@@ -35,7 +41,9 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 		// Note: The ID is used by the navbar to scroll this element into view.
 		<Root id='about-us'>
 			{/* Note: Youtube Embeds are HEEEAVY (around 700kB). Avoid it */}
-			Vídeo aqui
+			<Video controls>
+				<source src="/presentation-video.mp4" type="video/mp4" />
+			</Video>
 			<PresentButton imageElem={<PresentIcon />} />
 		</Root>
 	);
