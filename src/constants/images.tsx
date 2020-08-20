@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { FlattenSimpleInterpolation } from 'styled-components';
 
 const Picture = styled.picture<{ css?: FlattenSimpleInterpolation }>`
@@ -21,23 +22,21 @@ type BaseImageProps = React.PropsWithChildren<{
 	fit?: 'contain' | 'cover' | 'fill' | 'inherit' | 'initial' | 'none' | 'revert' | 'scale-down' | 'unset',
 }> & Omit<React.ComponentProps<'picture'>, 'ref'>;
 
-type BaseImageComponent = React.FunctionComponent<BaseImageProps>;
-
-const BaseImage: BaseImageComponent = ({
+const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 	src,
 	alt,
 	fit = 'contain',
 	...props
-}) => {
+}, ref) => {
 	const webpSrc = src.replace(/\.(png|jpe?g)$/, '.webp');
 
 	return (
-		<Picture {...props}>
+		<Picture {...props} ref={ref}>
 			<source srcSet={webpSrc} type='image/webp' />
 			<Image src={src} alt={alt} fit={fit} />
 		</Picture>
 	);
-}
+});
 
 const Images = {
 	Logo: {
@@ -70,6 +69,10 @@ const Images = {
 		Youtube: styled(BaseImage).attrs(({ alt }) => ({
 			src: require('../images/icons/youtube.svg'),
 			alt: alt || 'Icone do Youtube',
+		}))``,
+		Sunshine: styled(BaseImage).attrs(({ alt }) => ({
+			src: require('../images/icons/sunshine.svg'),
+			alt: alt || 'Brilho do sol',
 		}))``,
 	},
 	Founders: {

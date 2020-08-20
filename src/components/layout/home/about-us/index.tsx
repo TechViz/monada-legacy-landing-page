@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import FloatIconButton from '../../../reusable/float-icon-button';
 import Images from '../../../../constants/images';
 
@@ -18,11 +18,45 @@ const PresentIcon = styled(Images.Icons.gift)`
 	height: 32px;
 `;
 
-const PresentButton = styled(FloatIconButton)`
+const PresentButtonContainer = styled.div`
+	animation-name: ${keyframes`
+		0% {
+			transform: scale(0.9);
+		} 50% {
+			transform: scale(1.1);
+		} 100% {
+			transform: scale(0.9);
+		}
+	`};
+	animation-duration: 4000ms;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+
+	transtion: 200ms;
 	position: absolute;
 	right: 64px;
 	bottom: 64px;
-	padding: 16px;
+`;
+
+const PresentButtonShine = styled(Images.Icons.Sunshine)`
+	animation-name: ${keyframes`
+		from {
+			transform: rotate(0deg);
+		} to {
+			transform: rotate(360deg);
+		}
+	`};
+	animation-duration: 10000ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	position: absolute;
+	top: 0;
+`;
+
+const PresentButton = styled(FloatIconButton)`
+	position: relative;
+	padding: 8px;
+	margin: 16px;
 	background-color: ${props => props.theme.colors.primary.white};
 `;
 
@@ -36,6 +70,8 @@ type HomeAboutUsProps = React.PropsWithoutRef<{}>;
 type HomeAboutUsComponent = React.FunctionComponent<HomeAboutUsProps>;
 
 const HomeAboutUs: HomeAboutUsComponent = () => {
+	const sunshineRef = React.useRef<HTMLPictureElement>(null);
+	const buttonContainerRef = React.useRef<HTMLDivElement>(null);
 
 	return (
 		// Note: The ID is used by the navbar to scroll this element into view.
@@ -44,7 +80,10 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 			<Video controls>
 				<source src="/presentation-video.mp4" type="video/mp4" />
 			</Video>
-			<PresentButton imageElem={<PresentIcon />} />
+			<PresentButtonContainer ref={buttonContainerRef}>
+				<PresentButtonShine ref={sunshineRef} />
+				<PresentButton imageElem={<PresentIcon />} />
+			</PresentButtonContainer>
 		</Root>
 	);
 }
