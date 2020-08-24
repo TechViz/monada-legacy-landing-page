@@ -57,17 +57,12 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 		<Root id='header'>
 			<SlideIn direction='right'>
 				<TextContainer>
-					{/* <Title>Faturamento através de diversidade com a <CompanyName>Mônada</CompanyName></Title> */}
 					<HeroName>Mônada</HeroName>
 					<Title>A primeira startup com foco em D&I Analytics no Brasil</Title>
 					<Description>
 						Atuamos para gerar oportunidades de impacto, aumento de produtividade,
 						eficiência, desempenho e lucratividade através do gerenciamento de
 						métricas de Diversidade, Equidade e Inclusão em empresas.
-						{/* Implementamos
-						nossas metodologias como estratégia corporativa e conectamos investimentos
-						em diversidade, equidade e inclusão com indicadores de performance e
-						inteligência de negócios. */}
 					</Description>
 				</TextContainer>
 			</SlideIn>
