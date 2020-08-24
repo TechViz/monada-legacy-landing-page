@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import HeaderLogo from './logo';
 import SlideIn from '../../../reusable/slide-in';
+import Images from '../../../../constants/images';
 
 const Root = styled.div`
 	height: 100%;
@@ -18,21 +19,26 @@ const Root = styled.div`
 const TextContainer = styled.div`
 	color: ${props => props.theme.colors.primary.main};
 	max-width: 612px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 
 const Title = styled.h1`
 	font-weight: normal;
 	text-align: center;
 	padding: 0 16px;
+	font-size: 40px;
 `;
 
-const CompanyName = styled.span`
-	font-size: 60px;
-	font-weight: bold;
+const HeroName = styled(Images.Logo.Text)`
+	width: 300px;
+	margin: 0 auto;
 `;
 
 const Description = styled.p`
 	font-size: 24px;
+	margin: 0;
 `;
 
 const ImageContainer = styled.div`
@@ -51,11 +57,17 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 		<Root id='header'>
 			<SlideIn direction='right'>
 				<TextContainer>
-					<Title>Faturamento através de diversidade com a <CompanyName>Mônada</CompanyName></Title>
+					{/* <Title>Faturamento através de diversidade com a <CompanyName>Mônada</CompanyName></Title> */}
+					<HeroName>Mônada</HeroName>
+					<Title>A primeira startup com foco em D&I Analytics no Brasil</Title>
 					<Description>
-						A Mônada usa tecnologia de ponta para deixar a sua empresa melhor e mais inteligente.
-						Com nossa equipe de pesquisa, nós aumentamos o faturamento da sua empresa em até 20%
-						através de políticas de diversidade e inclusão.
+						Atuamos para gerar oportunidades de impacto, aumento de produtividade,
+						eficiência, desempenho e lucratividade através do gerenciamento de
+						métricas de Diversidade, Equidade e Inclusão em empresas.
+						{/* Implementamos
+						nossas metodologias como estratégia corporativa e conectamos investimentos
+						em diversidade, equidade e inclusão com indicadores de performance e
+						inteligência de negócios. */}
 					</Description>
 				</TextContainer>
 			</SlideIn>

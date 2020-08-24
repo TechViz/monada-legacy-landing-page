@@ -48,6 +48,10 @@ const Images = {
 			src: require('../images/logo/textless.svg'),
 			alt: alt || 'Logo da Mônada sem texto',
 		}))``,
+		Text: styled(BaseImage).attrs(({ alt }) => ({
+			src: require('../images/logo/text.svg'),
+			alt: alt || 'Texto do logo da Mônada',
+		}))``,
 	},
 	Icons: {
 		gift: styled(BaseImage).attrs(({ alt }) => ({
