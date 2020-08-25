@@ -8,6 +8,7 @@ import HomeAboutUs from '../../components/layout/home/about-us';
 import HomePlans from '../../components/layout/home/plans';
 import HomeMonadaTeam from '../../components/layout/home/monada-team';
 import HomeContact from '../../components/layout/home/contact';
+import deployedUrl from '../../constants/deployed-url';
 
 const Main = styled.div`
 	width: 100%;
@@ -23,6 +24,7 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Mônada</title>
+				<link rel="canonical" href={`${deployedUrl}/home`}/>
 			</Head>
 			<Navbar />
 			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
