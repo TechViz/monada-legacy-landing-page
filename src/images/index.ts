@@ -1,5 +1,13 @@
 const ImageURLS = {
 	logo: {
+		/**
+		* The PNG versions of the logo exist to use with the OpenGraph meta tags, because they don't support SVG.
+		* These images SHOULD NOT be used in the website itself, as the svg version is lighter, and therefore preferable.
+		*/
+		png: {
+			main: require('./logo/png/main.png'),
+			textless: require('./logo/png/textless.png'),
+		},
 		main: require('./logo/main.svg'),
 		textless: require('./logo/textless.svg'),
 		text: require('./logo/text.svg'),
