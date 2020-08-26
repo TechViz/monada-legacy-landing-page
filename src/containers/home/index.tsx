@@ -24,7 +24,7 @@ const JSONLD = `{
 	"@id": "https://monada.tech/",
 	"url": "https://monada.tech/",
 	"name": "Mônada",
-	"image": "${deployedUrl}${ImageURLS.logo.main}",
+	"image": "${deployedUrl}${ImageURLS.logo.png.main}",
 	"email": "contato@monada.tech",
 	"founder": [
 		{
@@ -52,7 +52,7 @@ const JSONLD = `{
 			"familyName": "Viana"
 		}
 	],
-	"logo": "${deployedUrl}${ImageURLS.logo.main}"
+	"logo": "${deployedUrl}${ImageURLS.logo.png.main}"
 }`;
 
 export default function Home() {
@@ -68,7 +68,7 @@ export default function Home() {
 				<meta property='og:site-name' content='Mônada' />
 				<meta property='og:url' content={deployedUrl + '/'} />
 				<meta property='og:description' content='Atuamos para gerar oportunidades de impacto, aumento de produtividade, eficiência, desempenho e lucratividade através do gerenciamento de métricas de Diversidade, Equidade e Inclusão em empresas.' />
-				<meta property='og:image' content={`${deployedUrl}${ImageURLS.logo.main}`} />
+				<meta property='og:image' content={`${deployedUrl}${ImageURLS.logo.png.main}`} />
 			</Head>
 			<Navbar />
 			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
