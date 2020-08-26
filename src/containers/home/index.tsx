@@ -64,11 +64,9 @@ export default function Home() {
 				<title>Mônada</title>
 				<link rel='canonical' href={`${deployedUrl}/home`}/>
 				<script type='application/json-ld'>{JSONLD}</script>
-				<meta property='og:title' content='Mônada - D&I Analytics' />
-				<meta property='og:site-name' content='Mônada' />
+
+				{/* These meta tags are related to OpenGraph, which allows for your better webpage cards. */}
 				<meta property='og:url' content={deployedUrl + '/'} />
-				<meta property='og:description' content='Atuamos para gerar oportunidades de impacto, aumento de produtividade, eficiência, desempenho e lucratividade através do gerenciamento de métricas de Diversidade, Equidade e Inclusão em empresas.' />
-				<meta property='og:image' content={`${deployedUrl}${ImageURLS.logo.png.main}`} />
 			</Head>
 			<Navbar />
 			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
