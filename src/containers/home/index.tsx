@@ -24,7 +24,7 @@ const JSONLD = `{
 	"@id": "https://monada.tech/",
 	"url": "https://monada.tech/",
 	"name": "Mônada",
-	"image": "${ImageURLS.logo.main}",
+	"image": "${deployedUrl}${ImageURLS.logo.main}",
 	"email": "contato@monada.tech",
 	"founder": [
 		{
@@ -32,7 +32,7 @@ const JSONLD = `{
 			"name": "Reijane Salazar",
 			"gender": "Female",
 			"jobTitle": "Pesquisadora",
-			"image": "${ImageURLS.founders.reijane}",
+			"image": "${deployedUrl}${ImageURLS.founders.reijane}",
 			"familyName": "Salazar"
 		},
 		{
@@ -40,7 +40,7 @@ const JSONLD = `{
 			"name": "Maria Luiza Salvador",
 			"gender": "Female",
 			"jobTitle": "Designer",
-			"image": "${ImageURLS.founders.maria}",
+			"image": "${deployedUrl}${ImageURLS.founders.maria}",
 			"familyName": "Salvador"
 		},
 		{
@@ -48,11 +48,11 @@ const JSONLD = `{
 			"name": "Adla Viana",
 			"gender": "Female",
 			"jobTitle": "Pesquisadora",
-			"image": "${ImageURLS.founders.adla}",
+			"image": "${deployedUrl}${ImageURLS.founders.adla}",
 			"familyName": "Viana"
 		}
 	],
-	"logo": "${ImageURLS.logo.main}"
+	"logo": "${deployedUrl}${ImageURLS.logo.main}"
 }`;
 
 export default function Home() {
