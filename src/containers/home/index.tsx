@@ -63,7 +63,7 @@ export default function Home() {
 			<Head>
 				<title>Mônada</title>
 				<link rel='canonical' href={`${deployedUrl}/home`}/>
-				<script type='application/json-ld'>{JSONLD}</script>
+				<script type='application/ld+json'>{JSONLD}</script>
 
 				{/* These meta tags are related to OpenGraph, which allows for your better webpage cards. */}
 				<meta property='og:url' content={deployedUrl + '/'} />
