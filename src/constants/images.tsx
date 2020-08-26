@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { FlattenSimpleInterpolation } from 'styled-components';
+import ImageURLS from '../images';
 
 const Picture = styled.picture<{ css?: FlattenSimpleInterpolation }>`
 	width: 100%;
@@ -41,55 +42,55 @@ const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 const Images = {
 	Logo: {
 		Main: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/logo/main.svg'),
+			src: ImageURLS.logo.main,
 			alt: alt || 'Logo da Mônada',
 		}))``,
 		Textless: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/logo/textless.svg'),
+			src: ImageURLS.logo.textless,
 			alt: alt || 'Logo da Mônada sem texto',
 		}))``,
 		Text: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/logo/text.svg'),
+			src: ImageURLS.logo.text,
 			alt: alt || 'Texto do logo da Mônada',
 		}))``,
 	},
 	Icons: {
 		gift: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/gift.svg'),
+			src: ImageURLS.icons.gift,
 			alt: alt || 'Icone de um presente',
 		}))``,
 		Facebook: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/facebook.svg'),
+			src: ImageURLS.icons.facebook,
 			alt: alt || 'Icone do Facebook',
 		}))``,
 		Instagram: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/instagram.svg'),
+			src: ImageURLS.icons.instagram,
 			alt: alt || 'Icone do Instagram',
 		}))``,
 		Linkedin: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/linkedin.svg'),
+			src: ImageURLS.icons.linkedin,
 			alt: alt || 'Icone do Linkedin',
 		}))``,
 		Youtube: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/youtube.svg'),
+			src: ImageURLS.icons.youtube,
 			alt: alt || 'Icone do Youtube',
 		}))``,
 		Sunshine: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/icons/sunshine.svg'),
+			src: ImageURLS.icons.sunshine,
 			alt: alt || 'Brilho do sol',
 		}))``,
 	},
 	Founders: {
 		Adla: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/founders/adla.jpg'),
+			src: ImageURLS.founders.adla,
 			alt: alt || 'Adla Viana - Fundadora da Mônada',
 		}))``,
 		Maria: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/founders/maria.jpg'),
+			src: ImageURLS.founders.maria,
 			alt: alt || 'Maria Luiza Salvador - Fundadora da Mônada',
 		}))``,
 		Reijane: styled(BaseImage).attrs(({ alt }) => ({
-			src: require('../images/founders/reijane.jpg'),
+			src: ImageURLS.founders.reijane,
 			alt: alt || 'Reijane Salazar - Fundadora da Mônada',
 		}))``,
 	},
