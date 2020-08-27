@@ -18,13 +18,13 @@ const Main = styled.div`
 	overflow-y: auto;
 `;
 
-const JSONLD = `{
+const JSONLD = {
 	"@context": "http://schema.org/",
 	"@type": "Corporation",
 	"@id": "https://monada.tech/",
 	"url": "https://monada.tech/",
 	"name": "Mônada",
-	"image": "${deployedUrl}${ImageURLS.logo.png.main}",
+	"image": `${deployedUrl}${ImageURLS.logo.png.main}`,
 	"email": "contato@monada.tech",
 	"founder": [
 		{
@@ -32,7 +32,7 @@ const JSONLD = `{
 			"name": "Reijane Salazar",
 			"gender": "Female",
 			"jobTitle": "Pesquisadora",
-			"image": "${deployedUrl}${ImageURLS.founders.reijane}",
+			"image": `${deployedUrl}${ImageURLS.founders.reijane}`,
 			"familyName": "Salazar"
 		},
 		{
@@ -40,7 +40,7 @@ const JSONLD = `{
 			"name": "Maria Luiza Salvador",
 			"gender": "Female",
 			"jobTitle": "Designer",
-			"image": "${deployedUrl}${ImageURLS.founders.maria}",
+			"image": `${deployedUrl}${ImageURLS.founders.maria}`,
 			"familyName": "Salvador"
 		},
 		{
@@ -48,12 +48,12 @@ const JSONLD = `{
 			"name": "Adla Viana",
 			"gender": "Female",
 			"jobTitle": "Pesquisadora",
-			"image": "${deployedUrl}${ImageURLS.founders.adla}",
+			"image": `${deployedUrl}${ImageURLS.founders.adla}`,
 			"familyName": "Viana"
 		}
 	],
-	"logo": "${deployedUrl}${ImageURLS.logo.png.main}"
-}`;
+	"logo": `${deployedUrl}${ImageURLS.logo.png.main}`
+};
 
 export default function Home() {
 	const { closeHamburguer } = useHamburguer();
@@ -63,7 +63,7 @@ export default function Home() {
 			<Head>
 				<title>Mônada</title>
 				<link rel='canonical' href={`${deployedUrl}/home`}/>
-				<script type='application/ld+json'>{JSONLD}</script>
+				<script type='application/ld+json'>{JSON.stringify(JSONLD)}</script>
 
 				{/* These meta tags are related to OpenGraph, which allows for your better webpage cards. */}
 				<meta property='og:url' content={deployedUrl + '/'} />
