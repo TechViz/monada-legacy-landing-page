@@ -24,7 +24,7 @@ function step (start: number, end: number, deltaTime: number, maxTime: number) {
 * @argument targetElem The element that should enter into view.
 * @argument time The time, in milisseconds, to execute the animation
 */
-export default async function smoothScroll (scrollableElem: HTMLElement, targetElem: HTMLElement, time: number) {
+async function smoothScroll (scrollableElem: HTMLElement, targetElem: HTMLElement, time: number) {
 	// This Promise will be resolved when the animation ends
 	return new Promise<undefined>(resolve => {
 		const currentWindowsScroll = scrollableElem.scrollTop;
@@ -55,4 +55,27 @@ export default async function smoothScroll (scrollableElem: HTMLElement, targetE
 		}
 		requestAnimationFrame(applyStep);
 	});
+}
+
+/**
+* Will scroll the element with id `idToFocus` into view (and align them with the
+* top of the screen).
+*/
+export async function smoothScrollIntoElementId (idToFocus: string, scrollTimeLength = 1000) {
+	if (!document) throw new Error('Trying to scroll into element while server-side rendering!');
+
+	const containerElem = document.getElementById('main-page-container');
+
+	if (!containerElem) {
+		console.info('Warning. The container element was not found. Scroll function will be ignored.');
+		return;
+	}
+
+	const targetElem = document.getElementById(idToFocus);
+	if (!targetElem) {
+		console.warn(`Trying to scroll to invalid element of id '${idToFocus}'`);
+		return;
+	}
+
+	return smoothScroll(containerElem, targetElem, scrollTimeLength);
 }
