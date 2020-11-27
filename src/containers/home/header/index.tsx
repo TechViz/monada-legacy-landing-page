@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SlideIn from '../../../components/reusable/slide-in';
 import Images from '../../../constants/images';
+import HeaderLogoTemplate from './logo';
 
 const Root = styled.div`
 	min-height: 100vh;
@@ -60,7 +61,7 @@ const AspectRatioWrapper = styled.div`
 	padding-bottom: 100%;
 `;
 
-const HeaderLogo = styled(Images.Logo.Main)`
+const WhiteBallBackground = styled.div`
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -74,6 +75,11 @@ const HeaderLogo = styled(Images.Logo.Main)`
 	align-items: center;
 	max-width: 400px;
 	max-height: 400px;
+	padding: 3rem;
+	overflow: hidden;
+`;
+
+const HeaderLogo = styled(HeaderLogoTemplate)`
 `;
 
 type HomeHeaderProps = React.PropsWithoutRef<{
@@ -93,7 +99,9 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 				</TextContainer>
 			</SlideIn>
 			<AspectRatioWrapper>
-				<HeaderLogo />
+				<WhiteBallBackground>
+					<HeaderLogo />
+				</WhiteBallBackground>
 			</AspectRatioWrapper>
 		</Root>
 	);
