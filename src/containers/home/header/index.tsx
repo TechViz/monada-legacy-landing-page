@@ -5,6 +5,7 @@ import Images from '../../../constants/images';
 
 const Root = styled.div`
 	min-height: 100%;
+	margin-top: -10vh;
 	width: 100%;
 	display: grid;
 	position: relative;

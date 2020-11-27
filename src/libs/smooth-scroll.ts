@@ -60,8 +60,11 @@ async function smoothScroll (scrollableElem: HTMLElement, targetElem: HTMLElemen
 /**
 * Will scroll the element with id `idToFocus` into view (and align them with the
 * top of the screen).
+*
+* @argument idToFocus The Id of the element that should be focused.
+* @argument animationTime The time it takes for the animation to happen.
 */
-export async function smoothScrollIntoElementId (idToFocus: string, scrollTimeLength = 1000) {
+export async function smoothScrollIntoElementId (idToFocus: string, animationTime = 1000) {
 	if (!document) throw new Error('Trying to scroll into element while server-side rendering!');
 
 	const containerElem = document.getElementById('main-page-container');
@@ -77,5 +80,5 @@ export async function smoothScrollIntoElementId (idToFocus: string, scrollTimeLe
 		return;
 	}
 
-	return smoothScroll(containerElem, targetElem, scrollTimeLength);
+	return smoothScroll(containerElem, targetElem, animationTime);
 }

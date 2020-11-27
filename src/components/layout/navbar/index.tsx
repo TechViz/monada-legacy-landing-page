@@ -11,11 +11,10 @@ import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 const Root = styled.div`
 	height: 10vh;
 	width: 100%;
-	background-color: ${({ theme }) => theme.colors.primary.white};
+	background-color: white;
 	box-shadow: ${({ theme }) => theme.shadows.layout.large.soft.normal};
 	display: flex;
 	justify-content: space-between;
-	position: absolute;
 	z-index: ${props => props.theme.zindex.navbar};
 	padding: 8px 8px;
 	${props => props.theme.mediaQueries.minScreen.tablet} {
