@@ -15,7 +15,8 @@ const Root = styled.div`
 	box-shadow: ${({ theme }) => theme.shadows.layout.large.soft.normal};
 	display: flex;
 	justify-content: space-between;
-
+	position: absolute;
+	z-index: ${props => props.theme.zindex.navbar};
 	padding: 8px 8px;
 	${props => props.theme.mediaQueries.minScreen.tablet} {
 		padding: 8px 32px;
@@ -63,6 +64,8 @@ type NavbarProps = React.PropsWithoutRef<{}>;
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
 
 const Navbar: NavbarComponent = () => {
+	const rootRef = React.useRef<HTMLDivElement>(null);
+
 	const {
 		openHamburguer,
 		closeHamburguer,
@@ -106,7 +109,7 @@ const Navbar: NavbarComponent = () => {
 	];
 
 	return (
-		<Root>
+		<Root ref={rootRef}>
 			<Link href='/home'>
 				<Anchor onClick={() => scrollIntoElementId('header')}>
 					<Logo />

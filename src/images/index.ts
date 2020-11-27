@@ -25,6 +25,9 @@ const ImageURLS = {
 		maria: require('./founders/maria.jpg'),
 		reijane: require('./founders/reijane.jpg'),
 	},
+	misc: {
+		homeHeaderBackground: require('./home-header-background.jpg'),
+	},
 };
 
 export default ImageURLS;

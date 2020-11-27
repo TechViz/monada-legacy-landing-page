@@ -90,6 +90,9 @@ declare module "styled-components" {
 				uhd: string,
 			}
 		},
+		zindex:  {
+	 		navbar: number,
+		},
   }
 }
 
@@ -193,6 +196,9 @@ const theme: DefaultTheme = {
 			laptopL: '@media screen and (max-width: 1440px)',
 			uhd: '@media screen and (max-width: 2560px)',
 		},
+	},
+	zindex:  {
+		navbar: 10,
 	},
 };
 

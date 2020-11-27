@@ -2,12 +2,12 @@ import Head from 'next/head'
 import styled from 'styled-components';
 import Navbar from '../../components/layout/navbar';
 
-import HomeHeader from '../../components/layout/home/header';
+import HomeHeader from './header';
 import { useHamburguer } from '../../contexts/hamburguer';
-import HomeAboutUs from '../../components/layout/home/about-us';
-import HomePlans from '../../components/layout/home/plans';
-import HomeMonadaTeam from '../../components/layout/home/monada-team';
-import HomeContact from '../../components/layout/home/contact';
+import HomeAboutUs from './about-us';
+import HomePlans from './plans';
+import HomeMonadaTeam from './monada-team';
+import HomeContact from './contact';
 import deployedUrl from '../../constants/deployed-url';
 import ImageURLS from '../../images';
 

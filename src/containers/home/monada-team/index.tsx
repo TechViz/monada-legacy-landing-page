@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MonadaTeamPicture from './picture';
-import Images from '../../../../constants/images';
+import Images from '../../../constants/images';
 
 const Root = styled.div`
 	height: 100%;

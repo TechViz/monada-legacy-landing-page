@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Images from '../../../../constants/images';
+import Images from '../../../constants/images';
 import ContactSocialMedia from './social-media';
-import TextInput from '../../../reusable/text-input;';
-import Button from '../../../reusable/button';
+import TextInput from '../../../components/reusable/text-input;';
+import Button from '../../../components/reusable/button';
 
 const Root = styled.div`
 	height: 100%;

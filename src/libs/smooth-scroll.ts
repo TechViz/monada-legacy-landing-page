@@ -43,7 +43,7 @@ export default async function smoothScroll (scrollableElem: HTMLElement, targetE
 			if (currentTime >= initialTime + time) {
 				scrollableElem.scroll(0, elementTop);
 				// The function ended. Promise can be resolved now.
-				resolve();
+				resolve(undefined);
 				return;
 			}
 

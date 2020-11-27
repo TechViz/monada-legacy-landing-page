@@ -94,6 +94,12 @@ const Images = {
 			alt: alt || 'Reijane Salazar - Fundadora da Mônada',
 		}))``,
 	},
+	Misc: {
+		HomeHeaderBackground: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.misc.homeHeaderBackground,
+			alt: alt || '',
+		}))``,
+	} ,
 }
 
 export default Images;

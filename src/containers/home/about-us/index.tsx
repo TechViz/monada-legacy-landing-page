@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import FloatIconButton from '../../../reusable/float-icon-button';
-import Images from '../../../../constants/images';
+import FloatIconButton from '../../../components/reusable/float-icon-button';
+import Images from '../../../constants/images';
 
 const Root = styled.div`
 	height: 100%;
