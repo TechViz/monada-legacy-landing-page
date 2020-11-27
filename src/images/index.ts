@@ -10,6 +10,7 @@ const ImageURLS = {
 		},
 		main: require('./logo/main.svg'),
 		textless: require('./logo/textless.svg'),
+		textlessMonochromatic: require('./logo/textless-monochromatic.svg'),
 		text: require('./logo/text.svg'),
 	},
 	icons: {

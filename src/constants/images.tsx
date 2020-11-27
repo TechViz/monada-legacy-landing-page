@@ -43,41 +43,45 @@ const Images = {
 	Logo: {
 		Main: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.logo.main,
-			alt: alt || 'Logo da Mônada',
+			alt: alt || 'Logo Mônada',
 		}))``,
 		Textless: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.logo.textless,
-			alt: alt || 'Logo da Mônada sem texto',
+			alt: alt || 'Logo Mônada',
+		}))``,
+		TextlessMonochromatic: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.logo.textlessMonochromatic,
+			alt: alt || 'Logo Mônada',
 		}))``,
 		Text: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.logo.text,
-			alt: alt || 'Texto do logo da Mônada',
+			alt: alt || 'Mônada',
 		}))``,
 	},
 	Icons: {
 		gift: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.gift,
-			alt: alt || 'Icone de um presente',
+			alt: alt || 'Presente',
 		}))``,
 		Facebook: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.facebook,
-			alt: alt || 'Icone do Facebook',
+			alt: alt || 'Facebook',
 		}))``,
 		Instagram: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.instagram,
-			alt: alt || 'Icone do Instagram',
+			alt: alt || 'Instagram',
 		}))``,
 		Linkedin: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.linkedin,
-			alt: alt || 'Icone do Linkedin',
+			alt: alt || 'Linkedin',
 		}))``,
 		Youtube: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.youtube,
-			alt: alt || 'Icone do Youtube',
+			alt: alt || 'Youtube',
 		}))``,
 		Sunshine: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.sunshine,
-			alt: alt || 'Brilho do sol',
+			alt: alt || '',
 		}))``,
 	},
 	Founders: {

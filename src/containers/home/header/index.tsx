@@ -4,7 +4,7 @@ import SlideIn from '../../../components/reusable/slide-in';
 import Images from '../../../constants/images';
 
 const Root = styled.div`
-	min-height: 100%;
+	min-height: 100vh;
 	margin-top: -10vh;
 	width: 100%;
 	display: grid;

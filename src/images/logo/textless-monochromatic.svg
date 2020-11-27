@@ -2,14 +2,14 @@
 	<defs>
 		<style>
 			.cls-1{fill:#efefef;}
-			.cls-2{fill:#ce1b64;}
+			.cls-2{fill:#8228e0;}
 			.cls-3{fill:none;}
 			.cls-3, .cls-4, .cls-6, .cls-7{stroke:#efefef;stroke-width:11px;}
 			.cls-3, .cls-4, .cls-6, .cls-7, .cls-9{stroke-miterlimit:10;}
-			.cls-4{fill:#008ad1;}
-			.cls-5{fill:#f3711b;}
-			.cls-6{fill:#fcb808;}
-			.cls-7{fill:#04b34a;}
+			.cls-4{fill:#8228e0;}
+			.cls-5{fill:#8228e0;}
+			.cls-6{fill:#8228e0;}
+			.cls-7{fill:#8228e0;}
 			.cls-8{fill:#8228e0;}
 			.cls-9{stroke:#fff;stroke-width:10.71px;fill:url(#linear-gradient);}
 		</style>
