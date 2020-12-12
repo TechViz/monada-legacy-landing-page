@@ -6,6 +6,16 @@ type HoverableShadow = {
 	active: string,
 }
 
+type AllScreenSizes = {
+	mobileS: string,
+	mobileM: string,
+	mobileL: string,
+	tablet: string,
+	laptop: string,
+	laptopL: string,
+	uhd: string,
+}
+
 declare module "styled-components" {
   export interface DefaultTheme {
 		colors: {
@@ -71,26 +81,15 @@ declare module "styled-components" {
 			},
 		},
 		mediaQueries: {
-			minScreen: {
-				mobileS: string,
-				mobileM: string,
-				mobileL: string,
-				tablet: string,
-				laptop: string,
-				laptopL: string,
-				uhd: string,
-			}
-			maxScreen: {
-				mobileS: string,
-				mobileM: string,
-				mobileL: string,
-				tablet: string,
-				laptop: string,
-				laptopL: string,
-				uhd: string,
-			}
+			minScreen: AllScreenSizes,
+			maxScreen: AllScreenSizes,
+			minScreenPlusOne: AllScreenSizes,
+			maxScreenPlusOne: AllScreenSizes,
+			minScreenMinusOne: AllScreenSizes,
+			maxScreenMinusOne: AllScreenSizes,
 		},
 		zindex:  {
+			backgroundImage: number,
 	 		navbar: number,
 		},
   }
@@ -196,8 +195,45 @@ const theme: DefaultTheme = {
 			laptopL: '@media screen and (max-width: 1440px)',
 			uhd: '@media screen and (max-width: 2560px)',
 		},
+		maxScreenMinusOne: {
+			mobileS: '@media screen and (max-width: 319px)',
+			mobileM: '@media screen and (max-width: 374px)',
+			mobileL: '@media screen and (max-width: 424px)',
+			tablet: '@media screen and (max-width: 767px)',
+			laptop: '@media screen and (max-width: 1023px)',
+			laptopL: '@media screen and (max-width: 1439px)',
+			uhd: '@media screen and (max-width: 2559px)',
+		},
+		minScreenMinusOne: {
+			mobileS: '@media screen and (min-width: 319px)',
+			mobileM: '@media screen and (min-width: 374px)',
+			mobileL: '@media screen and (min-width: 424px)',
+			tablet: '@media screen and (min-width: 767px)',
+			laptop: '@media screen and (min-width: 1023px)',
+			laptopL: '@media screen and (min-width: 1439px)',
+			uhd: '@media screen and (min-width: 2559px)',
+		},
+		minScreenPlusOne: {
+			mobileS: '@media screen and (min-width: 321px)',
+			mobileM: '@media screen and (min-width: 376px)',
+			mobileL: '@media screen and (min-width: 426px)',
+			tablet: '@media screen and (min-width: 769px)',
+			laptop: '@media screen and (min-width: 1025px)',
+			laptopL: '@media screen and (min-width: 1441px)',
+			uhd: '@media screen and (min-width: 2561px)',
+		},
+		maxScreenPlusOne: {
+			mobileS: '@media screen and (max-width: 321px)',
+			mobileM: '@media screen and (max-width: 376px)',
+			mobileL: '@media screen and (max-width: 426px)',
+			tablet: '@media screen and (max-width: 769px)',
+			laptop: '@media screen and (max-width: 1025px)',
+			laptopL: '@media screen and (max-width: 1441px)',
+			uhd: '@media screen and (max-width: 2561px)',
+		},
 	},
 	zindex:  {
+		backgroundImage: -1,
 		navbar: 10,
 	},
 };
