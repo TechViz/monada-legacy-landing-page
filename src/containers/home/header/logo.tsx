@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Images from '../../../constants/images';
+
 type HeaderLogoProps = React.PropsWithoutRef<{
 }> & React.ComponentProps<'svg'>;
 
@@ -92,7 +94,7 @@ const HeaderLogo: HeaderLogoComponent = ({ ...props }) => {
 		animate();
 	}, []);
 
-	return (
+	return <>
 		<svg {...props} viewBox="163.29 86 457 605.54" style={{ width: '100%', height: '100%' }}>
 			<style>{styleString}</style>
 			<defs>
@@ -133,7 +135,10 @@ const HeaderLogo: HeaderLogoComponent = ({ ...props }) => {
 				<path style={{ fill: 'gray' }} className="letter" d="M567.07,604.65c2.4-8.32,10.72-13.92,19.84-13.92s17.6,5.6,20,13.92L614.75,632A60.89,60.89,0,0,1,616,643.86v43.52a4.24,4.24,0,0,1-4.16,4.16h-5.6a4.24,4.24,0,0,1-4.16-4.16v-28.8h-30.4v28.8a4.24,4.24,0,0,1-4.16,4.16h-5.6a4.24,4.24,0,0,1-4.16-4.16V643.86A55.44,55.44,0,0,1,559.07,632Zm4.64,41.13h30.4V644.5a53.82,53.82,0,0,0-1.12-9.76l-6.88-24.32c-1.12-3.68-3.36-6.88-7.2-6.88s-6.08,2.72-7.2,6.88l-6.88,24.16a39.94,39.94,0,0,0-1.12,9.92Z"/>
 			</g>
 		</svg>
-	);
+		{/* <noscript>
+			<Images.Logo.Main />
+	 	</noscript> */}
+	</>;
 }
 
 const styleString = `

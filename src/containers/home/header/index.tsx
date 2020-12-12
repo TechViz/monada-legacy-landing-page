@@ -16,6 +16,10 @@ const Root = styled.div`
 	padding: 64px;
 	align-items: center;
 	justify-content: center;
+	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 `;
 
 const BackgroundImage = styled(Images.Misc.HomeHeaderBackground).attrs(() => ({ fit: 'cover' }))`
@@ -25,6 +29,7 @@ const BackgroundImage = styled(Images.Misc.HomeHeaderBackground).attrs(() => ({ 
 	width: 100%;
 	height: 100%;
 	filter: blur(3px);
+	z-index: ${props => props.theme.zindex.backgroundImage};
 `;
 
 const ImageOverlay = styled.div`
@@ -35,6 +40,7 @@ const ImageOverlay = styled.div`
 	height: 100%;
 	opacity: 0.2;
 	background-color: black;
+	z-index: ${props => props.theme.zindex.backgroundImage};
 `;
 
 const TextContainer = styled.div`
@@ -54,29 +60,21 @@ const Title = styled.h1`
 	text-shadow: 0 0 1px #000;
 `;
 
-const AspectRatioWrapper = styled.div`
-	width: 100%;
-	height: 0px;
-	position: relative;
-	padding-bottom: 100%;
-`;
-
 const WhiteBallBackground = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 100%;
 	border-radius: 100%;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 400px;
-	max-height: 400px;
+	width: 400px;
+	height: 400px;
 	padding: 3rem;
-	overflow: hidden;
+	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
+		margin-top: 25px;
+		width: 250px;
+		height: 250px;
+		padding: 2rem;
+	}
 `;
 
 const HeaderLogo = styled(HeaderLogoTemplate)`
@@ -98,11 +96,9 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 					<Title>Gestão e métricas de impactos de investimentos em D&I para sua empresa</Title>
 				</TextContainer>
 			</SlideIn>
-			<AspectRatioWrapper>
-				<WhiteBallBackground>
-					<HeaderLogo />
-				</WhiteBallBackground>
-			</AspectRatioWrapper>
+			<WhiteBallBackground>
+				<HeaderLogo />
+			</WhiteBallBackground>
 		</Root>
 	);
 }
