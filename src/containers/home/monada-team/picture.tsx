@@ -28,7 +28,7 @@ const Picture = styled.div`
 	border-radius: 100%;
 	overflow: hidden;
 	margin: 32px 0;
-	box-shadow: ${props => props.theme.shadows.layout.large.strong.normal};
+	box-shadow: ${props => props.theme.shadows.card.normal};
 `;
 
 const PersonTitle = styled.p`

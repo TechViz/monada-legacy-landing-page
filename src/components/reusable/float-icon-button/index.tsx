@@ -8,16 +8,16 @@ const Root = styled.button`
 	padding: 8px;
 	border-radius: 100%;
 	cursor: pointer;
-	box-shadow: ${props => props.theme.shadows.button.small.normal};
+	box-shadow: ${props => props.theme.shadows.button.normal};
 	transition: 200ms;
 	outline: none;
 	border: 0;
 	:hover, :focus {
-		box-shadow: ${props => props.theme.shadows.button.small.hover};
+		box-shadow: ${props => props.theme.shadows.button.hover};
 		transform: scale(1.1);
 	}
 	:active {
-		box-shadow: ${props => props.theme.shadows.button.small.active};
+		box-shadow: ${props => props.theme.shadows.button.active};
 		transform: scale(0.9);
 	}
 `;

@@ -12,7 +12,7 @@ const Root = styled.div`
 	height: 10vh;
 	width: 100%;
 	background-color: white;
-	box-shadow: ${({ theme }) => theme.shadows.layout.large.soft.normal};
+	box-shadow: ${({ theme }) => theme.shadows.navbar};
 	display: flex;
 	justify-content: space-between;
 	z-index: ${props => props.theme.zindex.navbar};
