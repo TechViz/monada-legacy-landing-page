@@ -3,11 +3,17 @@ import styled, { DefaultTheme } from 'styled-components';
 
 type ColorDescriptor = string | ((theme: DefaultTheme) => string);
 
+function resolveColorDescriptor (desc: ColorDescriptor, theme: DefaultTheme) {
+	return typeof desc === 'string' ? desc : desc(theme);
+}
+
 const Root = styled.button<{
 	fullWidth: boolean,
 	hoverScaleOffset: number,
 	backgroundColor: ColorDescriptor,
 	textColor: ColorDescriptor,
+	hoverTextColor: ColorDescriptor,
+	hoverBackgroundColor: ColorDescriptor,
 }>`
 	width: ${({ fullWidth }) => fullWidth ? '100%' : 'max-content'};
 	padding: 4px 16px;
@@ -15,41 +21,39 @@ const Root = styled.button<{
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	border: 0;
 	outline: 0;
 	transition: 200ms;
 	cursor: pointer;
-	border-radius: 8px;
-	background-color: ${({ backgroundColor, theme }) =>
-		typeof backgroundColor === 'string' ? backgroundColor : backgroundColor(theme)
-	};
-	color: ${({ textColor, theme }) =>
-		typeof textColor === 'string' ? textColor : textColor(theme)
-	};
+	border-radius: 32px;
+	font-size: 20px;
+	background-color: ${({ backgroundColor, theme }) => resolveColorDescriptor(backgroundColor, theme)};
+	color: ${({ textColor, theme }) => resolveColorDescriptor(textColor, theme)}
+	border: 1px solid ${({ hoverBackgroundColor, theme }) => resolveColorDescriptor(hoverBackgroundColor, theme)};
 	:hover, :focus {
-		transform: scale(${({ hoverScaleOffset }) => 1 + hoverScaleOffset});
-	}
-	:active {
-		transform: scale(${({ hoverScaleOffset }) => 1 - hoverScaleOffset});
+		background-color: ${({ hoverBackgroundColor, theme }) => resolveColorDescriptor(hoverBackgroundColor, theme)};
+		color: ${({ hoverTextColor, theme }) => resolveColorDescriptor(hoverTextColor, theme)}
 	}
 `;
 
-type ButtonProps = React.PropsWithoutRef<{
-	content: React.ReactNode,
+type ButtonProps = React.PropsWithChildren<{
 	hoverScaleOffset?: number,
 	backgroundColor?: ColorDescriptor,
 	textColor?: ColorDescriptor,
+	hoverTextColor?: ColorDescriptor,
+	hoverBackgroundColor?: ColorDescriptor,
 	fullWidth?: boolean,
 }> & React.ComponentProps<'button'>;
 
 type ButtonComponent = React.FunctionComponent<ButtonProps>;
 
 const Button: ButtonComponent = ({
-	content,
+	children,
 	fullWidth = false,
 	hoverScaleOffset = 0.1,
-	backgroundColor = (theme: DefaultTheme) => theme.colors.action.main,
-	textColor = 'rgba(0, 0, 0, 0.8)',
+	backgroundColor = 'white',
+	textColor = (theme: DefaultTheme) => theme.colors.primary.main,
+	hoverTextColor = 'white',
+	hoverBackgroundColor = (theme: DefaultTheme) => theme.colors.primary.main,
 	ref,
 	...props
 }) => {
@@ -60,9 +64,11 @@ const Button: ButtonComponent = ({
 			hoverScaleOffset={hoverScaleOffset}
 			textColor={textColor}
 			backgroundColor={backgroundColor}
+			hoverTextColor={hoverTextColor}
+			hoverBackgroundColor={hoverBackgroundColor}
 			{...props}
 		>
-			{content}
+			{children}
 		</Root>
 	);
 }
