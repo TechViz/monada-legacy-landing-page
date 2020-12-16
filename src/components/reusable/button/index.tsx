@@ -1,22 +1,10 @@
-import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled from 'styled-components';
 
-type ColorDescriptor = string | ((theme: DefaultTheme) => string);
-
-function resolveColorDescriptor (desc: ColorDescriptor, theme: DefaultTheme) {
-	return typeof desc === 'string' ? desc : desc(theme);
-}
-
-const Root = styled.button<{
+const Button = styled.button<{
 	fullWidth: boolean,
-	hoverScaleOffset: number,
-	backgroundColor: ColorDescriptor,
-	textColor: ColorDescriptor,
-	hoverTextColor: ColorDescriptor,
-	hoverBackgroundColor: ColorDescriptor,
 }>`
 	width: ${({ fullWidth }) => fullWidth ? '100%' : 'max-content'};
-	padding: 4px 16px;
+	padding: 8px 32px;
 	text-align: center;
 	align-items: center;
 	display: flex;
@@ -26,51 +14,14 @@ const Root = styled.button<{
 	cursor: pointer;
 	border-radius: 32px;
 	font-size: 20px;
-	background-color: ${({ backgroundColor, theme }) => resolveColorDescriptor(backgroundColor, theme)};
-	color: ${({ textColor, theme }) => resolveColorDescriptor(textColor, theme)}
-	border: 1px solid ${({ hoverBackgroundColor, theme }) => resolveColorDescriptor(hoverBackgroundColor, theme)};
+	text-decoration: none;
+	background-color: white;
+	color: ${props => props.theme.colors.primary.main};
+	border: 1px solid ${props => props.theme.colors.primary.main};
 	:hover, :focus {
-		background-color: ${({ hoverBackgroundColor, theme }) => resolveColorDescriptor(hoverBackgroundColor, theme)};
-		color: ${({ hoverTextColor, theme }) => resolveColorDescriptor(hoverTextColor, theme)}
+		background-color: ${props => props.theme.colors.primary.main};
+		color: white;
 	}
 `;
-
-type ButtonProps = React.PropsWithChildren<{
-	hoverScaleOffset?: number,
-	backgroundColor?: ColorDescriptor,
-	textColor?: ColorDescriptor,
-	hoverTextColor?: ColorDescriptor,
-	hoverBackgroundColor?: ColorDescriptor,
-	fullWidth?: boolean,
-}> & React.ComponentProps<'button'>;
-
-type ButtonComponent = React.FunctionComponent<ButtonProps>;
-
-const Button: ButtonComponent = ({
-	children,
-	fullWidth = false,
-	hoverScaleOffset = 0.1,
-	backgroundColor = 'white',
-	textColor = (theme: DefaultTheme) => theme.colors.primary.main,
-	hoverTextColor = 'white',
-	hoverBackgroundColor = (theme: DefaultTheme) => theme.colors.primary.main,
-	ref,
-	...props
-}) => {
-
-	return (
-		<Root
-			fullWidth={fullWidth}
-			hoverScaleOffset={hoverScaleOffset}
-			textColor={textColor}
-			backgroundColor={backgroundColor}
-			hoverTextColor={hoverTextColor}
-			hoverBackgroundColor={hoverBackgroundColor}
-			{...props}
-		>
-			{children}
-		</Root>
-	);
-}
 
 export default Button;

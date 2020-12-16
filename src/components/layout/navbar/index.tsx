@@ -22,7 +22,7 @@ const Root = styled.div`
 	}
 `;
 
-const Logo = styled(Images.Logo.TextlessMonochromatic)`
+const Logo = styled(Images.Logo.Horizontal)`
 	height: 100%;
 	width: auto;
 	cursor: pointer;
