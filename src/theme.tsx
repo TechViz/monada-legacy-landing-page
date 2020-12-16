@@ -66,17 +66,9 @@ declare module "styled-components" {
 		shadows: {
 			/** Layout shadows are shadows related to things like cards, the navbar, etc...
 			* These shadows are usually larger and more subtle*/
-			layout: {
-				large: {
-					soft: HoverableShadow,
-					strong: HoverableShadow,
-				},
-			},
-			button: {
-				small: HoverableShadow,
-				medium: HoverableShadow,
-				large: HoverableShadow,
-			},
+			navbar: string, // Cannot "hover" the navbar.
+			card: HoverableShadow,
+			button: HoverableShadow,
 			icons: {
 			},
 		},
@@ -98,14 +90,14 @@ declare module "styled-components" {
 const theme: DefaultTheme = {
 	colors: {
 		primary: {
-			main: '#6a27c1',
+			main: '#9623E4',
 			white: '#F1EBF9',
 			black: '#130723',
 			dark: '#3A1569',
 			light: '#AE89DD',
 		},
 		secondary: {
-			main: '#008AD1',
+			main: '#FFB800',
 			dark: '#00245D',
 			light: '#80c5e8',
 			white: '#F2FAFF',
@@ -142,36 +134,16 @@ const theme: DefaultTheme = {
 		},
 	},
 	shadows: {
-		layout: {
-			large: {
-				soft: {
-					normal: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
-					active: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
-					hover: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
-				},
-				strong: {
-					normal: '-3px 3px 12px rgba(0, 0, 0, 0.2)',
-					active: '-2px 2px 6px rgba(0, 0, 0, 0.3)',
-					hover: '-6px 6px 22px rgba(0, 0, 0, 0.1)',
-				},
-			},
+		navbar: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+		card: {
+			normal: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+			active: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
+			hover: '-4px 4px 12px rgba(0, 0, 0, 0.1)',
 		},
 		button: {
-			small: {
-				hover: '-3px 3px 3px rgba(0, 0, 0, 0.1)',
-				normal: '-2px 2px 2px rgba(0, 0, 0, 0.2)',
-				active: '-1px 1px 1px rgba(0, 0, 0, 0.4)',
-			},
-			medium: {
-				hover: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
-				normal: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
-				active: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
-			},
-			large: {
-				hover: '-2px 2px 4px rgba(0, 0, 0, 0.2)',
-				normal: '-2px 2px 4px rgba(0, 0, 0, 0.2)',
-				active: '-2px 2px 4px rgba(0, 0, 0, 0.2)',
-			},
+			hover: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
+			normal: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
+			active: '-3px 3px 3px rgba(0, 0, 0, 0.3)',
 		},
 		icons: {
 		},
