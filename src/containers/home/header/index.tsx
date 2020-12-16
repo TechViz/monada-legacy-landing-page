@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../../components/reusable/button';
 import SlideIn from '../../../components/reusable/slide-in';
-import Images from '../../../constants/images';
 import HeaderLogoTemplate from './logo';
 
 const Root = styled.div`
@@ -16,48 +16,32 @@ const Root = styled.div`
 	padding: 64px;
 	align-items: center;
 	justify-content: center;
+	background-color: ${props => props.theme.colors.primary.main};
 	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
 		display: flex;
 		flex-direction: column-reverse;
 	}
 `;
 
-const BackgroundImage = styled(Images.Misc.HomeHeaderBackground).attrs(() => ({ fit: 'cover' }))`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	filter: blur(3px);
-	z-index: ${props => props.theme.zindex.backgroundImage};
-`;
-
-const ImageOverlay = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.2;
-	background-color: black;
-	z-index: ${props => props.theme.zindex.backgroundImage};
-`;
-
 const TextContainer = styled.div`
-	color: ${props => props.theme.colors.primary.main};
-	max-width: 612px;
+	color: white;
+	max-width: 520px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	font-weight: lighter;
+	margin: auto 0 auto auto;
 `;
 
-const Title = styled.h1`
+const LargeText = styled.h1`
+	margin: 0;
 	font-weight: bold;
-	text-align: center;
-	color: white;
-	padding: 0 16px;
-	font-size: 60px;
+	font-size: 50px;
 	text-shadow: 0 0 1px #000;
+`;
+
+const SmallText = styled.p`
+	margin: 0;
+	font-size: 30px;
 `;
 
 const WhiteBallBackground = styled.div`
@@ -77,6 +61,14 @@ const WhiteBallBackground = styled.div`
 	}
 `;
 
+const KnowMoreButton = styled(Button)`
+	margin-left: auto;
+	background-color: ${props => props.theme.colors.secondary.main};
+	:hover, :focus {
+		border-color: white;
+	}
+`;
+
 const HeaderLogo = styled(HeaderLogoTemplate)`
 `;
 
@@ -89,11 +81,16 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 	return (
 		// Note: The ID is used by the navbar to scroll this element into view.
 		<Root id='header'>
-			<BackgroundImage />
-			<ImageOverlay />
 			<SlideIn direction='right'>
 				<TextContainer>
-					<Title>Gestão e métricas de impactos de investimentos em D&I para sua empresa</Title>
+					<SmallText>
+						<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada</strong>:
+					</SmallText>
+					<LargeText>análise de dados em Diversidade e Inclusão</LargeText>
+					<SmallText>
+						que <strong>impactam</strong> nos <strong>indicadores (KPIs)</strong> da sua empresa.
+					</SmallText>
+					<KnowMoreButton>Saiba Mais</KnowMoreButton>
 				</TextContainer>
 			</SlideIn>
 			<WhiteBallBackground>
