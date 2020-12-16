@@ -57,6 +57,10 @@ const Images = {
 			src: ImageURLS.logo.text,
 			alt: alt || 'Mônada',
 		}))``,
+		Horizontal: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.logo.horizontal,
+			alt: alt || 'Mônada',
+		}))``,
 	},
 	Icons: {
 		gift: styled(BaseImage).attrs(({ alt }) => ({
