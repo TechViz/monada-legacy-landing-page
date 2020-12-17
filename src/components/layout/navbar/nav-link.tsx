@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
 import { useHamburguer } from '../../../contexts/hamburguer';
+import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 import Button from '../../reusable/button';
 
 const Root = styled.li`
@@ -44,12 +45,18 @@ const NavLink: NavLinkComponent = ({
 }) => {
 	const { isHamburguerOpen } = useHamburguer();
 
+	function handleClick (event: React.MouseEvent) {
+		event.preventDefault();
+		smoothScrollIntoElementId(idToFocus);
+	}
+
 	return (
-		<Root onClick={onClick} {...props}>
-			<MobileAnchor tabIndex={isHamburguerOpen ? 0 : -1} href='#'>
+		<Root onClick={handleClick} {...props}>
+			{/* The anchors have a valid href in case the user doesn't have JavaScript enabled. */}
+			<MobileAnchor tabIndex={isHamburguerOpen ? 0 : -1} href={`#${idToFocus}`}>
 				{children}
 			</MobileAnchor>
-			<DesktopAnchor href={'#'}>
+			<DesktopAnchor href={`#${idToFocus}`}>
 				{children}
 			</DesktopAnchor>
 		</Root>
