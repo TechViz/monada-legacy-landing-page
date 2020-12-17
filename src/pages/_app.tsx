@@ -20,8 +20,10 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
   return (
 		<>
 			<Head>
-				<link rel="preconnect" href="https://fonts.gstatic.com" />
-				<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700;900&display=swap" rel="stylesheet" />
+				{/* If you're loooking for where the font's <link> tag is, you should look
+				in the `/src/pages/_document.tsx` file. It's where the fonts are being
+				downloaded. */}
+
 				{/* Global styling */}
 				<style>{`
 					body, html, #__next {
