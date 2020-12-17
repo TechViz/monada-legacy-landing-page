@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { StyledComponent } from 'styled-components';
 import { useHamburguer } from '../../../contexts/hamburguer';
 import Button from '../../reusable/button';
 
@@ -18,7 +18,7 @@ const MobileAnchor = styled(Button).attrs({ as: 'a' })`
 	${props => props.theme.mediaQueries.minScreen.tablet} {
 		display: none;
 	}
-`;
+` as StyledComponent<typeof Button, {}>;
 
 const DesktopAnchor = styled(Button).attrs({ as: 'a' })`
 	margin: 0 8px;
@@ -26,7 +26,7 @@ const DesktopAnchor = styled(Button).attrs({ as: 'a' })`
 	${props => props.theme.mediaQueries.maxScreen.tablet} {
 		display: none;
 	}
-`;
+` as StyledComponent<typeof Button, {}>;
 
 type NavLinkProps = React.PropsWithChildren<{
 	/** The ID of the document object to scroll to */

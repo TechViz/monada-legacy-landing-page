@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button<{
-	fullWidth: boolean,
+	fullWidth?: boolean,
 }>`
 	width: ${({ fullWidth }) => fullWidth ? '100%' : 'max-content'};
 	padding: 8px 32px;
