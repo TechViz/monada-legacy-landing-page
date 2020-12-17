@@ -1,18 +1,17 @@
 import React from 'react';
-import styled, { DefaultTheme, StyledComponent } from 'styled-components';
+import styled from 'styled-components';
 import Button from '../../../components/reusable/button';
 import SlideIn from '../../../components/reusable/slide-in';
-import HeaderLogoTemplate from './logo';
+import Images from '../../../constants/images';
 
 const Root = styled.div`
-	min-height: 100vh;
-	margin-top: -10vh;
+	min-height: 90vh;
 	width: 100%;
 	display: grid;
 	position: relative;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 100%;
-	column-gap: 128px;
+	column-gap: 64px;
 	padding: 64px;
 	align-items: center;
 	justify-content: center;
@@ -44,23 +43,6 @@ const SmallText = styled.p`
 	font-size: 30px;
 `;
 
-const WhiteBallBackground = styled.div`
-	border-radius: 100%;
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 400px;
-	height: 400px;
-	padding: 3rem;
-	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
-		margin-top: 25px;
-		width: 250px;
-		height: 250px;
-		padding: 2rem;
-	}
-`;
-
 const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, download?: string }>`
 	margin-left: auto;
 	font-weight: normal;
@@ -70,7 +52,10 @@ const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, downlo
 	}
 `;
 
-const HeaderLogo = styled(HeaderLogoTemplate)`
+const HeaderLogo = styled(Images.Misc.HomeHeaderBackground)`
+	height: 100%;
+	width: auto;
+	max-height: min(70vh, 444px);
 `;
 
 type HomeHeaderProps = React.PropsWithoutRef<{
@@ -85,7 +70,7 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 			<SlideIn direction='right'>
 				<TextContainer>
 					<SmallText>
-						<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada</strong>:
+						<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada:</strong>
 					</SmallText>
 					<LargeText>análise de dados em Diversidade e Inclusão</LargeText>
 					<SmallText>
@@ -97,9 +82,7 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 					>Saiba Mais</KnowMoreButton>
 				</TextContainer>
 			</SlideIn>
-			<WhiteBallBackground>
-				<HeaderLogo />
-			</WhiteBallBackground>
+			<HeaderLogo />
 		</Root>
 	);
 }
