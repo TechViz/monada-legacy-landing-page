@@ -28,7 +28,7 @@ const ImageURLS = {
 		reijane: require('./founders/reijane.jpg'),
 	},
 	misc: {
-		homeHeaderBackground: require('./home-header-background.jpg'),
+		homeHeaderBackground: require('./home-header-background.svg'),
 	},
 };
 
