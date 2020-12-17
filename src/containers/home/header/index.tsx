@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../../../components/reusable/button';
-import SlideIn from '../../../components/reusable/slide-in';
 import Images from '../../../constants/images';
 
 const Root = styled.div`
@@ -67,21 +66,19 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 	return (
 		// Note: The ID is used by the navbar to scroll this element into view.
 		<Root id='header'>
-			<SlideIn direction='right'>
-				<TextContainer>
-					<SmallText>
-						<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada:</strong>
-					</SmallText>
-					<LargeText>análise de dados em Diversidade e Inclusão</LargeText>
-					<SmallText>
-						que <strong>impactam</strong> nos <strong>indicadores (KPIs)</strong> da sua empresa.
-					</SmallText>
-					<KnowMoreButton
-						download="D&I Analytics e o Metodo Monada.pdf"
-						href="/apresentacao.pdf"
-					>Saiba Mais</KnowMoreButton>
-				</TextContainer>
-			</SlideIn>
+			<TextContainer>
+				<SmallText>
+					<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada:</strong>
+				</SmallText>
+				<LargeText>análise de dados em Diversidade e Inclusão</LargeText>
+				<SmallText>
+					que <strong>impactam</strong> nos <strong>indicadores (KPIs)</strong> da sua empresa.
+				</SmallText>
+				<KnowMoreButton
+					download="D&I Analytics e o Metodo Monada.pdf"
+					href="/apresentacao.pdf"
+				>Saiba Mais</KnowMoreButton>
+			</TextContainer>
 			<HeaderLogo />
 		</Root>
 	);
