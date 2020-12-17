@@ -64,7 +64,7 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Mônada</title>
-				<link rel='canonical' href={`${deployedUrl}/home`}/>
+				<link rel='canonical' href={`${deployedUrl}`}/>
 
 				{/* dangerouslySetInnerHTML is used to prevent string escaping */}
 				<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}></script>

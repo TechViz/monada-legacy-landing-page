@@ -6,8 +6,7 @@ module.exports = {
 		{ dev, dir, outDir, distDir, buildId }
 	) {
 		return {
-		...defaultPathMap,
-		'/': { page: '/home' },
+			...defaultPathMap,
 		}
 	},
 
