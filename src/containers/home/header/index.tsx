@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import Button from '../../../components/reusable/button';
 import SlideIn from '../../../components/reusable/slide-in';
 import HeaderLogoTemplate from './logo';
@@ -61,8 +61,9 @@ const WhiteBallBackground = styled.div`
 	}
 `;
 
-const KnowMoreButton = styled(Button)`
+const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, download?: string }>`
 	margin-left: auto;
+	font-weight: normal;
 	background-color: ${props => props.theme.colors.secondary.main};
 	:hover, :focus {
 		border-color: white;
@@ -90,7 +91,10 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 					<SmallText>
 						que <strong>impactam</strong> nos <strong>indicadores (KPIs)</strong> da sua empresa.
 					</SmallText>
-					<KnowMoreButton>Saiba Mais</KnowMoreButton>
+					<KnowMoreButton
+						download="D&I Analytics e o Metodo Monada.pdf"
+						href="/apresentacao.pdf"
+					>Saiba Mais</KnowMoreButton>
 				</TextContainer>
 			</SlideIn>
 			<WhiteBallBackground>
