@@ -20,6 +20,8 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
   return (
 		<>
 			<Head>
+				<link rel="preconnect" href="https://fonts.gstatic.com" />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700;900&display=swap" rel="stylesheet" />
 				{/* Global styling */}
 				<style>{`
 					body, html, #__next {
@@ -28,8 +30,9 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
 					}
 					* {
 						box-sizing: border-box;
+						font-family: 'Roboto', sans-serif;
 					}
-				`}</style>
+				`.replace(/\s/g, '')}</style>
 
 				{/* Favicon related stuff */}
 				<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

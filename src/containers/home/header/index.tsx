@@ -1,83 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
-import SlideIn from '../../../components/reusable/slide-in';
+import Button from '../../../components/reusable/button';
 import Images from '../../../constants/images';
-import HeaderLogoTemplate from './logo';
 
 const Root = styled.div`
-	min-height: 100vh;
-	margin-top: -10vh;
+	min-height: 90vh;
 	width: 100%;
 	display: grid;
 	position: relative;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 100%;
-	column-gap: 128px;
+	column-gap: 64px;
 	padding: 64px;
 	align-items: center;
 	justify-content: center;
+	background-color: ${props => props.theme.colors.primary.main};
 	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
 		display: flex;
 		flex-direction: column-reverse;
 	}
 `;
 
-const BackgroundImage = styled(Images.Misc.HomeHeaderBackground).attrs(() => ({ fit: 'cover' }))`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	filter: blur(3px);
-	z-index: ${props => props.theme.zindex.backgroundImage};
-`;
-
-const ImageOverlay = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.2;
-	background-color: black;
-	z-index: ${props => props.theme.zindex.backgroundImage};
-`;
-
 const TextContainer = styled.div`
-	color: ${props => props.theme.colors.primary.main};
-	max-width: 612px;
+	color: white;
+	max-width: 520px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	font-weight: lighter;
+	margin: auto 0 auto auto;
 `;
 
-const Title = styled.h1`
+const LargeText = styled.h1`
+	margin: 0;
 	font-weight: bold;
-	text-align: center;
-	color: white;
-	padding: 0 16px;
-	font-size: 60px;
+	font-size: 50px;
 	text-shadow: 0 0 1px #000;
 `;
 
-const WhiteBallBackground = styled.div`
-	border-radius: 100%;
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 400px;
-	height: 400px;
-	padding: 3rem;
-	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
-		margin-top: 25px;
-		width: 250px;
-		height: 250px;
-		padding: 2rem;
+const SmallText = styled.p`
+	margin: 0;
+	font-size: 30px;
+`;
+
+const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, download?: string }>`
+	margin-left: auto;
+	font-weight: normal;
+	background-color: ${props => props.theme.colors.secondary.main};
+	:hover, :focus {
+		border-color: white;
 	}
 `;
 
-const HeaderLogo = styled(HeaderLogoTemplate)`
+const HeaderLogo = styled(Images.Misc.HomeHeaderBackground)`
+	height: 100%;
+	width: auto;
+	max-height: min(70vh, 444px);
 `;
 
 type HomeHeaderProps = React.PropsWithoutRef<{
@@ -89,16 +66,20 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 	return (
 		// Note: The ID is used by the navbar to scroll this element into view.
 		<Root id='header'>
-			<BackgroundImage />
-			<ImageOverlay />
-			<SlideIn direction='right'>
-				<TextContainer>
-					<Title>Gestão e métricas de impactos de investimentos em D&I para sua empresa</Title>
-				</TextContainer>
-			</SlideIn>
-			<WhiteBallBackground>
-				<HeaderLogo />
-			</WhiteBallBackground>
+			<TextContainer>
+				<SmallText>
+					<strong><i>D&I Analytics</i></strong> e o método <strong>Mônada:</strong>
+				</SmallText>
+				<LargeText>análise de dados em Diversidade e Inclusão</LargeText>
+				<SmallText>
+					que <strong>impactam</strong> nos <strong>indicadores (KPIs)</strong> da sua empresa.
+				</SmallText>
+				<KnowMoreButton
+					download="D&I Analytics e o Metodo Monada.pdf"
+					href="/apresentacao.pdf"
+				>Saiba Mais</KnowMoreButton>
+			</TextContainer>
+			<HeaderLogo />
 		</Root>
 	);
 }

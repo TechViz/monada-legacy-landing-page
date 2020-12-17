@@ -51,7 +51,7 @@ const HomeContact: HomeContactComponent = ({  }) => {
 				<TextInput label='Seu nome' />
 				<TextInput label='Seu e-mail' />
 				<TextInput label='Sua mensagem' numberOfLines={3} />
-				<Button content='Enviar' type='submit' />
+				<Button type='submit'>Enviar</Button>
 			</Form>
 			<SocialMediaContainer>
 				<ActionTitle>Acesse nossas redes sociais</ActionTitle>

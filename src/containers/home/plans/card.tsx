@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Root = styled.a`
 	border-radius: 16px;
-	box-shadow: ${props => props.theme.shadows.layout.large.strong.normal};
+	box-shadow: ${props => props.theme.shadows.card.normal};
 	margin: 0 32px;
 	width: 300px;
 	height: 60%;
@@ -15,11 +15,11 @@ const Root = styled.a`
 	outline: 1px solid rgba(0, 0, 0, 0);
 	:hover, :focus {
 		transform: scale(1.05);
-		box-shadow: ${props => props.theme.shadows.layout.large.strong.hover};
+		box-shadow: ${props => props.theme.shadows.card.hover};
 	}
 	:active {
 		transform: scale(.95);
-		box-shadow: ${props => props.theme.shadows.layout.large.strong.active};
+		box-shadow: ${props => props.theme.shadows.card.active};
 	}
 `;
 

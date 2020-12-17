@@ -21,18 +21,19 @@ type BaseImageProps = React.PropsWithChildren<{
 	alt: string,
 	css?: FlattenSimpleInterpolation,
 	fit?: 'contain' | 'cover' | 'fill' | 'inherit' | 'initial' | 'none' | 'revert' | 'scale-down' | 'unset',
-}> & Omit<React.ComponentProps<'picture'>, 'ref'>;
+}> & React.ComponentProps<'picture'>;
 
 const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 	src,
 	alt,
+	ref,
 	fit = 'contain',
 	...props
-}, ref) => {
+}, refForwarded) => {
 	const webpSrc = src.replace(/\.(png|jpe?g)$/, '.webp');
 
 	return (
-		<Picture {...props} ref={ref}>
+		<Picture {...props} ref={refForwarded}>
 			<source srcSet={webpSrc} type='image/webp' />
 			<Image src={src} alt={alt} fit={fit} />
 		</Picture>
@@ -55,6 +56,10 @@ const Images = {
 		}))``,
 		Text: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.logo.text,
+			alt: alt || 'Mônada',
+		}))``,
+		Horizontal: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.logo.horizontal,
 			alt: alt || 'Mônada',
 		}))``,
 	},

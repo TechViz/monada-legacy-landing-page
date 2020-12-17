@@ -12,7 +12,7 @@ const Root = styled.div`
 	height: 10vh;
 	width: 100%;
 	background-color: white;
-	box-shadow: ${({ theme }) => theme.shadows.layout.large.soft.normal};
+	box-shadow: ${({ theme }) => theme.shadows.navbar};
 	display: flex;
 	justify-content: space-between;
 	z-index: ${props => props.theme.zindex.navbar};
@@ -22,7 +22,7 @@ const Root = styled.div`
 	}
 `;
 
-const Logo = styled(Images.Logo.TextlessMonochromatic)`
+const Logo = styled(Images.Logo.Horizontal)`
 	height: 100%;
 	width: auto;
 	cursor: pointer;
@@ -81,16 +81,21 @@ const Navbar: NavbarComponent = () => {
 	}, []);
 
 	const links = [
+		{ idToFocus: 'products', text: 'Produtos' },
 		{ idToFocus: 'about-us', text: 'Sobre Nós' },
-		{ idToFocus: 'plans', text: 'Planos' },
-		{ idToFocus: 'team', text: 'Nossa equipe' },
 		{ idToFocus: 'contact', text: 'Contato' },
+		{ idToFocus: 'team', text: 'Parcerias' },
 	];
+
+	function handleClick (event: React.MouseEvent) {
+		event.preventDefault();
+		smoothScrollIntoElementId('main-page-container');
+	}
 
 	return (
 		<Root ref={rootRef}>
-			<Link href='/home'>
-				<Anchor onClick={() => smoothScrollIntoElementId('header')}>
+			<Link href='/#main-page-container'>
+				<Anchor onClick={handleClick}>
 					<Logo />
 				</Anchor>
 			</Link>
@@ -99,7 +104,6 @@ const Navbar: NavbarComponent = () => {
 					idToFocus={link.idToFocus}
 					children={link.text}
 					key={link.text}
-					onClick={() => smoothScrollIntoElementId(link.idToFocus)}
 				/>)}
 			</LinksContainer>
 			<MobileHamburguer>

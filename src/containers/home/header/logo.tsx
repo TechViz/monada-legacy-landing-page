@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Images from '../../../constants/images';
-
 type HeaderLogoProps = React.PropsWithoutRef<{
 }> & React.ComponentProps<'svg'>;
 

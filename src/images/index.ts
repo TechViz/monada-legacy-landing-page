@@ -12,6 +12,7 @@ const ImageURLS = {
 		textless: require('./logo/textless.svg'),
 		textlessMonochromatic: require('./logo/textless-monochromatic.svg'),
 		text: require('./logo/text.svg'),
+		horizontal: require('./logo/horizontal.svg'),
 	},
 	icons: {
 		gift: require('./icons/gift.svg'),
@@ -27,7 +28,7 @@ const ImageURLS = {
 		reijane: require('./founders/reijane.jpg'),
 	},
 	misc: {
-		homeHeaderBackground: require('./home-header-background.jpg'),
+		homeHeaderBackground: require('./home-header-background.svg'),
 	},
 };
 

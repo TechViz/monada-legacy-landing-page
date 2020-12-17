@@ -5,10 +5,6 @@ import Navbar from '../../components/layout/navbar';
 
 import HomeHeader from './header';
 import { useHamburguer } from '../../contexts/hamburguer';
-import HomeAboutUs from './about-us';
-import HomePlans from './plans';
-import HomeMonadaTeam from './monada-team';
-import HomeContact from './contact';
 import deployedUrl from '../../constants/deployed-url';
 import ImageURLS from '../../images';
 
@@ -80,10 +76,6 @@ export default function Home() {
 			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
 			<Main onClick={closeHamburguer} id='main-page-container'>
 				<HomeHeader />
-				<HomeAboutUs />
-				<HomePlans />
-				<HomeMonadaTeam />
-				<HomeContact />
 			</Main>
 		</>
 	)
