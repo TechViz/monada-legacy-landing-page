@@ -18,7 +18,7 @@ const Button = styled.button<{
 	background-color: white;
 	color: ${props => props.theme.colors.primary.main};
 	border: 1px solid ${props => props.theme.colors.primary.main};
-	:hover, :focus {
+	:hover {
 		background-color: ${props => props.theme.colors.primary.main};
 		color: white;
 	}

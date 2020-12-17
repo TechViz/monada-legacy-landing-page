@@ -9,8 +9,8 @@ import { useHamburguer } from '../../../contexts/hamburguer';
 import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 
 const Root = styled.div`
-	height: 10vh;
 	width: 100%;
+	height: min-content;
 	background-color: white;
 	box-shadow: ${({ theme }) => theme.shadows.navbar};
 	display: flex;
@@ -18,14 +18,16 @@ const Root = styled.div`
 	z-index: ${props => props.theme.zindex.navbar};
 	padding: 8px 8px;
 	${props => props.theme.mediaQueries.minScreen.tablet} {
-		padding: 8px 32px;
+		padding: 8px 128px;
+	}
+	@media screen and (max-width: 1090px) {
+		padding: 8px 64px;
 	}
 `;
 
 const Logo = styled(Images.Logo.Horizontal)`
-	height: 100%;
-	width: auto;
-	cursor: pointer;
+	height: 40px;
+	width: 150px;
 `;
 
 const LinksContainer = styled.ul`
@@ -42,6 +44,8 @@ const LinksContainer = styled.ul`
 	}
 	${props => props.theme.mediaQueries.minScreen.tablet} {
 		display: flex;
+		position: relative;
+		right: -16px;
 	}
 `;
 
@@ -81,8 +85,8 @@ const Navbar: NavbarComponent = () => {
 	}, []);
 
 	const links = [
-		{ idToFocus: 'products', text: 'Produtos' },
 		{ idToFocus: 'about-us', text: 'Sobre Nós' },
+		{ idToFocus: 'products', text: 'Produtos' },
 		{ idToFocus: 'contact', text: 'Contato' },
 		{ idToFocus: 'team', text: 'Parcerias' },
 	];

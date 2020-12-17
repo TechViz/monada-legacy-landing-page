@@ -22,8 +22,9 @@ const MobileAnchor = styled(Button).attrs({ as: 'a' })`
 ` as StyledComponent<typeof Button, {}>;
 
 const DesktopAnchor = styled(Button).attrs({ as: 'a' })`
-	margin: 0 8px;
+	margin: 0 1rem;
 	padding: 8px 12px;
+	width: 140px;
 	${props => props.theme.mediaQueries.maxScreen.tablet} {
 		display: none;
 	}

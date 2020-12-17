@@ -5,6 +5,9 @@ import ImageURLS from '../images';
 const Picture = styled.picture<{ css?: FlattenSimpleInterpolation }>`
 	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	${({ css }) => css || ''};
 `;
 
