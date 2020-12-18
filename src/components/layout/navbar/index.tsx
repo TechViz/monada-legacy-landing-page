@@ -8,20 +8,24 @@ import Hamburguer from '../../reusable/hamburguer';
 import { useHamburguer } from '../../../contexts/hamburguer';
 import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 
-const Root = styled.div`
+const RootContainer = styled.div`
 	width: 100%;
-	height: min-content;
-	background-color: white;
 	box-shadow: ${({ theme }) => theme.shadows.navbar};
+	z-index: ${props => props.theme.zindex.navbar};
+	background-color: white;
+	display: flex;
+	justify-content: center;
+`;
+
+const Root = styled.div`
+	max-width: 1150px;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	z-index: ${props => props.theme.zindex.navbar};
-	padding: 8px 8px;
+	margin: 8px 16px;
 	${props => props.theme.mediaQueries.minScreen.tablet} {
-		padding: 8px 128px;
 	}
 	@media screen and (max-width: 1090px) {
-		padding: 8px 64px;
 	}
 `;
 
@@ -97,28 +101,30 @@ const Navbar: NavbarComponent = () => {
 	}
 
 	return (
-		<Root ref={rootRef}>
-			<Link href='/#main-page-container'>
-				<Anchor onClick={handleClick}>
-					<Logo />
-				</Anchor>
-			</Link>
-			<LinksContainer ref={linksContainerRef}>
-				{links.map(link => <NavLink
-					idToFocus={link.idToFocus}
-					children={link.text}
-					key={link.text}
-				/>)}
-			</LinksContainer>
-			<MobileHamburguer>
-				<Hamburguer
-					value={isHamburguerOpen}
-					onOpen={openHamburguer}
-					onClose={closeHamburguer}
-					animationTime={500}
-				/>
-			</MobileHamburguer>
-		</Root>
+		<RootContainer>
+			<Root ref={rootRef}>
+				<Link href='/#main-page-container'>
+					<Anchor onClick={handleClick}>
+						<Logo />
+					</Anchor>
+				</Link>
+				<LinksContainer ref={linksContainerRef}>
+					{links.map(link => <NavLink
+						idToFocus={link.idToFocus}
+						children={link.text}
+						key={link.text}
+					/>)}
+				</LinksContainer>
+				<MobileHamburguer>
+					<Hamburguer
+						value={isHamburguerOpen}
+						onOpen={openHamburguer}
+						onClose={closeHamburguer}
+						animationTime={500}
+					/>
+				</MobileHamburguer>
+			</Root>
+		</RootContainer>
 	);
 }
 

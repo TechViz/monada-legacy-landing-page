@@ -11,7 +11,7 @@ const Root = styled.div`
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 100%;
 	padding: 1rem 3rem;
-	column-gap: 10%;
+	column-gap: 14%;
 	align-items: center;
 	justify-content: center;
 	background-color: ${props => props.theme.colors.primary.main};
