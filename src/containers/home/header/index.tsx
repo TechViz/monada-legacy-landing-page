@@ -14,7 +14,7 @@ const Root = styled.div`
 	column-gap: 14%;
 	align-items: center;
 	justify-content: center;
-	background-color: ${props => props.theme.colors.primary.main};
+	background-color: ${props => props.theme.colors.purple.main};
 	${props => props.theme.mediaQueries.maxScreenMinusOne.laptop} {
 		display: flex;
 		flex-direction: column-reverse;
@@ -46,7 +46,7 @@ const SmallText = styled.p`
 const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, download?: string }>`
 	margin-left: auto;
 	font-weight: normal;
-	background-color: ${props => props.theme.colors.secondary.main};
+	background-color: ${props => props.theme.colors.yellow.main};
 	margin-top: 1.75rem;
 	:hover {
 		border-color: white;

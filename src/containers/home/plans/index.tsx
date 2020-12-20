@@ -27,8 +27,8 @@ const HomePlans: HomePlansComponent = ({  }) => {
 					'',
 				]}
 				frequency=''
-				headerBackgroundColor={theme.colors.secondary.light}
-				headerTextColor={theme.colors.secondary.dark}
+				headerBackgroundColor={theme.colors.yellow.main}
+				headerTextColor={theme.colors.yellow.main}
 				price='Grátis!'
 				title='Básico'
 				linkHref='#'

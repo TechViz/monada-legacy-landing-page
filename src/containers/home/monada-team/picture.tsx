@@ -17,7 +17,7 @@ const Root = styled.div`
 
 const Name = styled.p`
 	font-size: 32px;
-	color: ${props => props.theme.colors.primary.main};
+	color: ${props => props.theme.colors.purple.main};
 	font-weight: bold;
 	margin: 0;
 `;
@@ -33,7 +33,7 @@ const Picture = styled.div`
 
 const PersonTitle = styled.p`
 	font-size: 24px;
-	color: ${props => props.theme.colors.primary.main};
+	color: ${props => props.theme.colors.purple.main};
 	margin: 0;
 `;
 

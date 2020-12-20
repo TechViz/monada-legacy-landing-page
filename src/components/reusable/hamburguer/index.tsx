@@ -14,7 +14,7 @@ const Bar = Styled.div<{ animationTime: number }>`
 	position: relative;
 	width: 30px;
 	height: 4px;
-	background-color: ${props => props.theme.colors.primary.main};
+	background-color: ${props => props.theme.colors.purple.main};
 	margin: 8px 0;
 	top: 0;
 	transition: ${({ animationTime }) => animationTime}ms cubic-bezier(0.77, 0, 0.175, 1);
