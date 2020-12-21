@@ -8,6 +8,7 @@ import { useHamburguer } from '../../contexts/hamburguer';
 import deployedUrl from '../../constants/deployed-url';
 import ImageURLS from '../../images';
 import HomeAboutUs from './about-us';
+import HomePlans from './plans';
 
 const Main = styled.div`
 `;
@@ -72,6 +73,7 @@ export default function Home() {
 			<Navbar />
 			<HomeHeader />
 			<HomeAboutUs />
+			<HomePlans />
 		</Main>
 	)
 }

@@ -86,7 +86,7 @@ const Navbar: NavbarComponent = () => {
 
 	const links = [
 		{ idToFocus: 'about-us', text: 'Sobre Nós' },
-		{ idToFocus: 'products', text: 'Soluções' },
+		{ idToFocus: 'plans', text: 'Soluções' },
 		{ idToFocus: 'team', text: 'Parcerias' },
 		{ idToFocus: 'contact', text: 'Contato' },
 	];

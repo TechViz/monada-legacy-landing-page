@@ -1,13 +1,90 @@
 import React from 'react';
-import styled, { useTheme } from 'styled-components';
-import HomePlanCard from './card';
+import styled, { DefaultTheme } from 'styled-components';
+import Button from '../../../components/reusable/button';
 
 const Root = styled.div`
-	height: 100%;
+	min-height: 100vh;
 	width: 100%;
+	position: relative;
 	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding:
+		calc(1rem + ${props => props.theme.spacing.navbarHeight})
+		${props => props.theme.spacing.horizontalPadding}
+		1rem
+		${props => props.theme.spacing.horizontalPadding}
+	;
+`;
+
+const Title = styled.h1`
+	margin: 0;
+	position: absolute;
+	font-size: 40px;
+	color: ${props => props.theme.colors.purple.main};
+	top: calc(${props => props.theme.spacing.navbarHeight} + 1rem);
+	font-weight: 300;
+`;
+
+const Italic = styled.span`
+	font-style: italic;
+`;
+
+const CardsContainer = styled.div`
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: flex-end;
+`;
+
+const Card = styled.div<{ colorSelector: (color: DefaultTheme['colors']) => string }>`
+	color: white;
+	border-radius: 64px;
+	padding: 2rem;
+	background-color: ${props => props.colorSelector(props.theme.colors)};
+	width: 360px;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	height: max-content;
+	text-align: center;
+`;
+
+const CardTitle = styled.h2`
+	font-size: 36px;
+	font-weight: bold;
+	margin: 0;
+`;
+
+const Separator = styled.div`
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid white;
+	margin: 1rem 0 3.5rem 0;
+`;
+
+const CardDescription = styled.p`
+	font-size: 25px;
+	margin: 0;
+	font-weight: 300;
+`;
+
+const CardSubtitle = styled.p`
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0;
+`;
+
+const CardPlus = styled.p.attrs({ children: '+' })`
+	font-size: 30px;
+	margin: 0.5rem 0;
+`;
+
+const AskForBudget = styled(Button)`
+	margin-left: auto;
+	margin-top: 1rem;
+	width: 360px;
+	padding: 1rem
 `;
 
 type HomePlansProps = React.PropsWithoutRef<{
@@ -16,54 +93,50 @@ type HomePlansProps = React.PropsWithoutRef<{
 type HomePlansComponent = React.FunctionComponent<HomePlansProps>;
 
 const HomePlans: HomePlansComponent = ({  }) => {
-	const theme = useTheme();
-
 	return (
 		// Note: The ID is used by the navbar to scroll this element into view.
 		<Root id='plans'>
-			<HomePlanCard
-				bodyItems={[
-					'Acesso a métricas de diversidade e inclusão da sua empresa',
-					'',
-				]}
-				frequency=''
-				headerBackgroundColor={theme.colors.yellow.main}
-				headerTextColor={theme.colors.yellow.main}
-				price='Grátis!'
-				title='Básico'
-				linkHref='#'
-			/>
-			<HomePlanCard
-				bodyItems={[
-					'Tudo do plano Básico',
-					'Acesso a diagnósticos da sua empresa em tempo integral',
-					'Soluções individuais e costumizadas para a sua empresa',
-					'Treinamento e ações de impacto em diversidade, equidade e inclusão',
-				]}
-				frequency='Por mês'
-				// Based on this color: #CD004B. It's a shade of red
-				headerBackgroundColor='#e16693'
-				headerTextColor='#52001e'
-				price='R$ 100,00'
-				title='Pro'
-				showBanner
-				linkHref='#'
-			/>
-			<HomePlanCard
-				bodyItems={[
-					'Tudo do plano Pro',
-					'Monitoramento permanente',
-					'Gerenciamento de métricas',
-					'Implementações de soluções para impactos no ROI, desempenho e faaturamento',
-				]}
-				frequency='Por mês'
-				// Based on this color: #04B34A. It's a shade of green
-				headerBackgroundColor='#68d192'
-				headerTextColor='#02481e'
-				price='R$ 200,00'
-				title='Premium'
-				linkHref='#'
-			/>
+			<Title>
+				Oferecemos <strong>serviços de<br />
+				<Italic>D&I Analytics</Italic></strong> divididos em <strong>3<br />
+				soluções complementares.</strong>
+			</Title>
+			<CardsContainer>
+				<Card colorSelector={colors => colors.blue.main}>
+					<CardTitle>Mônada <Italic>Report</Italic></CardTitle>
+					<Separator />
+					<CardDescription>
+						Um diagnóstico inicial com métricas de <Italic>D&I</Italic> focadas em INCLUSÃO da sua empresa.
+					</CardDescription>
+				</Card>
+				<Card colorSelector={colors => colors.pink.main}>
+					<CardTitle>Mônada <Italic>Way</Italic></CardTitle>
+					<Separator />
+					<CardSubtitle>
+						Mônada <Italic>Report</Italic>
+					</CardSubtitle>
+					<CardPlus />
+					<CardDescription>
+						Mediações customizadas para geração de oportunidades de novos negócios.
+					</CardDescription>
+				</Card>
+				<Card colorSelector={colors => colors.purple.main}>
+					<CardTitle>Mônada <Italic>Analytics</Italic></CardTitle>
+					<Separator />
+					<CardSubtitle>
+						Mônada <Italic>Report</Italic>
+					</CardSubtitle>
+					<CardPlus />
+					<CardSubtitle>
+						Mônada <Italic>Way</Italic>
+					</CardSubtitle>
+					<CardPlus />
+					<CardDescription>
+						<Italic>Dashboard</Italic> com monitoramento constante de <Italic>D&I</Italic> através de análise de dados específicos da área de atuação da sua empresa.
+					</CardDescription>
+				</Card>
+			</CardsContainer>
+			<AskForBudget>Solicite um orçamento</AskForBudget>
 		</Root>
 	);
 }
