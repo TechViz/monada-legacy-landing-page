@@ -103,7 +103,11 @@ const Images = {
 		}))``,
 		AdmitedSebrae: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.misc.admitedSebrae,
-			alt: alt || 'Logo Predify',
+			alt: alt || '',
+		}))``,
+		CoffeeCup: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.misc.coffeeCup,
+			alt: alt || '',
 		}))``,
 	} ,
 }

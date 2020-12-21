@@ -32,6 +32,10 @@ const ImageURLS = {
 		homeHeaderBackground: require('./home-header-background.svg'),
 		predifyLogo: require('./predify-logo.svg'),
 		admitedSebrae: require('./admited-sebrae.png'),
+		coffeeCup: require('./coffee-cup.svg'),
+		linkedin: require('./linkedin.svg'),
+		instagram: require('./instagram.svg'),
+		facebook: require('./facebook.svg'),
 	},
 };
 

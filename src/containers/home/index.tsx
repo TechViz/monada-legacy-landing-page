@@ -10,6 +10,7 @@ import ImageURLS from '../../images';
 import HomeAboutUs from './about-us';
 import HomePlans from './plans';
 import HomeSponsors from './sponsors';
+import HomeContact from './contact';
 
 const Main = styled.div`
 `;
@@ -76,6 +77,7 @@ export default function Home() {
 			<HomeAboutUs />
 			<HomePlans />
 			<HomeSponsors />
+			<HomeContact />
 		</Main>
 	)
 }
