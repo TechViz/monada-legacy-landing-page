@@ -14,7 +14,7 @@ import { ServerStyleSheet } from 'styled-components';
 export async function getFontFamiliesStyle() {
 	// This is the Roboto font.
 	// This font was found here: https://fonts.google.com/specimen/Roboto
-	const response = await fetch('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700;900&display=swap');
+	const response = await fetch('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap');
 	const fontText = await response.text();
 
 	if (!fontText) {

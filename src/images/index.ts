@@ -26,6 +26,7 @@ const ImageURLS = {
 		adla: require('./founders/adla.jpg'),
 		maria: require('./founders/maria.jpg'),
 		reijane: require('./founders/reijane.jpg'),
+		jean: require('./founders/jean.jpg'),
 	},
 	misc: {
 		homeHeaderBackground: require('./home-header-background.svg'),

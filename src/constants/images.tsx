@@ -26,7 +26,7 @@ type BaseImageProps = React.PropsWithChildren<{
 	fit?: 'contain' | 'cover' | 'fill' | 'inherit' | 'initial' | 'none' | 'revert' | 'scale-down' | 'unset',
 }> & React.ComponentProps<'picture'>;
 
-const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
+export const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 	src,
 	alt,
 	ref,
@@ -90,20 +90,6 @@ const Images = {
 		Sunshine: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLS.icons.sunshine,
 			alt: alt || '',
-		}))``,
-	},
-	Founders: {
-		Adla: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLS.founders.adla,
-			alt: alt || 'Adla Viana - Fundadora da Mônada',
-		}))``,
-		Maria: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLS.founders.maria,
-			alt: alt || 'Maria Luiza Salvador - Fundadora da Mônada',
-		}))``,
-		Reijane: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLS.founders.reijane,
-			alt: alt || 'Reijane Salazar - Fundadora da Mônada',
 		}))``,
 	},
 	Misc: {
