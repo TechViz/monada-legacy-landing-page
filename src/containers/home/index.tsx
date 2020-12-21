@@ -9,6 +9,7 @@ import deployedUrl from '../../constants/deployed-url';
 import ImageURLS from '../../images';
 import HomeAboutUs from './about-us';
 import HomePlans from './plans';
+import HomeSponsors from './sponsors';
 
 const Main = styled.div`
 `;
@@ -74,6 +75,7 @@ export default function Home() {
 			<HomeHeader />
 			<HomeAboutUs />
 			<HomePlans />
+			<HomeSponsors />
 		</Main>
 	)
 }

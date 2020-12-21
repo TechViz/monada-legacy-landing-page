@@ -97,6 +97,14 @@ const Images = {
 			src: ImageURLS.misc.homeHeaderBackground,
 			alt: alt || '',
 		}))``,
+		PredifyLogo: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.misc.predifyLogo,
+			alt: alt || 'Logo Predify',
+		}))``,
+		AdmitedSebrae: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLS.misc.admitedSebrae,
+			alt: alt || 'Logo Predify',
+		}))``,
 	} ,
 }
 

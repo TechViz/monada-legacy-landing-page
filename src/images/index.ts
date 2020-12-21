@@ -30,6 +30,8 @@ const ImageURLS = {
 	},
 	misc: {
 		homeHeaderBackground: require('./home-header-background.svg'),
+		predifyLogo: require('./predify-logo.svg'),
+		admitedSebrae: require('./admited-sebrae.png'),
 	},
 };
 

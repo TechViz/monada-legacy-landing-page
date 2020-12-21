@@ -8,6 +8,7 @@ const Root = styled.div`
 	width: 100%;
 	padding: 8px 86px;
 	padding-top: calc(8px + ${props => props.theme.spacing.navbarHeight});
+	padding-bottom: 2rem;
 	position: relative;
 	background-color: #EEEEEE;
 `;

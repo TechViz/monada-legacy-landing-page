@@ -45,9 +45,10 @@ const SmallText = styled.p`
 const KnowMoreButton = styled(Button).attrs({ as: 'a' })<{ href?: string, download?: string }>`
 	margin-left: auto;
 	font-weight: normal;
-	background-color: ${props => props.theme.colors.yellow.main};
+	background-color: white;
 	margin-top: 1.75rem;
 	:hover {
+		background-color: transparent;
 		border-color: white;
 	}
 `;
@@ -80,7 +81,7 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 				<KnowMoreButton
 					download="D&I Analytics e o Metodo Monada.pdf"
 					href="/apresentacao.pdf"
-				>Saiba Mais</KnowMoreButton>
+				>Quero saber mais</KnowMoreButton>
 			</TextContainer>
 			<HeaderLogo />
 		</Root>
