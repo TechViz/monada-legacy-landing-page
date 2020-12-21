@@ -8,21 +8,17 @@ import Hamburguer from '../../reusable/hamburguer';
 import { useHamburguer } from '../../../contexts/hamburguer';
 import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 
-const RootContainer = styled.div`
+const Root = styled.div`
 	width: 100%;
+	height: ${props => props.theme.spacing.navbarHeight};
+	background-color: white;
 	box-shadow: ${({ theme }) => theme.shadows.navbar};
 	z-index: ${props => props.theme.zindex.navbar};
-	background-color: white;
-	display: flex;
-	justify-content: center;
-`;
-
-const Root = styled.div`
-	max-width: 1150px;
-	width: 100%;
+	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: space-between;
-	margin: 8px 16px;
+	padding: 8px ${props => props.theme.spacing.horizontalPadding};
 	${props => props.theme.mediaQueries.minScreen.tablet} {
 	}
 	@media screen and (max-width: 1090px) {
@@ -90,41 +86,39 @@ const Navbar: NavbarComponent = () => {
 
 	const links = [
 		{ idToFocus: 'about-us', text: 'Sobre Nós' },
-		{ idToFocus: 'products', text: 'Produtos' },
-		{ idToFocus: 'contact', text: 'Contato' },
+		{ idToFocus: 'products', text: 'Soluções' },
 		{ idToFocus: 'team', text: 'Parcerias' },
+		{ idToFocus: 'contact', text: 'Contato' },
 	];
 
 	function handleClick (event: React.MouseEvent) {
 		event.preventDefault();
-		smoothScrollIntoElementId('main-page-container');
+		smoothScrollIntoElementId('header');
 	}
 
 	return (
-		<RootContainer>
-			<Root ref={rootRef}>
-				<Link href='/#main-page-container'>
-					<Anchor onClick={handleClick}>
-						<Logo />
-					</Anchor>
-				</Link>
-				<LinksContainer ref={linksContainerRef}>
-					{links.map(link => <NavLink
-						idToFocus={link.idToFocus}
-						children={link.text}
-						key={link.text}
-					/>)}
-				</LinksContainer>
-				<MobileHamburguer>
-					<Hamburguer
-						value={isHamburguerOpen}
-						onOpen={openHamburguer}
-						onClose={closeHamburguer}
-						animationTime={500}
-					/>
-				</MobileHamburguer>
-			</Root>
-		</RootContainer>
+		<Root ref={rootRef}>
+			<Link href='/#header'>
+				<Anchor onClick={handleClick}>
+					<Logo />
+				</Anchor>
+			</Link>
+			<LinksContainer ref={linksContainerRef}>
+				{links.map(link => <NavLink
+					idToFocus={link.idToFocus}
+					children={link.text}
+					key={link.text}
+				/>)}
+			</LinksContainer>
+			<MobileHamburguer>
+				<Hamburguer
+					value={isHamburguerOpen}
+					onOpen={openHamburguer}
+					onClose={closeHamburguer}
+					animationTime={500}
+				/>
+			</MobileHamburguer>
+		</Root>
 	);
 }
 

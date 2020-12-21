@@ -54,6 +54,10 @@ declare module "styled-components" {
 			minScreenMinusOne: AllScreenSizes,
 			maxScreenMinusOne: AllScreenSizes,
 		},
+		spacing: {
+			horizontalPadding: string,
+			navbarHeight: string,
+		},
 		zindex:  {
 			backgroundImage: number,
 	 		navbar: number,
@@ -73,7 +77,7 @@ const theme: DefaultTheme = {
 			main: '#FF7201',
 		},
 		pink: {
-			main: '#FF7201',
+			main: '#EF1466',
 		},
 		green: {
 			main: '#00B33E',
@@ -105,6 +109,10 @@ const theme: DefaultTheme = {
 		},
 		icons: {
 		},
+	},
+	spacing: {
+		horizontalPadding: '86px',
+		navbarHeight: '58px',
 	},
 	mediaQueries: {
 		minScreen: {
