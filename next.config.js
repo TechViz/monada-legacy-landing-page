@@ -24,6 +24,13 @@ module.exports = {
 					}
 				},
 			],
+		}, {
+			test: /\.(png|jpe?g)$/i,
+			use: [
+				{
+					loader: 'webpack-image-resize-loader',
+				},
+			],
 		});
 		config.plugins.push(new ImageminWebpWebpackPlugin());
 		return config;

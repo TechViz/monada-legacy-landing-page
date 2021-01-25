@@ -67,7 +67,7 @@ async function smoothScroll (scrollableElem: HTMLElement, targetElem: HTMLElemen
 export async function smoothScrollIntoElementId (idToFocus: string, animationTime = 1000) {
 	if (!document) throw new Error('Trying to scroll into element while server-side rendering!');
 
-	const containerElem = document.getElementById('main-page-container');
+	const containerElem = document.body.parentElement;
 
 	if (!containerElem) {
 		console.info('Warning. The container element was not found. Scroll function will be ignored.');

@@ -16,46 +16,20 @@ type AllScreenSizes = {
 	uhd: string,
 }
 
+type ColorVariations = {
+	main: string,
+};
+
 declare module "styled-components" {
   export interface DefaultTheme {
 		colors: {
-			primary: {
-				main: string,
-				white: string,
-				black: string,
-				dark: string,
-				light: string,
-			},
-			secondary: {
-				main: string,
-				white: string,
-				dark: string,
-				light: string,
-			},
-			action: {
-				main: string,
-			},
-			success: {
-				lighter: string,
-				light: string,
-				normal: string,
-				dark: string,
-			},
-			error: {
-				lighter: string,
-				light: string,
-				normal: string,
-				dark: string,
-			},
-			warning: {
-				light: string,
-				normal: string,
-				dark: string,
-			},
-			gray: {
-				light: string,
-				lighter: string,
-			},
+			purple: ColorVariations,
+			yellow: ColorVariations,
+			orange: ColorVariations,
+			pink: ColorVariations,
+			green: ColorVariations,
+			blue: ColorVariations,
+			gray: ColorVariations,
 		},
 		font: {
 			size: {
@@ -80,6 +54,10 @@ declare module "styled-components" {
 			minScreenMinusOne: AllScreenSizes,
 			maxScreenMinusOne: AllScreenSizes,
 		},
+		spacing: {
+			horizontalPadding: string,
+			navbarHeight: string,
+		},
 		zindex:  {
 			backgroundImage: number,
 	 		navbar: number,
@@ -89,42 +67,26 @@ declare module "styled-components" {
 
 const theme: DefaultTheme = {
 	colors: {
-		primary: {
+		purple: {
 			main: '#9623E4',
-			white: '#F1EBF9',
-			black: '#130723',
-			dark: '#3A1569',
-			light: '#AE89DD',
 		},
-		secondary: {
+		yellow: {
 			main: '#FFB800',
-			dark: '#00245D',
-			light: '#80c5e8',
-			white: '#F2FAFF',
 		},
-		action: {
-			main: '#F3711B',
+		orange: {
+			main: '#FF7201',
+		},
+		pink: {
+			main: '#EF1466',
+		},
+		green: {
+			main: '#00B33E',
+		},
+		blue: {
+			main: '#008AD4',
 		},
 		gray: {
-			light: '#dddddd',
-			lighter: '#eeeeee',
-		},
-		success: {
-			lighter: '#a7d7a9',
-			light: '#81c784',
-			normal: '#4caf50',
-			dark: '#388e3c',
-		},
-		error: {
-			lighter: '#eb9393',
-			light: '#e57373',
-			normal: '#f44336',
-			dark: '#d32f2f',
-		},
-		warning: {
-			light: '#ffb74d',
-			normal: '#ff9800',
-			dark: '#f57c00',
+			main: '#EEEEEE',
 		},
 	},
 	font: {
@@ -147,6 +109,10 @@ const theme: DefaultTheme = {
 		},
 		icons: {
 		},
+	},
+	spacing: {
+		horizontalPadding: '86px',
+		navbarHeight: '58px',
 	},
 	mediaQueries: {
 		minScreen: {

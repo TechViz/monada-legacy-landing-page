@@ -7,12 +7,12 @@ import HomeHeader from './header';
 import { useHamburguer } from '../../contexts/hamburguer';
 import deployedUrl from '../../constants/deployed-url';
 import ImageURLS from '../../images';
+import HomeAboutUs from './about-us';
+import HomePlans from './plans';
+import HomeSponsors from './sponsors';
+import HomeContact from './contact';
 
 const Main = styled.div`
-	width: 100%;
-	height: 100%;
-	font-size: 32px;
-	overflow-y: auto;
 `;
 
 const JSONLD = {
@@ -61,7 +61,7 @@ export default function Home() {
 	const { closeHamburguer } = useHamburguer();
 
 	return (
-		<>
+		<Main onClick={closeHamburguer}>
 			<Head>
 				<title>Mônada</title>
 				<link rel='canonical' href={`${deployedUrl}`}/>
@@ -73,10 +73,11 @@ export default function Home() {
 				<meta property='og:url' content={deployedUrl + '/'} />
 			</Head>
 			<Navbar />
-			{/* Note: The ID is used by the navbar to scroll this element's contents into view. */}
-			<Main onClick={closeHamburguer} id='main-page-container'>
-				<HomeHeader />
-			</Main>
-		</>
+			<HomeHeader />
+			<HomeAboutUs />
+			<HomePlans />
+			<HomeSponsors />
+			<HomeContact />
+		</Main>
 	)
 }

@@ -16,10 +16,10 @@ const Button = styled.button<{
 	font-size: 20px;
 	text-decoration: none;
 	background-color: white;
-	color: ${props => props.theme.colors.primary.main};
-	border: 1px solid ${props => props.theme.colors.primary.main};
+	color: ${props => props.theme.colors.purple.main};
+	border: 1px solid ${props => props.theme.colors.purple.main};
 	:hover {
-		background-color: ${props => props.theme.colors.primary.main};
+		background-color: ${props => props.theme.colors.purple.main};
 		color: white;
 	}
 `;
