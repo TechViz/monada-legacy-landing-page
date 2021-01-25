@@ -23,10 +23,10 @@ const ImageURLS = {
 		sunshine: require('./icons/sunshine.svg'),
 	},
 	founders: {
-		adla: require('./founders/adla.jpg'),
-		maria: require('./founders/maria.jpg'),
-		reijane: require('./founders/reijane.jpg'),
-		jean: require('./founders/jean.jpg'),
+		adla: require('./founders/adla.jpg?width=250&height=250'),
+		maria: require('./founders/maria.jpg?width=250&height=250'),
+		reijane: require('./founders/reijane.jpg?width=250&height=250'),
+		jean: require('./founders/jean.jpg?width=250&height=250'),
 	},
 	misc: {
 		homeHeaderBackground: require('./home-header-background.svg'),
