@@ -29,7 +29,7 @@ const Title = styled.h1`
 	margin: 0;
 `;
 
-const CoffeeCup = styled(Images.Misc.CoffeeCup)`
+const CoffeeCup = styled(Images.Misc.CoffeeCup).attrs({ alt: 'Home' })`
 	width: 450px;
 	height: auto;
 `;
