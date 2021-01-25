@@ -22,6 +22,8 @@ const Image = styled.img<{ fit: string }>`
 type BaseImageProps = React.PropsWithChildren<{
 	src: string,
 	alt: string,
+	width: number,
+	height: number,
 	css?: FlattenSimpleInterpolation,
 	fit?: 'contain' | 'cover' | 'fill' | 'inherit' | 'initial' | 'none' | 'revert' | 'scale-down' | 'unset',
 }> & React.ComponentProps<'picture'>;
@@ -30,6 +32,8 @@ export const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 	src,
 	alt,
 	ref,
+	width,
+	height,
 	fit = 'contain',
 	...props
 }, refForwarded) => {
@@ -38,7 +42,7 @@ export const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 	return (
 		<Picture {...props} ref={refForwarded}>
 			<source srcSet={webpSrc} type='image/webp' />
-			<Image src={src} alt={alt} fit={fit} />
+			<Image src={src} alt={alt} fit={fit} width={width} height={height} />
 		</Picture>
 	);
 });

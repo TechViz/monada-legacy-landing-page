@@ -100,7 +100,7 @@ const Navbar: NavbarComponent = () => {
 		<Root ref={rootRef}>
 			<Link href='/#header'>
 				<Anchor onClick={handleClick}>
-					<Logo />
+					<Logo height={40} width={150} />
 				</Anchor>
 			</Link>
 			<LinksContainer ref={linksContainerRef}>

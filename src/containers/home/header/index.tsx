@@ -83,7 +83,7 @@ const HomeHeader: HomeHeaderComponent = ({  }) => {
 					href="/apresentacao.pdf"
 				>Quero saber mais</KnowMoreButton>
 			</TextContainer>
-			<HeaderLogo />
+			<HeaderLogo width={546} height={569} />
 		</Root>
 	);
 }

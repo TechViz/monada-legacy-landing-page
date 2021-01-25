@@ -62,10 +62,10 @@ const HomeSponsors: HomeMonadaTeamComponent = ({  }) => {
 			</Title>
 			<ImagesContainer>
 				<LogosContainer>
-					<Predify />
+					<Predify width={400} height={83} />
 					<p>(Falta marca do Ricardo)</p>
 				</LogosContainer>
-				<Sebrae />
+				<Sebrae width={542} height={476} />
 			</ImagesContainer>
 		</Root>
 	);

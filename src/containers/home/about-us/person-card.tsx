@@ -95,6 +95,9 @@ const PersonCard: PersonCardComponent = ({
 						bgColor={bgColor}
 						alt={"Fundador(a) " + name}
 						src={imageURL}
+						/* Prevents cumulative shifting. Yes, this is a magic number */
+						width={238}
+						height={238}
 					/>
 				</InnerImageContainer>
 			</ImageContainer>

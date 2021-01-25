@@ -85,9 +85,9 @@ const HomeContact: HomeContactComponent = ({  }) => {
 				<Contact>
 					<Email href="mailto: monada.tech@gmail.com">monada.tech@gmail.com</Email>
 					<SocialNetworkContainer>
-						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/monada-tech/"><Linkedin /></a>
-						<a rel="noopener" target="_blank" href="https://www.instagram.com/monada.tech/"><Instagram /></a>
-						<a rel="noopener" target="_blank" href="https://www.facebook.com/M%C3%B4nada-107716481140676"><Facebook /></a>
+						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/monada-tech/"><Linkedin height={74} width={74} /></a>
+						<a rel="noopener" target="_blank" href="https://www.instagram.com/monada.tech/"><Instagram height={74} width={74} /></a>
+						<a rel="noopener" target="_blank" href="https://www.facebook.com/M%C3%B4nada-107716481140676"><Facebook height={74} width={74} /></a>
 					</SocialNetworkContainer>
 				</Contact>
 				<Footer>
@@ -95,7 +95,7 @@ const HomeContact: HomeContactComponent = ({  }) => {
 					<strong>Segunda a Sexta, das 08h às 18h</strong>
 				</Footer>
 			</LeftSide>
-			<a href="#header"><CoffeeCup /></a>
+			<a href="#header"><CoffeeCup width={450} height={587} /></a>
 		</Root>
 	);
 }
