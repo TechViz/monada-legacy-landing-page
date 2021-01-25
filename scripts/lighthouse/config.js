@@ -13,7 +13,7 @@ module.exports = {
 	// This the lighthouse requirements for the script to succeed.
 	// You can comment any of these to disable it's checking.
 	LIGHTHOUSE_REQUIREMENTS: {
-		'performance': 0.9,
+		'performance': 0.7,
 		'accessibility': 1,
 		'best-practices': 1,
 		'seo': 1,
