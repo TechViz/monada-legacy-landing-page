@@ -7,6 +7,7 @@ import NavLink from './nav-link';
 import Hamburguer from '../../reusable/hamburguer';
 import { useHamburguer } from '../../../contexts/hamburguer';
 import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
+import Button from '../../reusable/button';
 
 const Root = styled.div`
 	width: 100%;
@@ -62,6 +63,12 @@ const Anchor = styled.a.attrs({ href: '#' })`
 	max-width: 80px;
 `;
 
+const PDFLink = styled(Button).attrs({ as: 'a' })<{ download: string, href: string }>`
+	background-color: ${props => props.theme.colors.yellow.main};
+	color: ${props => props.theme.colors.purple.main};
+	border-color: ${props => props.theme.colors.purple.main};
+`;
+
 type NavbarProps = React.PropsWithoutRef<{}>;
 
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
@@ -104,6 +111,9 @@ const Navbar: NavbarComponent = () => {
 				</Anchor>
 			</Link>
 			<LinksContainer ref={linksContainerRef}>
+				<PDFLink download="D&I Analytics e o Metodo Monada.pdf" href="/apresentacao.pdf">
+					Quero saber mais
+				</PDFLink>
 				{links.map(link => <NavLink
 					idToFocus={link.idToFocus}
 					children={link.text}
