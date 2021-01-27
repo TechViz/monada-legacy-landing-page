@@ -18,7 +18,7 @@ const Title = styled.h1`
 	font-weight: 300;
 	color: ${props => props.theme.colors.purple.main};
 	margin: 0;
-	margin-bottom: 4rem;
+	margin-bottom: 32px;
 `;
 
 const Strong = styled.strong`

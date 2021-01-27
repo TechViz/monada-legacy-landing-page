@@ -20,21 +20,7 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
   return (
 		<>
 			<Head>
-				{/* If you're loooking for where the font's <link> tag is, you should look
-				in the `/src/pages/_document.tsx` file. It's where the fonts are being
-				downloaded. */}
-
-				{/* Global styling */}
-				<style>{`
-					body, html, #__next {
-						height: 100%;
-						margin: 0;
-					}
-					* {
-						box-sizing: border-box;
-						font-family: 'Roboto', sans-serif;
-					}
-				`.replace(/\s/g, '')}</style>
+				{/* Don't put CSS here. Use the file `/src/global-css.css` instead. */}
 
 				{/* Favicon related stuff */}
 				<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

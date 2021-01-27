@@ -55,7 +55,7 @@ const TextContainer = styled.div`
 `;
 
 const Profession = styled.p`
-	margin: 10px 0 16px 0;
+	margin: 8px 0 14px 0;
 	font-size: 20px;
 	font-style: italic;
 `;
