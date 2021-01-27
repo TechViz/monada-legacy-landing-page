@@ -111,9 +111,11 @@ const Navbar: NavbarComponent = () => {
 				</Anchor>
 			</Link>
 			<LinksContainer ref={linksContainerRef}>
-				<PDFLink download="D&I Analytics e o Metodo Monada.pdf" href="/apresentacao.pdf">
-					Quero saber mais
-				</PDFLink>
+				<li style={{ listStyle: 'none' }}>
+					<PDFLink download="D&I Analytics e o Metodo Monada.pdf" href="/apresentacao.pdf">
+						Quero saber mais
+					</PDFLink>
+				</li>
 				{links.map(link => <NavLink
 					idToFocus={link.idToFocus}
 					children={link.text}
