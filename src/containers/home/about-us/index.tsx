@@ -51,6 +51,7 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 					name="Reiijane Salazar"
 					profession="Educadora e Gerontóloga"
 					positionAtMonada="Sócia Fundadora"
+					linkedin="https://www.linkedin.com/in/reijane-salazar-costa-4675758b"
 				/>
 				<PersonCard
 					imageURL={ImageURLS.founders.adla}
@@ -58,6 +59,7 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 					name="Adla Viana"
 					profession="Antropóloga"
 					positionAtMonada="Sócia Fundadora"
+					linkedin="https://www.linkedin.com/in/adlaviana"
 				/>
 				<PersonCard
 					imageURL={ImageURLS.founders.maria}
@@ -65,6 +67,7 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 					name="Maria Luiza Salvador"
 					profession="Product (UX/UI) Designer"
 					positionAtMonada="Sócia Fundadora"
+					linkedin="https://www.linkedin.com/in/malusalvadors"
 				/>
 				<PersonCard
 					imageURL={ImageURLS.founders.jean}
@@ -72,6 +75,7 @@ const HomeAboutUs: HomeAboutUsComponent = () => {
 					name="Jean Sidharta"
 					profession="Desenvolvedor Web"
 					positionAtMonada="Colaborador"
+					linkedin="https://www.linkedin.com/in/jean-sidharta-rocha-guzman-ba8331190/"
 				/>
 			</CardsContainer>
 		</Root>

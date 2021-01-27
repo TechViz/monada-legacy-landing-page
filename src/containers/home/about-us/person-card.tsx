@@ -20,7 +20,7 @@ const ImageContainer = styled.div<{ bgColor: ColorFunction }>`
 	justify-content: flex-end;
 `;
 
-const InnerImageContainer = styled.div`
+const InnerImageLink = styled.a`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -74,6 +74,7 @@ type PersonCardProps = React.PropsWithoutRef<{
 	profession: string,
 	positionAtMonada: string,
 	bgColor: ColorFunction,
+	linkedin: string,
 }>;
 
 type PersonCardComponent = React.FunctionComponent<PersonCardProps>;
@@ -84,12 +85,13 @@ const PersonCard: PersonCardComponent = ({
 	profession,
 	positionAtMonada,
 	bgColor,
+	linkedin,
 }) => {
 	return (
 		<Root>
 			<ImageContainer bgColor={bgColor}>
 				<ImageBackgroundCover />
-				<InnerImageContainer>
+				<InnerImageLink href={linkedin} rel="noreferrer noopener" target="_blank">
 					<Image
 						fit="cover"
 						bgColor={bgColor}
@@ -99,7 +101,7 @@ const PersonCard: PersonCardComponent = ({
 						width={238}
 						height={238}
 					/>
-				</InnerImageContainer>
+				</InnerImageLink>
 			</ImageContainer>
 			<TextContainer>
 				<Name>{name}</Name>

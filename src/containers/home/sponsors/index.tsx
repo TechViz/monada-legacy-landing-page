@@ -62,7 +62,9 @@ const HomeSponsors: HomeMonadaTeamComponent = ({  }) => {
 			</Title>
 			<ImagesContainer>
 				<LogosContainer>
-					<Predify width={400} height={83} />
+					<a href="https://predify.me/" rel="noreferrer noopener" target="_blank">
+						<Predify width={400} height={83} />
+					</a>
 					<p>(Falta marca do Ricardo)</p>
 				</LogosContainer>
 				<Sebrae width={542} height={476} />
