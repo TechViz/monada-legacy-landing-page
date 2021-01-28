@@ -83,7 +83,7 @@ const HomeContact: HomeContactComponent = ({  }) => {
 					cafezinho virtual?
 				</Title>
 				<Contact>
-					<Email href="mailto: monada.tech@gmail.com">monada.tech@gmail.com</Email>
+					<Email href="mailto: contato@monada.tech">contato@monada.tech</Email>
 					<SocialNetworkContainer>
 						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/monada-tech/"><Linkedin height={74} width={74} /></a>
 						<a rel="noopener" target="_blank" href="https://www.instagram.com/monada.tech/"><Instagram height={74} width={74} /></a>
