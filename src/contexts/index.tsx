@@ -1,11 +1,10 @@
 import React from 'react';
+import ModalProvider from './modal';
 
-import HamburguerProvider from "./hamburguer";
-
+/** Place your React's context providers inside this component. They will automatically
+ * be visible in your whole application. */
 const Providers: React.FunctionComponent<React.PropsWithChildren<{}>> = ({ children }) => {
-	return <HamburguerProvider>
-		{children}
-	</HamburguerProvider>
-}
+	return <ModalProvider>{children}</ModalProvider>;
+};
 
-export default  Providers;
+export default Providers;

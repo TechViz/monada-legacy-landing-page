@@ -6,44 +6,41 @@ const Root = styled.div`
 `;
 
 type SlideInProps = React.PropsWithoutRef<{
-	duration?: number,
-	offset?: number,
-	direction: 'up' | 'down' | 'left' | 'right',
+	/** The animation duration. */
+	duration?: number;
+	/** The offset that the component will move when sliding. */
+	offset?: number;
+	/** The direction the animation will occur. */
+	direction: 'up' | 'down' | 'left' | 'right';
 }>;
 
 type SlideInComponent = React.FunctionComponent<SlideInProps>;
 
-const sleep = (time: number) => new Promise(resolve => setTimeout(resolve, time));
-
+/**
+ * This component will be transparent on it's first render, and will slowly slide
+ * in and become opaque. It's an animation componente.
+ */
 const SlideIn: SlideInComponent = ({ duration = 2000, direction, offset = 100, children }) => {
 	const rootRef = React.useRef<HTMLDivElement>(null);
-	const noscriptRef = React.useRef<HTMLElement>(null);
 
 	React.useEffect(() => {
-		// If this function runs, we surely have JavaScript enabled.
-		noscriptRef.current!.style.display = 'none';
-
-		(async () => {
-			const { style } = rootRef.current!;
-			style.display = 'block';
-			style.opacity = '0';
-			await sleep(10);
-			(style as any)[direction] = '0px';
-			style.opacity = '1';
-		})();
+		const { style } = rootRef.current!;
+		(style as any)[direction] = `0px`;
+		style.opacity = `1`;
 	}, []);
 
 	return (
-		<div>
-			{/* If JavaScript is disabled, just display the content, without animation */}
-			<noscript ref={noscriptRef}>
-				{children}
-			</noscript>
-			<Root ref={rootRef} style={{ display: 'none', transition: `${duration}ms`, [direction]: offset + 'px', opacity: 0 }}>
-				{children}
-			</Root>
-		</div>
+		<Root
+			ref={rootRef}
+			style={{
+				transition: `${duration}ms`,
+				[direction]: `${offset}px`,
+				opacity: 0,
+			}}
+		>
+			{children}
+		</Root>
 	);
-}
+};
 
 export default SlideIn;
