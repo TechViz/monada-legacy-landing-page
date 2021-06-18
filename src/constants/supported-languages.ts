@@ -9,4 +9,4 @@
  * A complete description of the valid options can be found here:
  * https://www.ietf.org/rfc/bcp/bcp47.txt
  */
-export const supportedLanguages = ['en-US'] as const;
+export const supportedLanguages = ['pt-BR'] as const;
