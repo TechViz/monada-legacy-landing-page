@@ -15,51 +15,23 @@ type HoverableShadow = {
 export type DefaultThemeShadows = {
 	/** Layout shadows are shadows related to things like cards, the navbar, etc...
 	 * These shadows are usually larger and more subtle */
-	layout: {
-		large: {
-			soft: HoverableShadow;
-			strong: HoverableShadow;
-		};
+	card: {
+		medium: string;
 	};
+
 	/** Button shadows are shadows for clickable elements. They are usually
 	 * sharper and more dynamic. */
 	button: {
-		small: HoverableShadow;
-		medium: HoverableShadow;
-		large: HoverableShadow;
+		medium: string;
 	};
 };
 
 export const DefaultThemeShadows = {
-	layout: {
-		large: {
-			soft: {
-				normal: `-4px 4px 12px rgba(0, 0, 0, 0.1)`,
-				active: `-4px 4px 12px rgba(0, 0, 0, 0.1)`,
-				hover: `-4px 4px 12px rgba(0, 0, 0, 0.1)`,
-			},
-			strong: {
-				normal: `-3px 3px 12px rgba(0, 0, 0, 0.2)`,
-				active: `-2px 2px 6px rgba(0, 0, 0, 0.3)`,
-				hover: `-6px 6px 22px rgba(0, 0, 0, 0.1)`,
-			},
-		},
+	card: {
+		medium: `4px 4px 4px rgba(0, 0, 0, 0.25)`,
 	},
+
 	button: {
-		small: {
-			hover: `-3px 3px 3px rgba(0, 0, 0, 0.1)`,
-			normal: `-2px 2px 2px rgba(0, 0, 0, 0.2)`,
-			active: `-1px 1px 1px rgba(0, 0, 0, 0.4)`,
-		},
-		medium: {
-			hover: `-3px 3px 3px rgba(0, 0, 0, 0.3)`,
-			normal: `-3px 3px 3px rgba(0, 0, 0, 0.3)`,
-			active: `-3px 3px 3px rgba(0, 0, 0, 0.3)`,
-		},
-		large: {
-			hover: `-2px 2px 4px rgba(0, 0, 0, 0.2)`,
-			normal: `-2px 2px 4px rgba(0, 0, 0, 0.2)`,
-			active: `-2px 2px 4px rgba(0, 0, 0, 0.2)`,
-		},
+		medium: `-2px 2px 15px rgba(0, 0, 0, 0.25)`,
 	},
 } as DefaultThemeShadows;

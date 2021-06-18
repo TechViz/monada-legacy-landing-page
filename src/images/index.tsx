@@ -70,6 +70,11 @@ const Images = {
 		src: ImageURLs.logo,
 		alt: alt || `My Company Logo`,
 	}))``,
+
+	HeroImage: styled(BaseImage).attrs(({ alt }) => ({
+		src: ImageURLs.heroImage,
+		alt: alt || `Some analytics graphics`,
+	}))``,
 };
 
 export default Images;

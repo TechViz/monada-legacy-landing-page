@@ -11,12 +11,11 @@ type GradientColor = {
 
 export type DefaultThemeColors = {
 	primary: GradientColor;
-	secondary: GradientColor;
-
-	/** Sometimes, pages will have a color dedicated to objects that should
-	 * attract the user's attention, like a call-to-action button on a landing page.
-	 * This is the Action color. */
-	action: GradientColor;
+	yellow: GradientColor;
+	orange: GradientColor;
+	pink: GradientColor;
+	green: GradientColor;
+	blue: GradientColor;
 
 	success: GradientColor;
 	error: GradientColor;
@@ -28,40 +27,61 @@ export type DefaultThemeColors = {
 
 	white: {
 		background: string;
+		/** full white is the #FFFFFF color */
 		full: string;
 	};
 };
 
-/* TODO - replace this with an actual color. */
-const EMPTY_COLOR = ``;
+const EMPTY_COLOR = `#EEEEEE`;
 
 export const DefaultThemeColors = {
 	primary: {
-		main: EMPTY_COLOR,
+		main: '#9623E4',
 		dark: EMPTY_COLOR,
 		darker: EMPTY_COLOR,
 		light: EMPTY_COLOR,
 		lighter: EMPTY_COLOR,
 	},
-	secondary: {
-		main: EMPTY_COLOR,
+	yellow: {
+		main: '#FFB800',
 		dark: EMPTY_COLOR,
 		darker: EMPTY_COLOR,
 		light: EMPTY_COLOR,
 		lighter: EMPTY_COLOR,
 	},
-	action: {
-		main: EMPTY_COLOR,
+	orange: {
+		main: '#FF7201',
 		dark: EMPTY_COLOR,
 		darker: EMPTY_COLOR,
 		light: EMPTY_COLOR,
+		lighter: EMPTY_COLOR,
+	},
+	pink: {
+		main: '#EF1466',
+		dark: EMPTY_COLOR,
+		darker: EMPTY_COLOR,
+		light: EMPTY_COLOR,
+		lighter: EMPTY_COLOR,
+	},
+	green: {
+		main: '#00B33E',
+		dark: EMPTY_COLOR,
+		darker: EMPTY_COLOR,
+		light: EMPTY_COLOR,
+		lighter: EMPTY_COLOR,
+	},
+	blue: {
+		main: '#008AD4',
+		dark: EMPTY_COLOR,
+		darker: EMPTY_COLOR,
+		light: '#A7AEDB',
 		lighter: EMPTY_COLOR,
 	},
 	gray: {
 		light: `#dddddd`,
 		lighter: `#eeeeee`,
 		main: EMPTY_COLOR,
-		dark: EMPTY_COLOR,
+		dark: '#666666',
 		darker: EMPTY_COLOR,
 	},
 	white: {
