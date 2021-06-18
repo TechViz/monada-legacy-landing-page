@@ -32,9 +32,9 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
 				<meta property="og:title" content="Mônada" />
 				<meta property="og:site_name" content="Mônada" />
 				<meta property="og:description" content={description} />
-				<meta property="og:locale" content={supportedLanguages[0].replaceAll('-', '_')} />
+				<meta property="og:locale" content={supportedLanguages[0].replace(/-/g, '_')} />
 				{supportedLanguages.slice(1).map(language => (
-					<meta property="og:locale:alternate" content={language.replaceAll('-', '_')} />
+					<meta property="og:locale:alternate" content={language.replace(/-/g, '_')} />
 				))}
 				<meta property="og:image" content={`${ImageURLs.logoPng}`} />
 				<meta property="og:url" content={deployedURLHome} />
