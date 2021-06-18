@@ -7,6 +7,10 @@ import { description } from '../../constants/basic-page-description';
 import ContactForm from './contact-form';
 import ImageURLs from '../../images/image-urls';
 import HomeHeader from './header';
+import NavbarSpacing from '../../components/reusable/navbar-spacing';
+import WhatWeDo from './what-we-do';
+import SocialProof from './social-proof';
+import WhoAreWe from './who-are-we';
 
 const Main = styled.div`
 	min-height: 100vh;
@@ -40,7 +44,11 @@ export default function Home() {
 			</Head>
 			<Navbar />
 			<Main>
+				<NavbarSpacing />
 				<HomeHeader />
+				<WhatWeDo />
+				<SocialProof />
+				<WhoAreWe />
 			</Main>
 			<ContactForm />
 		</>

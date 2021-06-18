@@ -1,21 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContactFormSpacing from '../../../components/reusable/contact-form-spacing';
-import NavbarSpacing from '../../../components/reusable/navbar-spacing';
 import Images from '../../../images';
-
-const Root = styled.div`
-	width: 100%;
-	display: flex;
-`;
-
-const Content = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 64px;
-`;
+import HomeSubpartRoot from '../home-subpart-root';
 
 const HeroImage = styled(Images.HeroImage)`
 	width: 673px;
@@ -34,16 +20,12 @@ type HomeHeaderComponent = React.FunctionComponent<HomeHeaderProps>;
 
 const HomeHeader: HomeHeaderComponent = ({}) => {
 	return (
-		<Root>
-			<Content>
-				<NavbarSpacing />
-				<HeroImage />
-				<Title>
-					Conheça nossa plataforma de análise da dados para otimizar investimentos de impacto.
-				</Title>
-			</Content>
-			<ContactFormSpacing />
-		</Root>
+		<HomeSubpartRoot>
+			<HeroImage />
+			<Title>
+				Conheça nossa plataforma de análise da dados para otimizar investimentos de impacto.
+			</Title>
+		</HomeSubpartRoot>
 	);
 };
 

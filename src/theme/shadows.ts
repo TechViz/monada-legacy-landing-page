@@ -1,17 +1,3 @@
-/**
- * Used to describe shadows of hoverable components, such as buttons.
- */
-type HoverableShadow = {
-	/** The shadow that should be applied when there is no mouse interaction */
-	normal: string;
-	/** The shadow that should be applied when the user is clicking the element. */
-	active: string;
-	/** The shadow that should be applied when the user is hovering the mouse on top
-	 * of the element. Should also be applied for the `focus` event to provide
-	 * feedback for keyboard users. */
-	hover: string;
-};
-
 export type DefaultThemeShadows = {
 	/** Layout shadows are shadows related to things like cards, the navbar, etc...
 	 * These shadows are usually larger and more subtle */

@@ -78,7 +78,7 @@ export const DefaultThemeColors = {
 		lighter: EMPTY_COLOR,
 	},
 	gray: {
-		light: `#dddddd`,
+		light: `#C4C4C4`,
 		lighter: `#eeeeee`,
 		main: EMPTY_COLOR,
 		dark: '#666666',
