@@ -13,7 +13,7 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 64px;
+	padding: 0 64px;
 `;
 
 const PaddedContainer = styled.div`
