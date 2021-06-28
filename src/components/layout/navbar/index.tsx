@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Images from '../../../images';
 import ContactForm from '../../reusable/contact-form';
 
-export const NAVBAR_HEIGHT = 118;
+export const NAVBAR_HEIGHT = 167;
 export const CONTACT_FORM_WIDTH = 340;
 
 const Root = styled.div`
@@ -72,11 +72,10 @@ const ContactFormContainer = styled.div`
 	top: calc(100% - 0px);
 	right: 0px;
 	z-index: -1;
-	box-shadow: ${props => props.theme.shadows.card.medium};
 	background-color: ${props => props.theme.colors.white.full};
 	padding: 32px;
-	border-radius: 0 0 0 8px;
 	width: ${CONTACT_FORM_WIDTH}px;
+	min-height: calc(100vh - ${NAVBAR_HEIGHT}px);
 
 	${props => props.theme.mediaQueries.maxScreen.custom(1130)} {
 		display: none;
@@ -143,6 +142,11 @@ const Navbar: NavbarComponent = () => {
 					<Link href="/#team">
 						<a>Quem Somos</a>
 					</Link>
+				</NavItem>
+				<NavItem>
+					<a href="https://www.linkedin.com/company/monada-tech/" target="_blank" rel="noopener">
+						Blog
+					</a>
 				</NavItem>
 			</BluePart>
 		</Root>
