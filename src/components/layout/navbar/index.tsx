@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import Images from '../../../images';
+import ContactForm from './contact-form';
 
 const Root = styled.div`
 	width: 100%;
@@ -68,6 +69,7 @@ const Navbar: NavbarComponent = () => {
 				<LargeText>Diversidade e Inclusão</LargeText>
 				<StrongText>impactam sua empresa.</StrongText>
 			</TextContainer>
+			<ContactForm />
 		</Root>
 	);
 };

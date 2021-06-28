@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import ButtonBase from '../../../components/reusable/button';
+import ButtonBase from '../../../reusable/button';
 import ContactInput from './input';
 
 const Root = styled.div`
-	position: fixed;
+	position: absolute;
 	right: 0px;
 	width: 340px;
 	background-color: ${props => props.theme.colors.white.full};
 	color: ${props => props.theme.colors.primary.main};
 	box-shadow: ${props => props.theme.shadows.card.medium};
-	z-index: ${props => props.theme.zIndex.modal};
+	z-index: -1;
 	padding: 32px;
-	border-radius: 8px 0 0 8px;
-	top: 50%;
-	transform: translate(0%, -50%);
+	border-radius: 0 0 0 8px;
+	top: calc(100% - 0px);
 `;
 
 const Title = styled.p`

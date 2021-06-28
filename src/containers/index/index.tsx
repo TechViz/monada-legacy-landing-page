@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Navbar from '../../components/layout/navbar';
 import { deployedURLHome } from '../../constants/deployed-url';
 import { description } from '../../constants/basic-page-description';
-import ContactForm from './contact-form';
 import ImageURLs from '../../images/image-urls';
 import HomeHeader from './header';
 import NavbarSpacing from '../../components/reusable/navbar-spacing';
@@ -50,7 +49,6 @@ export default function Home() {
 				<SocialProof />
 				<WhoAreWe />
 			</Main>
-			<ContactForm />
 		</>
 	);
 }
