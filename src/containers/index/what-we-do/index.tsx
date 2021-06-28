@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import HomeSubpartRoot from '../home-subpart-root';
 
 const List = styled.ul`
-	padding: 0;
+	padding: 64px 0;
 	width: 673px;
 	padding-left: 16px;
 	font-size: 32px;
@@ -21,11 +21,13 @@ const WhatWeDo: WhatWeDoComponent = ({}) => {
 	return (
 		<HomeSubpartRoot>
 			<List>
-				<Item>O que fazemos;</Item>
-				<Item>O que fazemos;</Item>
-				<Item>O que fazemos;</Item>
-				<Item>O que fazemos;</Item>
-				<Item>O que fazemos;</Item>
+				<Item>Demonstrativo de retorno de investimentos;</Item>
+				<Item>Dashboard interativa com métricas de D&I atualizadas em tempo real;</Item>
+				<Item>Indicadores e KPIs para obtenção de retornos a curto, médio e longo prazo;</Item>
+				<Item>Mapeamento de oportunidades e desafios para investimentos de impacto; </Item>
+				<Item>
+					Conexão de métricas de D&I com metas de ESG (Environmental, Social & Governance);
+				</Item>
 			</List>
 		</HomeSubpartRoot>
 	);
