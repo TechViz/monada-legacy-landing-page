@@ -11,6 +11,7 @@ import Services from '../services';
 import { deployedURLHome } from '../constants/deployed-url';
 import { supportedLanguages } from '../constants/supported-languages';
 import { description } from '../constants/basic-page-description';
+import { ToastContainer } from 'react-toastify';
 
 type MyAppProps = React.PropsWithoutRef<{
 	Component: any;
@@ -44,6 +45,7 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
 				<Providers>
 					<AppContainer>
 						<Services />
+						<ToastContainer hideProgressBar />
 						<Component {...pageProps} />
 					</AppContainer>
 				</Providers>
