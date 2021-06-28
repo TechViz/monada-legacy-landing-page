@@ -46,10 +46,10 @@ export default function Home() {
 			<Main>
 				<NavbarSpacing />
 				<HomeHeader />
+				<ContactFormSection />
 				<WhatWeDo />
 				<SocialProof />
 				<WhoAreWe />
-				<ContactFormSection />
 			</Main>
 		</>
 	);

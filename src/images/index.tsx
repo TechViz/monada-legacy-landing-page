@@ -32,6 +32,8 @@ type BaseImageProps = React.PropsWithChildren<{
 	src: string;
 	alt: string;
 	css?: FlattenSimpleInterpolation;
+	width?: number;
+	height?: number;
 	fit?:
 		| 'contain'
 		| 'cover'
@@ -50,7 +52,7 @@ type BaseImageProps = React.PropsWithChildren<{
  * and will automaticaly handle webp sources.
  */
 const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(
-	({ src, alt, fit = `contain`, ...props }, ref) => {
+	({ src, alt, fit = `contain`, width, height, ...props }, ref) => {
 		const webpSrc = src.match(hasWebpCounterpartRegex)
 			? src.replace(hasWebpCounterpartRegex, `.webp`)
 			: ``;
@@ -58,7 +60,7 @@ const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(
 		return (
 			<Picture {...props} ref={ref}>
 				{webpSrc && <source srcSet={webpSrc} type="image/webp" />}
-				<Image src={src} alt={alt} fit={fit} />
+				<Image width={width} height={height} src={src} alt={alt} fit={fit} />
 			</Picture>
 		);
 	},
