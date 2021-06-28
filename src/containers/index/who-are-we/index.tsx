@@ -38,13 +38,13 @@ const ImageCommonCSS = css`
 	}
 `;
 
-const MariaImage = styled(Images.Maria)`
+const MariaImage = styled(Images.Maria).attrs({ width: 256, height: 256 })`
 	${ImageCommonCSS}
 `;
-const AdlaImage = styled(Images.Adla)`
+const AdlaImage = styled(Images.Adla).attrs({ width: 256, height: 256 })`
 	${ImageCommonCSS}
 `;
-const ReijaneImage = styled(Images.Reijane)`
+const ReijaneImage = styled(Images.Reijane).attrs({ width: 256, height: 256 })`
 	${ImageCommonCSS}
 `;
 
