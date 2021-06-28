@@ -19,6 +19,10 @@ const Root = styled.form`
 	padding: 32px;
 	border-radius: 0 0 0 8px;
 	top: calc(100% - 0px);
+
+	${props => props.theme.mediaQueries.maxScreen.custom(1130)} {
+		display: none;
+	}
 `;
 
 const Title = styled.p`

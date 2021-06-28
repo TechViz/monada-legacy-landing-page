@@ -7,14 +7,20 @@ const Text = styled.p`
 	font-size: 40px;
 	margin: 64px 0;
 	text-align: center;
+	${props => props.theme.mediaQueries.maxScreen.custom(710)} {
+		font-size: 30px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 24px;
+	}
 `;
 
 const Larger = styled.span`
-	font-size: 80px;
+	font-size: 2em;
 `;
 
 const Smaller = styled.span`
-	font-size: 24px;
+	font-size: 0.5em;
 `;
 
 type SocialProofProps = React.PropsWithoutRef<{}>;

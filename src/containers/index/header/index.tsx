@@ -4,7 +4,7 @@ import Images from '../../../images';
 import HomeSubpartRoot from '../home-subpart-root';
 
 const Root = styled.div`
-	width: 673px;
+	width: 100%;
 	margin: 16px 0 64px 0;
 `;
 

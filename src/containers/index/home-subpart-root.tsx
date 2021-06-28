@@ -14,6 +14,12 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
 	padding: 0 64px;
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
+		padding: 0 32px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(500)} {
+		padding: 0 16px;
+	}
 `;
 
 const PaddedContainer = styled.div`

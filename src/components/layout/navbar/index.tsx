@@ -19,6 +19,22 @@ const Root = styled.div`
 	top: 0;
 	column-gap: 96px;
 	padding: 16px 32px;
+
+	font-size: 32px;
+	${props => props.theme.mediaQueries.maxScreen.custom(739)} {
+		column-gap: 64px;
+		font-size: 24px;
+	}
+
+	${props => props.theme.mediaQueries.maxScreen.custom(600)} {
+		column-gap: 32px;
+		font-size: 18px;
+	}
+
+	${props => props.theme.mediaQueries.maxScreen.custom(450)} {
+		column-gap: 8px;
+		font-size: 14px;
+	}
 `;
 
 const Logo = styled(Images.main)`
@@ -38,7 +54,6 @@ const LogoAnchor = styled.a.attrs({ href: `#` })`
 
 const Text = styled.p`
 	color: ${props => props.theme.colors.white.full};
-	font-size: 32px;
 	margin: 0;
 	text-align: center;
 	height: max-content;

@@ -5,6 +5,12 @@ const Root = styled.div`
 	display: flex;
 	align-items: center;
 	column-gap: 100px;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
 `;
 
 const Name = styled.p`

@@ -5,7 +5,7 @@ import HomeSubpartRoot from '../home-subpart-root';
 const List = styled.ul`
 	padding: 64px 0;
 	margin: 0;
-	width: 673px;
+	width: 100%;
 	padding-left: 16px;
 	row-gap: 32px;
 	display: flex;

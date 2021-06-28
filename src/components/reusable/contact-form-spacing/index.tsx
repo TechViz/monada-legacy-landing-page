@@ -4,6 +4,10 @@ import { CONTACT_FORM_WIDTH } from '../../layout/navbar/contact-form';
 
 const Root = styled.div`
 	width: ${CONTACT_FORM_WIDTH}px;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(1130)} {
+		display: none;
+	}
 `;
 
 type ContactFormSpacingProps = React.PropsWithoutRef<{}>;
