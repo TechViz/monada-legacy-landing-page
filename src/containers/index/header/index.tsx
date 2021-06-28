@@ -15,6 +15,9 @@ const Title = styled.p`
 	font-size: 35px;
 	text-align: center;
 	margin: 16px 0 12px 0;
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 30px;
+	}
 `;
 
 const Subtitle = styled.p`
@@ -23,6 +26,10 @@ const Subtitle = styled.p`
 	font-size: 30px;
 	margin: 0;
 	font-weight: lighter;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 24px;
+	}
 `;
 
 type HomeHeaderProps = React.PropsWithoutRef<{}>;

@@ -11,6 +11,15 @@ const Title = styled.p`
 	margin: 0;
 	font-size: 45px;
 	font-weight: bold;
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
+		font-size: 36px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 30px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(400)} {
+		font-size: 24px;
+	}
 `;
 
 const Image = styled.div`
@@ -18,6 +27,15 @@ const Image = styled.div`
 	height: 128px;
 	background-color: ${props => props.theme.colors.gray.light};
 	border-radius: 100%;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		width: 100px;
+		height: 100px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(400)} {
+		width: 80px;
+		height: 80px;
+	}
 `;
 
 const CardsContainer = styled.div`
@@ -27,6 +45,15 @@ const CardsContainer = styled.div`
 	row-gap: 32px;
 	margin-top: 32px;
 	font-size: 30px;
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
+		font-size: 30px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 24px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(400)} {
+		font-size: 18px;
+	}
 `;
 
 type WhoAreWeProps = React.PropsWithoutRef<{}>;

@@ -7,11 +7,14 @@ const Text = styled.p`
 	font-size: 40px;
 	margin: 64px 0;
 	text-align: center;
-	${props => props.theme.mediaQueries.maxScreen.custom(710)} {
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
 		font-size: 30px;
 	}
 	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
 		font-size: 24px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(400)} {
+		font-size: 18px;
 	}
 `;
 

@@ -11,6 +11,15 @@ const List = styled.ul`
 	display: flex;
 	flex-direction: column;
 	font-size: 32px;
+	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
+		font-size: 30px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
+		font-size: 24px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(400)} {
+		font-size: 18px;
+	}
 `;
 
 const Item = styled.li``;
