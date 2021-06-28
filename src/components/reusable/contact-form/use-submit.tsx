@@ -1,5 +1,5 @@
 import React from 'react';
-import { contactFormSubmitURL } from '../../../../constants/backend-url';
+import { contactFormSubmitURL } from '../../../constants/backend-url';
 
 export function useContactFormSubmit() {
 	const [isLoading, setIsLoading] = React.useState(false);

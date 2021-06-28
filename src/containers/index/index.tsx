@@ -10,6 +10,7 @@ import NavbarSpacing from '../../components/reusable/navbar-spacing';
 import WhatWeDo from './what-we-do';
 import SocialProof from './social-proof';
 import WhoAreWe from './who-are-we';
+import ContactFormSection from './contact-form';
 
 const Main = styled.div`
 	min-height: 100vh;
@@ -48,6 +49,7 @@ export default function Home() {
 				<WhatWeDo />
 				<SocialProof />
 				<WhoAreWe />
+				<ContactFormSection />
 			</Main>
 		</>
 	);

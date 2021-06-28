@@ -8,7 +8,7 @@ const Root = styled.div`
 	margin: 16px 0 64px 0;
 `;
 
-const HeroImage = styled(Images.HeroImage)``;
+const HeroImage = styled(Images.HeroImage).attrs({ width: 673, height: 366 })``;
 
 const Title = styled.p`
 	color: ${props => props.theme.colors.white.full};

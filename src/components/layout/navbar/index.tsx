@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import Images from '../../../images';
-import ContactForm from './contact-form';
+import ContactForm from '../../reusable/contact-form';
 
 export const NAVBAR_HEIGHT = 118;
+export const CONTACT_FORM_WIDTH = 340;
 
 const Root = styled.div`
 	display: flex;
@@ -60,6 +61,22 @@ const Text = styled.p`
 	align-self: center;
 `;
 
+const ContactFormContainer = styled.div`
+	position: absolute;
+	top: calc(100% - 0px);
+	right: 0px;
+	z-index: -1;
+	box-shadow: ${props => props.theme.shadows.card.medium};
+	background-color: ${props => props.theme.colors.white.full};
+	padding: 32px;
+	border-radius: 0 0 0 8px;
+	width: ${CONTACT_FORM_WIDTH}px;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(1130)} {
+		display: none;
+	}
+`;
+
 type NavbarProps = React.PropsWithoutRef<{}>;
 
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
@@ -77,7 +94,9 @@ const Navbar: NavbarComponent = () => {
 				<br />
 				em D&I impactam sua empresa.
 			</Text>
-			<ContactForm />
+			<ContactFormContainer>
+				<ContactForm />
+			</ContactFormContainer>
 		</Root>
 	);
 };

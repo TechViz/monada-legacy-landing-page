@@ -1,28 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { toastifyProblems } from '../../../../libs/toastify-problems';
-import ButtonBase from '../../../reusable/button';
+import { toastifyProblems } from '../../../libs/toastify-problems';
+import ButtonBase from '../button';
 import ContactInput from './input';
 import { useContactFormSubmit } from './use-submit';
 import { toast } from 'react-toastify';
 
-export const CONTACT_FORM_WIDTH = 340;
-
 const Root = styled.form`
-	position: absolute;
-	right: 0px;
-	width: ${CONTACT_FORM_WIDTH}px;
-	background-color: ${props => props.theme.colors.white.full};
 	color: ${props => props.theme.colors.primary.main};
-	box-shadow: ${props => props.theme.shadows.card.medium};
-	z-index: -1;
-	padding: 32px;
-	border-radius: 0 0 0 8px;
-	top: calc(100% - 0px);
-
-	${props => props.theme.mediaQueries.maxScreen.custom(1130)} {
-		display: none;
-	}
 `;
 
 const Title = styled.p`
@@ -50,6 +35,7 @@ const InputsContainer = styled.div`
 	flex-direction: column;
 	row-gap: 32px;
 	margin-top: 32px;
+	font-size: 16px;
 `;
 
 const Button = styled(ButtonBase)`
