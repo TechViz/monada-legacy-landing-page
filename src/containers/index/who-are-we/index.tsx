@@ -73,7 +73,7 @@ type WhoAreWeComponent = React.FunctionComponent<WhoAreWeProps>;
 const WhoAreWe: WhoAreWeComponent = ({}) => {
 	return (
 		<HomeSubpartRoot>
-			<Root>
+			<Root id="team">
 				<Title>Quem somos:</Title>
 				<CardsContainer>
 					<WhoAreWeCard

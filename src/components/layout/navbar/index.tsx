@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Images from '../../../images';
 import ContactForm from '../../reusable/contact-form';
+import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 
 export const NAVBAR_HEIGHT = 167;
 export const CONTACT_FORM_WIDTH = 340;
@@ -115,6 +116,14 @@ type NavbarProps = React.PropsWithoutRef<{}>;
 type NavbarComponent = React.FunctionComponent<NavbarProps>;
 
 const Navbar: NavbarComponent = () => {
+	function makeLinkClickHandler(elementId: string) {
+		return (event: React.MouseEvent) => {
+			event.preventDefault();
+			event.stopPropagation();
+			smoothScrollIntoElementId(elementId, undefined, -NAVBAR_HEIGHT);
+		};
+	}
+
 	return (
 		<Root>
 			<PurplePart>
@@ -135,12 +144,12 @@ const Navbar: NavbarComponent = () => {
 			<BluePart>
 				<NavItem>
 					<Link href="/#about">
-						<a>Sobre</a>
+						<a onClick={makeLinkClickHandler('about')}>Sobre</a>
 					</Link>
 				</NavItem>
 				<NavItem>
 					<Link href="/#team">
-						<a>Quem Somos</a>
+						<a onClick={makeLinkClickHandler('team')}>Quem Somos</a>
 					</Link>
 				</NavItem>
 				<NavItem>

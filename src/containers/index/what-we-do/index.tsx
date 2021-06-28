@@ -31,7 +31,7 @@ type WhatWeDoComponent = React.FunctionComponent<WhatWeDoProps>;
 const WhatWeDo: WhatWeDoComponent = ({}) => {
 	return (
 		<HomeSubpartRoot>
-			<List>
+			<List id="about">
 				<Item>Demonstrativo de retorno de investimentos;</Item>
 				<Item>Dashboard interativa com métricas de D&I atualizadas em tempo real;</Item>
 				<Item>Indicadores e KPIs para obtenção de retornos a curto, médio e longo prazo;</Item>
