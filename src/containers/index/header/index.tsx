@@ -5,7 +5,7 @@ import HomeSubpartRoot from '../home-subpart-root';
 
 const Root = styled.div`
 	width: 673px;
-	margin: 16px 0;
+	margin: 16px 0 64px 0;
 `;
 
 const HeroImage = styled(Images.HeroImage)``;
