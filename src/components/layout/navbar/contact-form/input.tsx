@@ -18,15 +18,16 @@ const Input = styled.input`
 
 type ContactInputProps = React.PropsWithoutRef<{
 	label: string;
+	name: string;
 }>;
 
 type ContactInputComponent = React.FunctionComponent<ContactInputProps>;
 
-const ContactInput: ContactInputComponent = ({ label }) => {
+const ContactInput: ContactInputComponent = ({ label, name }) => {
 	return (
 		<Root>
 			<Label>{label}</Label>
-			<Input />
+			<Input name={name} />
 		</Root>
 	);
 };

@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { toastifyProblems } from '../../../../libs/toastify-problems';
 import ButtonBase from '../../../reusable/button';
 import ContactInput from './input';
+import { useContactFormSubmit } from './use-submit';
+import { toast } from 'react-toastify';
 
 export const CONTACT_FORM_WIDTH = 340;
 
-const Root = styled.div`
+const Root = styled.form`
 	position: absolute;
 	right: 0px;
 	width: ${CONTACT_FORM_WIDTH}px;
@@ -55,20 +58,61 @@ type ContactFormProps = React.PropsWithoutRef<{}>;
 
 type ContactFormComponent = React.FunctionComponent<ContactFormProps>;
 
+type FormData = {
+	name: string;
+	email: string;
+	company: string;
+};
+
 const ContactForm: ContactFormComponent = ({}) => {
+	const { isLoading, makeRequest } = useContactFormSubmit();
+
+	function extractData(formElem: HTMLFormElement) {
+		return {
+			name: (formElem['contact-name'] as HTMLInputElement).value.trim(),
+			email: (formElem['contact-email'] as HTMLInputElement).value.trim(),
+			company: (formElem['contact-company'] as HTMLInputElement).value.trim(),
+		} as FormData;
+	}
+
+	function validateData(data: FormData) {
+		const problems: string[] = [];
+		if (!data.name) problems.push('Você deve fornecer o seu nome');
+		if (!data.email) problems.push('Você deve fornecer um e-mail de contato');
+		if (!data.company) problems.push('Você deve fornecer o nome da sua empresa');
+		return problems;
+	}
+
+	async function handleSubmit(event: React.FormEvent) {
+		event.preventDefault();
+		if (isLoading) return;
+		const formElem = event.target as HTMLFormElement;
+		const data = extractData(formElem);
+		const problems = validateData(data);
+		if (problems.length > 0) return toastifyProblems(problems);
+		await makeRequest(data).catch((error: any) => {
+			toast.error('Falha na submissão. Por favor, tente de novo mais tarde');
+			throw error;
+		});
+		toast.success('sucesso! Entraremos em contato com você em breve :)');
+		formElem.reset();
+	}
+
 	return (
-		<Root>
+		<Root onSubmit={handleSubmit}>
 			<Title>Mônada Analytics</Title>
 			<AnalyticsDescription>
 				Solicite um teste gratuito da plataforma com a nossa equipe.
 			</AnalyticsDescription>
 			<InputsContainer>
-				<ContactInput label="Nome*:" />
-				<ContactInput label="E-mail*:" />
-				<ContactInput label="Empresa*:" />
+				<ContactInput name="contact-name" label="Nome*:" />
+				<ContactInput name="contact-email" label="E-mail*:" />
+				<ContactInput name="contact-company" label="Empresa*:" />
 			</InputsContainer>
 			<Subtext>Essas informações são importantes.*</Subtext>
-			<Button fullWidth>Quero conhecer!</Button>
+			<Button isLoading={isLoading} fullWidth>
+				Quero conhecer!
+			</Button>
 		</Root>
 	);
 };
