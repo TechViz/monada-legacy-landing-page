@@ -77,6 +77,21 @@ const Images = {
 		src: ImageURLs.heroImage,
 		alt: alt || `Some analytics graphics`,
 	}))``,
+
+	Maria: styled(BaseImage).attrs(({ alt }) => ({
+		src: ImageURLs.maria,
+		alt: alt || `Maria Salvador`,
+	}))``,
+
+	Adla: styled(BaseImage).attrs(({ alt }) => ({
+		src: ImageURLs.adla,
+		alt: alt || `Adla Viana`,
+	}))``,
+
+	Reijane: styled(BaseImage).attrs(({ alt }) => ({
+		src: ImageURLs.reijane,
+		alt: alt || `Reijane Salazar`,
+	}))``,
 };
 
 export default Images;

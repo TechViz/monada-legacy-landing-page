@@ -4,6 +4,10 @@ const ImageURLs = {
 	// TODO - get svg version of the image
 	heroImage: require(`./hero-image.png`),
 
+	maria: require(`./maria.png`),
+	reijane: require(`./reijane.png`),
+	adla: require(`./adla.png`),
+
 	/**
 	 * The PNG versions of the logo exist to use with the OpenGraph meta tags, because
 	 * they don't support SVG. These images SHOULD NOT be used in the website itself,

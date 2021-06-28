@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import Images from '../../../images';
 import HomeSubpartRoot from '../home-subpart-root';
 import WhoAreWeCard from './card';
 
@@ -22,10 +23,9 @@ const Title = styled.p`
 	}
 `;
 
-const Image = styled.div`
+const ImageCommonCSS = css`
 	width: 128px;
 	height: 128px;
-	background-color: ${props => props.theme.colors.gray.light};
 	border-radius: 100%;
 
 	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
@@ -38,11 +38,21 @@ const Image = styled.div`
 	}
 `;
 
+const MariaImage = styled(Images.Maria)`
+	${ImageCommonCSS}
+`;
+const AdlaImage = styled(Images.Adla)`
+	${ImageCommonCSS}
+`;
+const ReijaneImage = styled(Images.Reijane)`
+	${ImageCommonCSS}
+`;
+
 const CardsContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	row-gap: 32px;
+	row-gap: 28px;
 	margin-top: 32px;
 	font-size: 30px;
 	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
@@ -67,17 +77,17 @@ const WhoAreWe: WhoAreWeComponent = ({}) => {
 				<Title>Quem somos:</Title>
 				<CardsContainer>
 					<WhoAreWeCard
-						imageComponent={<Image />}
+						imageComponent={<ReijaneImage />}
 						name="Reijane Salazar"
 						occupation="CKO | Phd. Educação"
 					/>
 					<WhoAreWeCard
-						imageComponent={<Image />}
+						imageComponent={<AdlaImage />}
 						name="Adla Viana"
 						occupation="COO | MsC. Antropologia"
 					/>
 					<WhoAreWeCard
-						imageComponent={<Image />}
+						imageComponent={<MariaImage />}
 						name="Maria Luiza Salvador"
 						occupation="CEO | Product Designer"
 					/>
