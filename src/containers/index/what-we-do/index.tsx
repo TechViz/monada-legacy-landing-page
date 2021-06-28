@@ -4,14 +4,16 @@ import HomeSubpartRoot from '../home-subpart-root';
 
 const List = styled.ul`
 	padding: 64px 0;
+	margin: 0;
 	width: 673px;
 	padding-left: 16px;
+	row-gap: 32px;
+	display: flex;
+	flex-direction: column;
 	font-size: 32px;
 `;
 
-const Item = styled.li`
-	margin-bottom: 32px;
-`;
+const Item = styled.li``;
 
 type WhatWeDoProps = React.PropsWithoutRef<{}>;
 

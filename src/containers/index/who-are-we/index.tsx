@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import HomeSubpartRoot from '../home-subpart-root';
 import WhoAreWeCard from './card';
 
+const Root = styled.div`
+	padding: 64px 0;
+`;
+
 const Title = styled.p`
 	margin: 0;
 	font-size: 45px;
@@ -32,16 +36,26 @@ type WhoAreWeComponent = React.FunctionComponent<WhoAreWeProps>;
 const WhoAreWe: WhoAreWeComponent = ({}) => {
 	return (
 		<HomeSubpartRoot>
-			<Title>Quem somos:</Title>
-			<CardsContainer>
-				<WhoAreWeCard imageComponent={<Image />} name="Reijane Salazar" occupation="Educadora" />
-				<WhoAreWeCard imageComponent={<Image />} name="Adla Viana" occupation="Antropólaga" />
-				<WhoAreWeCard
-					imageComponent={<Image />}
-					name="Maria Luiza Salvador"
-					occupation="Product Designer"
-				/>
-			</CardsContainer>
+			<Root>
+				<Title>Quem somos:</Title>
+				<CardsContainer>
+					<WhoAreWeCard
+						imageComponent={<Image />}
+						name="Reijane Salazar"
+						occupation="CKO | Phd. Educação"
+					/>
+					<WhoAreWeCard
+						imageComponent={<Image />}
+						name="Adla Viana"
+						occupation="COO | MsC. Antropologia"
+					/>
+					<WhoAreWeCard
+						imageComponent={<Image />}
+						name="Maria Luiza Salvador"
+						occupation="CEO | Product Designer"
+					/>
+				</CardsContainer>
+			</Root>
 		</HomeSubpartRoot>
 	);
 };
