@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CONTACT_FORM_WIDTH } from '../../layout/navbar/contact-form';
 
 const Root = styled.div`
-	width: 340px;
+	width: ${CONTACT_FORM_WIDTH}px;
 `;
 
 type ContactFormSpacingProps = React.PropsWithoutRef<{}>;

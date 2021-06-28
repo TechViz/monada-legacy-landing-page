@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import ButtonBase from '../../../reusable/button';
 import ContactInput from './input';
 
+export const CONTACT_FORM_WIDTH = 340;
+
 const Root = styled.div`
 	position: absolute;
 	right: 0px;
-	width: 340px;
+	width: ${CONTACT_FORM_WIDTH}px;
 	background-color: ${props => props.theme.colors.white.full};
 	color: ${props => props.theme.colors.primary.main};
 	box-shadow: ${props => props.theme.shadows.card.medium};

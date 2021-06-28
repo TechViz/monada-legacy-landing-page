@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NAVBAR_HEIGHT } from '../../layout/navbar';
 
 const Root = styled.div`
-	height: 161px;
+	height: ${NAVBAR_HEIGHT}px;
 	width: 100%;
 `;
 
