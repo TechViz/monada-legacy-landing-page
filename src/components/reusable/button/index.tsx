@@ -27,7 +27,6 @@ const Root = styled.button<{
 	transition: 200ms;
 	cursor: pointer;
 	border-radius: 8px;
-	user-select: none;
 	border: 1px solid;
 	box-shadow: ${({ theme }) => theme.shadows.button.medium};
 	background-color: ${({ backgroundColor, theme }) => solveColorDescriptor(backgroundColor, theme)};
