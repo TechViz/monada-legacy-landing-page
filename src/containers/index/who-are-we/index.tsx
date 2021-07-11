@@ -80,16 +80,19 @@ const WhoAreWe: WhoAreWeComponent = ({}) => {
 						imageComponent={<ReijaneImage />}
 						name="Reijane Salazar"
 						occupation="CKO | Phd. Educação"
+						linkedin="https://www.linkedin.com/in/reijane-salazar-costa-4675758b/"
 					/>
 					<WhoAreWeCard
 						imageComponent={<AdlaImage />}
 						name="Adla Viana"
 						occupation="COO | MsC. Antropologia"
+						linkedin="https://www.linkedin.com/in/adlaviana/"
 					/>
 					<WhoAreWeCard
 						imageComponent={<MariaImage />}
 						name="Maria Luiza Salvador"
 						occupation="CEO | Product Designer"
+						linkedin="https://www.linkedin.com/in/malusalvadors/"
 					/>
 				</CardsContainer>
 			</Root>

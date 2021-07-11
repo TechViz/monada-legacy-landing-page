@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Root = styled.div`
+const Root = styled.a`
 	display: flex;
 	align-items: center;
 	column-gap: 100px;
+	color: ${props => props.theme.colors.white.full};
+	text-decoration: none;
 
 	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
 		flex-direction: column;
@@ -31,13 +33,14 @@ type WhoAreWeCardProps = React.PropsWithoutRef<{
 	imageComponent: React.ReactNode;
 	name: string;
 	occupation: string;
+	linkedin: string;
 }>;
 
 type WhoAreWeCardComponent = React.FunctionComponent<WhoAreWeCardProps>;
 
-const WhoAreWeCard: WhoAreWeCardComponent = ({ imageComponent, name, occupation }) => {
+const WhoAreWeCard: WhoAreWeCardComponent = ({ imageComponent, name, occupation, linkedin }) => {
 	return (
-		<Root>
+		<Root href={linkedin} target="_blank" rel="noopener">
 			{imageComponent}
 			<TextContainer>
 				<Name>{name}</Name>
