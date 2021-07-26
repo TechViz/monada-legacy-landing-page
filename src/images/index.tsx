@@ -74,7 +74,12 @@ const Images = {
 	/** Here's an image import example. Just copy and paste it with the correct import path. */
 	main: styled(BaseImage).attrs(({ alt }) => ({
 		src: ImageURLs.logo,
-		alt: alt || `My Company Logo`,
+		alt: alt || `Logo Mônada`,
+	}))``,
+
+	LogoTipography: styled(BaseImage).attrs(({ alt }) => ({
+		src: ImageURLs.logoTipography,
+		alt: alt || `Mônada`,
 	}))``,
 
 	HeroImage: styled(BaseImage).attrs(({ alt }) => ({
@@ -100,27 +105,31 @@ const Images = {
 	Sponsors: {
 		BfSolucoes: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.bfSolucoes,
-			alt: alt || `Apoiador BF solucoes`,
+			alt: alt || `Logo BF solucoes`,
 		}))``,
 		Iam: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.iam,
-			alt: alt || `Apoiador IAM`,
+			alt: alt || `Logo IAM`,
 		}))``,
 		Onovolab: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.onovolab,
-			alt: alt || `Apoiador Onovolab`,
+			alt: alt || `Logo Onovolab`,
 		}))``,
 		Predify: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.predify,
-			alt: alt || `Apoiador Predify`,
+			alt: alt || `Logo Predify`,
 		}))``,
 		Sancahub: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.sancahub,
-			alt: alt || `Apoiador Sancahub`,
+			alt: alt || `Logo Sancahub`,
 		}))``,
 		StartupSpSebrae: styled(BaseImage).attrs(({ alt }) => ({
 			src: ImageURLs.sponsors.startupSpSebrae,
-			alt: alt || `Apoiador Startup Sebrae`,
+			alt: alt || `Logo Startup Sebrae`,
+		}))``,
+		Zygon: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.zygon,
+			alt: alt || `Logo Zygon`,
 		}))``,
 	},
 };

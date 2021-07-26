@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CONTACT_FORM_WIDTH } from '../../layout/navbar';
+import { CONTACT_FORM_WIDTH } from '../../../constants/default-page-spacings';
 
 const Root = styled.div`
 	width: ${CONTACT_FORM_WIDTH}px;

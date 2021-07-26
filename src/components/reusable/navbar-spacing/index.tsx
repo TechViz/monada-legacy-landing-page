@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NAVBAR_HEIGHT } from '../../layout/navbar';
+import { NAVBAR_HEIGHT } from '../../../constants/default-page-spacings';
 
 const Root = styled.div`
 	height: ${NAVBAR_HEIGHT}px;

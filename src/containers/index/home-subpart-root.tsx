@@ -12,8 +12,7 @@ const Content = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: 0 64px;
+	padding: 0 64px 0 140px;
 	${props => props.theme.mediaQueries.maxScreen.custom(700)} {
 		padding: 0 32px;
 	}

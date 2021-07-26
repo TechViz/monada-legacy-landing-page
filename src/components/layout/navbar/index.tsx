@@ -5,11 +5,9 @@ import Link from 'next/link';
 import Images from '../../../images';
 import ContactForm from '../../reusable/contact-form';
 import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
+import { CONTACT_FORM_WIDTH, NAVBAR_HEIGHT } from '../../../constants/default-page-spacings';
 
-export const NAVBAR_HEIGHT = 167;
-export const CONTACT_FORM_WIDTH = 340;
-
-const PURPLE_PART_HEIGHT = 118;
+const PURPLE_PART_HEIGHT = 163;
 
 const Root = styled.div`
 	display: flex;
@@ -31,7 +29,16 @@ const PurplePart = styled.div`
 	display: flex;
 	padding: 16px 32px;
 
-	font-size: 32px;
+	font-size: 48px;
+	align-items: center;
+
+	${props => props.theme.mediaQueries.maxScreen.custom(1025)} {
+		font-size: 40px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(930)} {
+		font-size: 32px;
+	}
+
 	${props => props.theme.mediaQueries.maxScreen.custom(739)} {
 		column-gap: 64px;
 		font-size: 24px;
@@ -57,10 +64,19 @@ const Logo = styled(Images.main)`
 const LogoAnchor = styled.a.attrs({ href: `#` })`
 	background-color: ${({ theme }) => theme.colors.white.full};
 	border-radius: 100%;
-	padding: 10px;
-	height: 80px;
-	width: 80px;
+	padding: 16px;
+	height: 120px;
+	width: 120px;
 	align-self: center;
+	position: absolute;
+	${props => props.theme.mediaQueries.maxScreen.custom(930)} {
+		height: 96px;
+		width: 96px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(600)} {
+		height: 80px;
+		width: 80px;
+	}
 `;
 
 const Text = styled.p`
@@ -68,7 +84,16 @@ const Text = styled.p`
 	margin: 0;
 	text-align: center;
 	height: max-content;
+	width: 100%;
 	align-self: center;
+	position: relative;
+	${props => props.theme.mediaQueries.maxScreen.custom(739)} {
+		left: 32px;
+	}
+	${props => props.theme.mediaQueries.maxScreen.custom(450)} {
+		width: 150px;
+		left: 100px;
+	}
 `;
 
 const ContactFormContainer = styled.div`
@@ -92,7 +117,7 @@ const BluePart = styled.ul`
 	color: ${props => props.theme.colors.white.full};
 	display: flex;
 	margin: 0;
-	padding: 8px;
+	padding: 8px 160px;
 	overflow-x: auto;
 `;
 
@@ -105,8 +130,8 @@ const NavItem = styled.li`
 	& > a {
 		display: block;
 		text-align: center;
-		width: 256px;
 		transition: 200ms;
+		margin-right: 96px;
 		color: inherit;
 		text-decoration: none;
 	}

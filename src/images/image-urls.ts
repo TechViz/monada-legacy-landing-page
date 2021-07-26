@@ -1,5 +1,6 @@
 const ImageURLs = {
 	logo: require(`./logo.svg`),
+	logoTipography: require(`./monada-tipography.png`),
 
 	// TODO - get svg version of the image
 	heroImage: require(`./hero-image.png`),
@@ -15,6 +16,7 @@ const ImageURLs = {
 		predify: require('./sponsors/predify.svg'),
 		sancahub: require('./sponsors/sancahub.png'),
 		startupSpSebrae: require('./sponsors/startup-sp-sebrae.jpg'),
+		zygon: require('./sponsors/zygon.jpg'),
 	},
 
 	/**

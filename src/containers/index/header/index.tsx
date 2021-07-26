@@ -13,6 +13,7 @@ const HeroImage = styled(Images.HeroImage).attrs({ width: 673, height: 366 })``;
 const Title = styled.p`
 	color: ${props => props.theme.colors.white.full};
 	font-size: 35px;
+	font-weight: bold;
 	text-align: center;
 	margin: 16px 0 12px 0;
 	${props => props.theme.mediaQueries.maxScreen.custom(575)} {
