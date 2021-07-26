@@ -9,6 +9,8 @@ import { smoothScrollIntoElementId } from '../../../libs/smooth-scroll';
 export const NAVBAR_HEIGHT = 167;
 export const CONTACT_FORM_WIDTH = 340;
 
+const PURPLE_PART_HEIGHT = 118;
+
 const Root = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -24,6 +26,7 @@ const Root = styled.div`
 const PurplePart = styled.div`
 	width: 100%;
 	background-color: ${({ theme }) => theme.colors.primary.main};
+	height: ${PURPLE_PART_HEIGHT}px;
 	column-gap: 96px;
 	display: flex;
 	padding: 16px 32px;
@@ -84,29 +87,31 @@ const ContactFormContainer = styled.div`
 `;
 
 const BluePart = styled.ul`
-	width: 100%;
+	min-width: 100%;
 	background-color: ${props => props.theme.colors.blue.light};
 	color: ${props => props.theme.colors.white.full};
-	font-size: 24px;
 	display: flex;
 	margin: 0;
 	padding: 8px;
+	overflow-x: auto;
 `;
 
 const NavItem = styled.li`
 	display: block;
 	list-style: none;
+	font-size: 24px;
+	color: ${props => props.theme.colors.white.full};
 
 	& > a {
 		display: block;
 		text-align: center;
 		width: 256px;
 		transition: 200ms;
-		color: ${props => props.theme.colors.white.full};
+		color: inherit;
 		text-decoration: none;
 	}
 
-	& > a:hover {
+	&:hover {
 		color: ${props => props.theme.colors.primary.main};
 	}
 `;
