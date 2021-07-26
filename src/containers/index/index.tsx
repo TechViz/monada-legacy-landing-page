@@ -11,6 +11,7 @@ import WhatWeDo from './what-we-do';
 import SocialProof from './social-proof';
 import WhoAreWe from './who-are-we';
 import ContactFormSection from './contact-form';
+import Sponsors from './sponsors';
 
 const Main = styled.div`
 	min-height: 100vh;
@@ -50,6 +51,7 @@ export default function Home() {
 				<WhatWeDo />
 				<SocialProof />
 				<WhoAreWe />
+				<Sponsors />
 			</Main>
 		</>
 	);

@@ -24,6 +24,10 @@ const Image = styled.img<{ fit: string }>`
 	object-fit: ${({ fit }) => fit};
 	width: inherit;
 	height: inherit;
+	max-width: inherit;
+	max-height: inherit;
+	min-width: inherit;
+	min-height: inherit;
 	user-drag: none;
 	user-select: none;
 `;
@@ -92,6 +96,33 @@ const Images = {
 		src: ImageURLs.reijane,
 		alt: alt || `Reijane Salazar`,
 	}))``,
+
+	Sponsors: {
+		BfSolucoes: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.bfSolucoes,
+			alt: alt || `Apoiador BF solucoes`,
+		}))``,
+		Iam: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.iam,
+			alt: alt || `Apoiador IAM`,
+		}))``,
+		Onovolab: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.onovolab,
+			alt: alt || `Apoiador Onovolab`,
+		}))``,
+		Predify: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.predify,
+			alt: alt || `Apoiador Predify`,
+		}))``,
+		Sancahub: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.sancahub,
+			alt: alt || `Apoiador Sancahub`,
+		}))``,
+		StartupSpSebrae: styled(BaseImage).attrs(({ alt }) => ({
+			src: ImageURLs.sponsors.startupSpSebrae,
+			alt: alt || `Apoiador Startup Sebrae`,
+		}))``,
+	},
 };
 
 export default Images;
