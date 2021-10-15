@@ -12,6 +12,8 @@ import sancahub from './sponsors/sancahub.png';
 import startupSpSebrae from './sponsors/startup-sp-sebrae.jpg';
 import zygon from './sponsors/zygon.jpg';
 import logoPng from './logo.png';
+import linkedinLogo from './linkedin.svg';
+import instagramLogo from './instagram.svg';
 
 const ImageURLs = {
 	logo,
@@ -24,6 +26,8 @@ const ImageURLs = {
 	reijane,
 	adla,
 
+	linkedinLogo,
+	instagramLogo,
 	sponsors: {
 		bfSolucoes,
 		iam,

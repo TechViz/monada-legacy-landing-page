@@ -96,6 +96,16 @@ const Images = {
 		alt: alt || `Reijane Salazar`,
 	}))``,
 
+	LinkedinLogo: styled(BaseImage).attrs(({ alt }) => ({
+		imageData: ImageURLs.linkedinLogo,
+		alt: alt || `Icone Linkedin`,
+	}))``,
+
+	InstagramLogo: styled(BaseImage).attrs(({ alt }) => ({
+		imageData: ImageURLs.instagramLogo,
+		alt: alt || `Icone Linkedin`,
+	}))``,
+
 	Sponsors: {
 		BfSolucoes: styled(BaseImage).attrs(({ alt }) => ({
 			imageData: ImageURLs.sponsors.bfSolucoes,
