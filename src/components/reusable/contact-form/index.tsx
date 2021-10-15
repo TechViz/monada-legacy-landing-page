@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { toastifyProblems } from '../../../libs/toastify-problems';
 import ButtonBase from '../button';
@@ -44,17 +44,13 @@ const Button = styled(ButtonBase)`
 	font-size: 18px;
 `;
 
-type ContactFormProps = React.PropsWithoutRef<{}>;
-
-type ContactFormComponent = React.FunctionComponent<ContactFormProps>;
-
 type FormData = {
 	name: string;
 	email: string;
 	company: string;
 };
 
-const ContactForm: ContactFormComponent = ({}) => {
+const ContactForm: FC<{}> = ({}) => {
 	const { isLoading, makeRequest } = useContactFormSubmit();
 
 	function extractData(formElem: HTMLFormElement) {

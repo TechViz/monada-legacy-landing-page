@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const Root = styled.label`
@@ -16,14 +16,10 @@ const Input = styled.input`
 	width: 100%;
 `;
 
-type ContactInputProps = React.PropsWithoutRef<{
+const ContactInput: FC<{
 	label: string;
 	name: string;
-}>;
-
-type ContactInputComponent = React.FunctionComponent<ContactInputProps>;
-
-const ContactInput: ContactInputComponent = ({ label, name }) => {
+}> = ({ label, name }) => {
 	return (
 		<Root>
 			<Label>{label}</Label>

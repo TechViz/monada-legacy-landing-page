@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { CONTACT_FORM_WIDTH } from '../../../constants/default-page-spacings';
 
@@ -10,15 +10,11 @@ const Root = styled.div`
 	}
 `;
 
-type ContactFormSpacingProps = React.PropsWithoutRef<{}>;
-
-type ContactFormSpacingComponent = React.FunctionComponent<ContactFormSpacingProps>;
-
 /**
  * This is simply a component that will have the exact length of the sticky contact form. It's used to
  * make sure the form will never cover any readable content.
  */
-const ContactFormSpacing: ContactFormSpacingComponent = ({}) => {
+const ContactFormSpacing: FC<{}> = ({}) => {
 	return <Root></Root>;
 };
 

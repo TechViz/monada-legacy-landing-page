@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
@@ -141,11 +141,7 @@ const NavItem = styled.li`
 	}
 `;
 
-type NavbarProps = React.PropsWithoutRef<{}>;
-
-type NavbarComponent = React.FunctionComponent<NavbarProps>;
-
-const Navbar: NavbarComponent = () => {
+const Navbar: FC<{}> = () => {
 	function makeLinkClickHandler(elementId: string) {
 		return (event: React.MouseEvent) => {
 			event.preventDefault();

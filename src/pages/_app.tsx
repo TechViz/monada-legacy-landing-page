@@ -1,5 +1,5 @@
 // Framework
-import React from 'react';
+import React, { FC } from 'react';
 import Head from 'next/head';
 
 // Misc
@@ -13,14 +13,10 @@ import { supportedLanguages } from '../constants/supported-languages';
 import { description } from '../constants/basic-page-description';
 import { ToastContainer } from 'react-toastify';
 
-type MyAppProps = React.PropsWithoutRef<{
+const MyApp: FC<{
 	Component: any;
 	pageProps: any;
-}>;
-
-type MyAppComponent = React.FunctionComponent<MyAppProps>;
-
-const MyApp: MyAppComponent = ({ Component, pageProps }) => {
+}> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>

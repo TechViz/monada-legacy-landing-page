@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import type { DefaultTheme } from 'styled-components';
 import styled, { useTheme } from 'styled-components';
 import SpinnerTemplate from '../spinner';
@@ -68,25 +68,22 @@ const Spinner = styled(SpinnerTemplate)<{
 	`}
 `;
 
-type ButtonProps = React.PropsWithoutRef<{
-	backgroundColor?: ColorDescriptor;
-	textColor?: ColorDescriptor;
-	variant?: 'white' | 'primary';
-
-	/**
-	 * If true, the button's width will be set to `100%`.
-	 */
-	fullWidth?: boolean;
-	isLoading?: boolean;
-	isDisabled?: boolean;
-	onClickWhileDisabled?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}> &
-	React.ComponentProps<'button'>;
-
-type ButtonComponent = React.FunctionComponent<ButtonProps>;
-
 /** This is the application's default button. */
-const Button: ButtonComponent = ({
+const Button: FC<
+	{
+		backgroundColor?: ColorDescriptor;
+		textColor?: ColorDescriptor;
+		variant?: 'white' | 'primary';
+
+		/**
+		 * If true, the button's width will be set to `100%`.
+		 */
+		fullWidth?: boolean;
+		isLoading?: boolean;
+		isDisabled?: boolean;
+		onClickWhileDisabled?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	} & React.ComponentProps<'button'>
+> = ({
 	children,
 	fullWidth = false,
 	backgroundColor,
