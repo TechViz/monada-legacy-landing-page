@@ -24,20 +24,14 @@ const Image = styled.img<{ fit: string }>`
 	object-fit: ${({ fit }) => fit};
 	width: inherit;
 	height: inherit;
-	max-width: inherit;
-	max-height: inherit;
-	min-width: inherit;
-	min-height: inherit;
 	user-drag: none;
 	user-select: none;
 `;
 
 type BaseImageProps = React.PropsWithChildren<{
-	src: string;
+	imageData: StaticImageData;
 	alt: string;
 	css?: FlattenSimpleInterpolation;
-	width?: number;
-	height?: number;
 	fit?:
 		| 'contain'
 		| 'cover'
@@ -56,7 +50,7 @@ type BaseImageProps = React.PropsWithChildren<{
  * and will automaticaly handle webp sources.
  */
 const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(
-	({ src, alt, fit = `contain`, width, height, ...props }, ref) => {
+	({ imageData: { src }, alt, fit = `contain`, ...props }, ref) => {
 		const webpSrc = src.match(hasWebpCounterpartRegex)
 			? src.replace(hasWebpCounterpartRegex, `.webp`)
 			: ``;
@@ -64,7 +58,7 @@ const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(
 		return (
 			<Picture {...props} ref={ref}>
 				{webpSrc && <source srcSet={webpSrc} type="image/webp" />}
-				<Image width={width} height={height} src={src} alt={alt} fit={fit} />
+				<Image src={src} alt={alt} fit={fit} />
 			</Picture>
 		);
 	},
@@ -73,62 +67,62 @@ const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(
 const Images = {
 	/** Here's an image import example. Just copy and paste it with the correct import path. */
 	main: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.logo,
+		imageData: ImageURLs.logo,
 		alt: alt || `Logo Mônada`,
 	}))``,
 
 	LogoTipography: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.logoTipography,
+		imageData: ImageURLs.logoTipography,
 		alt: alt || `Mônada`,
 	}))``,
 
 	HeroImage: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.heroImage,
+		imageData: ImageURLs.heroImage,
 		alt: alt || `Some analytics graphics`,
 	}))``,
 
 	Maria: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.maria,
+		imageData: ImageURLs.maria,
 		alt: alt || `Maria Salvador`,
 	}))``,
 
 	Adla: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.adla,
+		imageData: ImageURLs.adla,
 		alt: alt || `Adla Viana`,
 	}))``,
 
 	Reijane: styled(BaseImage).attrs(({ alt }) => ({
-		src: ImageURLs.reijane,
+		imageData: ImageURLs.reijane,
 		alt: alt || `Reijane Salazar`,
 	}))``,
 
 	Sponsors: {
 		BfSolucoes: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.bfSolucoes,
+			imageData: ImageURLs.sponsors.bfSolucoes,
 			alt: alt || `Logo BF solucoes`,
 		}))``,
 		Iam: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.iam,
+			imageData: ImageURLs.sponsors.iam,
 			alt: alt || `Logo IAM`,
 		}))``,
 		Onovolab: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.onovolab,
+			imageData: ImageURLs.sponsors.onovolab,
 			alt: alt || `Logo Onovolab`,
 		}))``,
 		Predify: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.predify,
+			imageData: ImageURLs.sponsors.predify,
 			alt: alt || `Logo Predify`,
 		}))``,
 		Sancahub: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.sancahub,
+			imageData: ImageURLs.sponsors.sancahub,
 			alt: alt || `Logo Sancahub`,
 		}))``,
 		StartupSpSebrae: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.startupSpSebrae,
+			imageData: ImageURLs.sponsors.startupSpSebrae,
 			alt: alt || `Logo Startup Sebrae`,
 		}))``,
 		Zygon: styled(BaseImage).attrs(({ alt }) => ({
-			src: ImageURLs.sponsors.zygon,
+			imageData: ImageURLs.sponsors.zygon,
 			alt: alt || `Logo Zygon`,
 		}))``,
 	},
