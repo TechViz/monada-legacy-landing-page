@@ -101,7 +101,7 @@ export default function Home() {
 			<Main>
 				<Container>
 					<Logo />
-					<Title>Olá! Bom te ver por aqui!</Title>
+					<Title>Olá! Que bom te ver por aqui!</Title>
 					<Description>
 						No momento a página está fechada para reformas. Por enquanto, você pode acompanhar todas
 						as atualizações da Mônada por nossas redes sociais:
@@ -113,7 +113,13 @@ export default function Home() {
 							<InstagramLogo />
 							Instagram
 						</Link>
+						Ou, entre em contato com a gente preenchendo o formulário.
+						<br />
+						<br />
 						Esperamos te ver em breve!
+						<br />
+						<br />
+						Equipe Mônada
 					</Description>
 				</Container>
 				<Container>
