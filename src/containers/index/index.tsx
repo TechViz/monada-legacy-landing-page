@@ -105,11 +105,11 @@ export default function Home() {
 					<Description>
 						No momento a página está fechada para reformas. Por enquanto, você pode acompanhar todas
 						as atualizações da Mônada por nossas redes sociais:
-						<Link href="https://www.instagram.com/monada.tech/">
+						<Link href="https://www.linkedin.com/company/monada-tech/">
 							<LinkedinLogo />
 							Linkedin
 						</Link>
-						<Link href="https://www.linkedin.com/company/monada-tech/">
+						<Link href="https://www.instagram.com/monada.tech/">
 							<InstagramLogo />
 							Instagram
 						</Link>
